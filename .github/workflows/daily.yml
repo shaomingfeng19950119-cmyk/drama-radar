@@ -1,0 +1,24 @@
+name: 每日自动更新
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 运行更新脚本
+        run: node update.js
+      - name: 提交并推送
+        run: |
+          git config user.name "drama-radar-bot"
+          git config user.email "bot@drama-radar.app"
+          git add data.json
+          git diff --cached --quiet || git commit -m "📊 更新 $(date +%Y-%m-%d)"
+          git push
