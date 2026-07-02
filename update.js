@@ -71,14 +71,14 @@ function parseCountryTable(rows) {
     const h = header[i].trim();
     if (h === '国家' || h === '國家') { startCol = i + 1; continue; }
     if (h === '领先' || h === '優勢' || h === '优势方') break;
-    if (startCol > 0 && i >= startCol && /^[A-Z]{2}$/.test(h)) abbrs.push(h);
+    if (startCol > 0 && i >= startCol && /^[A-Za-z]{2,3}$/.test(h)) abbrs.push(h);
   }
 
   if (abbrs.length === 0) {
     // Fallback: try to detect from known abbreviations
     for (let i = 1; i < header.length - 1; i++) {
       const h = header[i].trim();
-      if (/^[A-Z]{2}$/.test(h)) abbrs.push(h);
+      if (/^[A-Za-z]{2,3}$/.test(h)) abbrs.push(h);
     }
   }
 
