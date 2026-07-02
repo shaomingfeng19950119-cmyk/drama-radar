@@ -157,8 +157,16 @@ footer a{color:var(--indigo);text-decoration:none}
     <div class="tg" id="trendGrid"></div>
   </div></section>
   <section class="section"><div class="ctn">
-    <div class="section-header"><h2 class="section-title">iOS 娱乐免费榜 · 30国矩阵</h2><span class="section-badge">Top200</span></div>
-    <div class="tw"><table class="dt" id="paidTable"></table></div>
+    <div class="section-header"><h2 class="section-title">📥 iOS 免费榜 · 30国</h2><span class="section-badge">下载排名</span></div>
+    <div class="tw"><table class="dt" id="iosFreeTable"></table></div>
+  </div></section>
+  <section class="section"><div class="ctn">
+    <div class="section-header"><h2 class="section-title">💰 iOS 畅销榜 · 30国</h2><span class="section-badge">收入排名 · 权重55%</span></div>
+    <div class="tw"><table class="dt" id="iosGrossingTable"></table></div>
+  </div></section>
+  <section class="section"><div class="ctn">
+    <div class="section-header"><h2 class="section-title">🤖 GP 免费榜 · 30国</h2><span class="section-badge">Google Play 下载排名</span></div>
+    <div class="tw"><table class="dt" id="gpFreeTable"></table></div>
   </div></section>
   <section class="section"><div class="ctn">
     <div class="section-header"><h2 class="section-title">本期洞察</h2></div>
@@ -229,9 +237,35 @@ function renderAll(dk){
     return`<div class="tc"><div class="tc-h"><div class="tc-n">${name}</div><div><span class="tc-s" style="color:${clr}">${last}</span><span class="tc-c ${dc}">${ds}</span></div></div><div class="sl">${bars}</div><div class="sl-l">${T.dates.map(x=>`<span>${x}</span>`).join('')}</div></div>`;
   }).join('');
 
-  const PT=R.paid.table;let th='<thead><tr><th>国家</th>';PT.h.forEach(c=>th+=`<th>${c}</th>`);th+='<th>领先</th></tr></thead><tbody>';
-  PT.r.forEach(r=>{th+='<tr><td>'+r[0]+'</td>';for(let i=1;i<=11;i++){const v=r[i];th+=`<td class="${cc(String(v))}">${v==='-'?'–':'#'+v}</td>`;}th+=`<td style="font-weight:600;color:var(--gold)">${r[12]}</td></tr>`;});
-  document.getElementById('paidTable').innerHTML=th+'</tbody>';
+  function renderPaidTable(elId, tableData) {
+    if (!tableData || !tableData.h || !tableData.r || tableData.r.length === 0) {
+      document.getElementById(elId).innerHTML = '<tr><td style="padding:20px;color:var(--t3);text-align:center">暂无数据</td></tr>';
+      return;
+    }
+    const pc = tableData.h.length;
+    let th = '<thead><tr><th>国家</th>';
+    tableData.h.forEach(c => th += '<th>' + c + '</th>');
+    th += '<th>领先</th></tr></thead><tbody>';
+    tableData.r.forEach(r => {
+      th += '<tr><td>' + r[0] + '</td>';
+      for (let i = 1; i <= pc; i++) {
+        const v = r[i];
+        th += '<td class="' + cc(String(v)) + '">' + (v === '-' ? '–' : '#' + v) + '</td>';
+      }
+      th += '<td style="font-weight:600;color:var(--gold)">' + r[pc + 1] + '</td></tr>';
+    });
+    document.getElementById(elId).innerHTML = th + '</tbody>';
+  }
+  // Render all 3 tables (v2 format) or fallback to v1 single table
+  if (R.paid.iosFree) {
+    renderPaidTable('iosFreeTable', R.paid.iosFree);
+    renderPaidTable('iosGrossingTable', R.paid.iosGrossing);
+    renderPaidTable('gpFreeTable', R.paid.gpFree);
+  } else if (R.paid.table) {
+    renderPaidTable('iosFreeTable', R.paid.table);
+    document.getElementById('iosGrossingTable').innerHTML = '';
+    document.getElementById('gpFreeTable').innerHTML = '';
+  }
 
   document.getElementById('paidInsights').innerHTML=R.paid.insights.map(i=>`<div class="ic"><h3>${i.h}</h3><p>${i.p}</p><span class="it it-${i.tag}">${{g:'强势',r:'走弱',p:'关注'}[i.tag]}</span></div>`).join('');
 
