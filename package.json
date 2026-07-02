@@ -1,0 +1,8 @@
+{
+  "name": "drama-radar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "node update.js"
+  }
+}
