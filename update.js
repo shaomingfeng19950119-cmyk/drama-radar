@@ -1,64 +1,159 @@
 /**
- * 短剧雷达 · 每日自动更新脚本（纯爬虫版，无需任何 API Key）
- * 
- * 直接解析 narku.com HTML 表格，自动生成结构化数据
- * 用法：node update.js
- * 完全免费，零成本运行
+ * 短剧雷达 · 自动更新（v2 完整版）
+ * 解析 iOS免费榜 + iOS畅销榜 + GP免费榜 + 综合排名
+ * 自动检测产品数量（支持11/15产品）
  */
-
 import { readFileSync, writeFileSync } from 'fs';
 
 async function fetchPage(url) {
-  console.log('  抓取: ' + url);
-  const res = await fetch(url, { headers: { 'User-Agent': 'DramaRadar/1.0' } });
-  if (!res.ok) throw new Error('HTTP ' + res.status + ' for ' + url);
-  return await res.text();
+  console.log('  fetch: ' + url);
+  const r = await fetch(url, { headers: { 'User-Agent': 'DramaRadar/2.0' } });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return await r.text();
 }
 
-function strip(html) {
-  return html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
-    .replace(/&#8211;/g, '-').replace(/&[^;]+;/g, ' ').trim();
-}
-
-function parseTables(html) {
-  const tables = [];
-  const tRe = /<table[^>]*>([\s\S]*?)<\/table>/gi;
-  let tm;
-  while ((tm = tRe.exec(html)) !== null) {
-    const rows = [];
-    const rRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
-    let rm;
-    while ((rm = rRe.exec(tm[1])) !== null) {
-      const cells = [];
-      const cRe = /<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi;
-      let cm;
-      while ((cm = cRe.exec(rm[1])) !== null) {
-        cells.push(strip(cm[1]).replace(/\s+/g, ' ').trim());
-      }
-      if (cells.length > 0) rows.push(cells);
-    }
-    if (rows.length > 0) tables.push(rows);
-  }
-  return tables;
-}
+function strip(h) { return h.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#\d+;/g, '-').replace(/&[^;]+;/g, ' ').replace(/\*+/g, '').trim(); }
 
 function parseRank(s) {
   if (!s) return null;
   const c = s.replace(/[#＃*]/g, '').replace(/[‑–—]/g, '').trim();
-  if (!c || c === '-' || c === '–') return null;
-  const n = parseInt(c);
-  return isNaN(n) ? null : n;
+  if (!c || c === '-' || c === '\u2013') return null;
+  const n = parseInt(c); return isNaN(n) ? null : n;
 }
 
-const PA = ['RS','DB','NS','DW','SM','GS','MR','SR','VS','DS','ST'];
-const PN = ['ReelShort','DramaBox','NetShort','DramaWave','ShortMax','GoodShort','MoboReels','StoryReel','VibeShort','DreameShort','StarDustTV'];
-const FA = ['Fr','Pd','Me','MD','KT'];
-const FN = ['Freereels','Pinedrama','Melolo','MicroDrama','KukuTV'];
-const FC = ['昆仑万维','字节跳动','字节跳动','—','印度本土'];
+// Split HTML into sections by headings, then parse tables in each
+function parseSections(html) {
+  // Extract content area
+  const contentMatch = html.match(/<div[^>]*class="[^"]*entry-content[^"]*"[^>]*>([\s\S]*?)<\/div>\s*(?:<\/article|<div[^>]*class="[^"]*(?:post-|entry-|comments))/i)
+    || html.match(/<article[^>]*>([\s\S]*?)<\/article/i);
+  const content = contentMatch ? contentMatch[1] : html;
 
-// ─── 找最新文章 ───
+  // Find all tables with preceding context
+  const sections = [];
+  const parts = content.split(/<table/i);
+
+  for (let i = 1; i < parts.length; i++) {
+    const before = parts[i - 1].slice(-500); // text before this table
+    const tableHtml = '<table' + parts[i].split(/<\/table>/i)[0] + '</table>';
+
+    // Determine table type from preceding text
+    let type = 'unknown';
+    if (/iOS\s*免费|免费榜|topfree|iOS 免费/i.test(before) && !/畅销|grossing/i.test(before.slice(-200))) type = 'ios_free';
+    else if (/畅销|grossing|收入/i.test(before)) type = 'ios_grossing';
+    else if (/GP|Google\s*Play|GP 免费/i.test(before)) type = 'gp_free';
+    else if (/综合排名|综合分|全球综合/i.test(before)) type = 'ranking';
+
+    // Parse table rows
+    const rows = [];
+    const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    let rm;
+    while ((rm = rowRe.exec(tableHtml)) !== null) {
+      const cells = [];
+      const cRe = /<t[dh][^>]*>([\s\S]*?)<\/t[dh]>/gi;
+      let cm;
+      while ((cm = cRe.exec(rm[1])) !== null) cells.push(strip(cm[1]).trim());
+      if (cells.length > 0) rows.push(cells);
+    }
+
+    if (rows.length > 2) sections.push({ type, rows });
+  }
+
+  return sections;
+}
+
+function parseCountryTable(rows) {
+  // First row is header - extract product abbreviations
+  const header = rows[0];
+  let abbrs = [];
+  let startCol = -1;
+
+  for (let i = 0; i < header.length; i++) {
+    const h = header[i].trim();
+    if (h === '国家' || h === '國家') { startCol = i + 1; continue; }
+    if (h === '领先' || h === '優勢' || h === '优势方') break;
+    if (startCol > 0 && i >= startCol && /^[A-Z]{2}$/.test(h)) abbrs.push(h);
+  }
+
+  if (abbrs.length === 0) {
+    // Fallback: try to detect from known abbreviations
+    for (let i = 1; i < header.length - 1; i++) {
+      const h = header[i].trim();
+      if (/^[A-Z]{2}$/.test(h)) abbrs.push(h);
+    }
+  }
+
+  const productCount = abbrs.length;
+  if (productCount === 0) return null;
+
+  const tableRows = [];
+  const stats = {};
+  abbrs.forEach(a => stats[a] = { cnt: 0, lead: 0, ranks: [] });
+
+  for (let ri = 1; ri < rows.length; ri++) {
+    const row = rows[ri];
+    const country = row[0]?.trim();
+    if (!country || country.length !== 2 || country === '国家' || country === '缩写') continue;
+
+    const ranks = [];
+    let best = 999, bi = -1;
+
+    for (let i = 0; i < productCount; i++) {
+      const r = parseRank(row[i + 1]);
+      ranks.push(r);
+      if (r !== null) {
+        stats[abbrs[i]].cnt++;
+        stats[abbrs[i]].ranks.push(r);
+        if (r < best) { best = r; bi = i; }
+      }
+    }
+
+    const lead = bi >= 0 ? abbrs[bi] : '–';
+    if (bi >= 0) stats[abbrs[bi]].lead++;
+
+    tableRows.push([country, ...ranks.map(r => r === null ? '-' : r), lead]);
+  }
+
+  return { h: abbrs, r: tableRows, stats };
+}
+
+function parseRankingTable(rows) {
+  // Parse the comprehensive ranking table
+  const rankings = [];
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    // Find columns: rank, product, score, coverage, grossing_lead, free_lead
+    if (row.length < 4) continue;
+
+    let name = null, score = null, coverage = null, gl = 0, fl = 0;
+
+    for (const cell of row) {
+      const c = cell.trim();
+      if (/^\d+\.\d+$/.test(c)) score = parseFloat(c);
+      else if (/^\d+\/\d+$/.test(c)) coverage = c;
+      else if (/^\d+国$/.test(c)) {
+        const n = parseInt(c);
+        if (gl === 0 && fl === 0) gl = n;
+        else fl = n;
+      }
+      // Product name: English word with no digits-only
+      else if (/^[A-Za-z]{4,}$/.test(c)) name = c;
+    }
+
+    if (!name && row.length >= 3) {
+      // Try second column
+      name = row[1].replace(/\*+/g, '').trim();
+    }
+
+    if (name && score) {
+      rankings.push({ n: name, s: score, gl, fl, c: coverage || '30/30', t: 'flat', ch: '+0.0' });
+    }
+  }
+  return rankings;
+}
+
+// ─── Main flow ───
 async function findLatest() {
-  console.log('\n📡 扫描最新文章...');
+  console.log('\n📡 Scanning narku.com...');
   const html = await fetchPage('https://www.narku.com/archives/category/daily-drama-report');
   const ms = [...html.matchAll(/<h2[^>]*>\s*<a\s+href="(https:\/\/www\.narku\.com\/archives\/\d+)"[^>]*>([\s\S]*?)<\/a>/gi)];
   const arts = ms.map(m => ({ url: m[1], title: strip(m[2]) }));
@@ -69,153 +164,139 @@ async function findLatest() {
   return { paid, free, date };
 }
 
-// ─── 解析付费报告 ───
-function parsePaid(html) {
-  console.log('\n📊 解析付费短剧...');
-  const tables = parseTables(html);
-  // 找包含 "US" 行且宽 >= 12 列的表
-  let cTable = null;
-  for (const t of tables) { for (const r of t) { if (r[0] === 'US' && r.length >= 12) { cTable = t; break; } } if (cTable) break; }
-  if (!cTable) { console.log('  ⚠️ 未找到排名表'); return null; }
-
-  const rows = [], scores = {};
-  PN.forEach(n => scores[n] = { cnt: 0, lead: 0, ranks: [] });
-
-  for (const row of cTable) {
-    if (row.length < 12) continue;
-    const co = row[0].trim();
-    if (co.length !== 2 || co === '国家' || co === '缩写') continue;
-    const ranks = [];
-    let best = 999, bi = -1;
-    for (let i = 0; i < 11; i++) {
-      const r = parseRank(row[i + 1]);
-      ranks.push(r);
-      if (r !== null) { scores[PN[i]].cnt++; scores[PN[i]].ranks.push(r); if (r < best) { best = r; bi = i; } }
-    }
-    const lead = bi >= 0 ? PA[bi] : '–';
-    if (bi >= 0) scores[PN[bi]].lead++;
-    rows.push([co, ...ranks.map(r => r === null ? '-' : r), lead]);
-  }
-
-  const rankings = PN.map(name => {
-    const s = scores[name];
-    const avg = s.ranks.length > 0 ? s.ranks.reduce((a, b) => a + b, 0) / s.ranks.length : 200;
-    const score = Math.round(((s.cnt / 30) * 10 + Math.max(0, (200 - avg) / 200) * 15) * 10) / 10;
-    return { n: name, s: score, gl: 0, fl: s.lead, c: s.cnt + '/30', t: 'flat', ch: '+0.0' };
-  }).sort((a, b) => b.s - a.s);
-
-  console.log('  ✅ ' + rows.length + ' 个国家');
-  return { rankings, table: { h: PA, r: rows } };
-}
-
-// ─── 解析免费报告 ───
-function parseFree(html) {
-  console.log('\n📊 解析免费短剧...');
-  const tables = parseTables(html);
-  const iosT = [], gpT = [];
-  const iosS = FN.map(() => ({ c: 0, tags: [] }));
-  const gpS = FN.map(() => ({ c: 0, tags: [] }));
-
-  for (const table of tables) {
-    let hasUS = false;
-    for (const r of table) { if (r[0] === 'US' && r.length >= 6) { hasUS = true; break; } }
-    if (!hasUS) continue;
-
-    const isIos = iosT.length === 0;
-    const target = isIos ? iosT : gpT;
-    const stats = isIos ? iosS : gpS;
-
-    for (const row of table) {
-      if (row.length < 6) continue;
-      const co = row[0].trim();
-      if (co.length !== 2 || co === '国家') continue;
-      const ranks = [];
-      let best = 999, bi = -1;
-      for (let i = 0; i < 5; i++) {
-        const r = parseRank(row[i + 1]);
-        ranks.push(r);
-        if (r !== null) {
-          stats[i].c++;
-          if (r <= 5) stats[i].tags.push({ t: co + ' #' + r, top: true });
-          else if (r <= 20) stats[i].tags.push({ t: co + ' #' + r, top: false });
-          if (r < best) { best = r; bi = i; }
-        }
-      }
-      target.push([co, ...ranks.map(r => r === null ? '-' : r), bi >= 0 ? FA[bi] : '–']);
-    }
-  }
-
-  const products = FN.map((n, i) => ({
-    n, co: FC[i], ios: iosS[i].c, gp: gpS[i].c,
-    total: Math.max(iosS[i].c, gpS[i].c, iosS[i].c + gpS[i].c > 0 ? new Set([...iosT.map(r => r[0]), ...gpT.map(r => r[0])].filter((co, idx) => {
-      // rough: just use max
-      return true;
-    })).size : 0),
-    tags: [...gpS[i].tags, ...iosS[i].tags].slice(0, 7)
-  }));
-  // Simpler total calc
-  products.forEach(p => { p.total = Math.max(p.ios, p.gp); });
-
-  console.log('  ✅ iOS ' + iosT.length + ' 国 / GP ' + gpT.length + ' 国');
-  return { products, iosT, gpT };
-}
-
-// ─── 自动洞察（规则引擎）───
 function paidInsights(rk) {
   const ins = [];
-  if (!rk || rk.length === 0) return ins;
-  const top = rk[0];
-  ins.push({ h: top.n + ' 以 ' + top.s + ' 分领跑', p: '在 ' + top.fl + ' 个国家免费榜领先，覆盖 ' + top.c + ' 个市场。', tag: 'g' });
+  if (!rk?.length) return ins;
+  const t = rk[0];
+  ins.push({ h: t.n + ' 以 ' + t.s + ' 分领跑综合排名', p: '畅销榜 ' + t.gl + ' 国领先，免费榜 ' + t.fl + ' 国领先，覆盖 ' + t.c + ' 个市场。', tag: 'g' });
   const fl = [...rk].sort((a, b) => b.fl - a.fl)[0];
-  if (fl.n !== top.n && fl.fl > 0) ins.push({ h: fl.n + ' 在 ' + fl.fl + ' 国免费榜领先', p: '免费榜领先国家数最多，下载获取能力突出。', tag: 'p' });
+  if (fl.n !== t.n && fl.fl > 0) ins.push({ h: fl.n + ' 在 ' + fl.fl + ' 国免费榜领先', p: '下载获取能力全场最强。', tag: 'p' });
   const bot = rk[rk.length - 1];
-  if (bot.s < 8) ins.push({ h: bot.n + ' 综合分仅 ' + bot.s, p: '排名末位，覆盖 ' + bot.c + ' 个市场。', tag: 'r' });
+  if (bot.s < 5) ins.push({ h: bot.n + ' 综合分仅 ' + bot.s, p: '排名末位，覆盖 ' + bot.c + '。', tag: 'r' });
   return ins;
 }
 
 function freeInsights(prods) {
   const ins = [], s = [...prods].sort((a, b) => b.total - a.total);
-  if (s[0]) ins.push({ h: s[0].n + ' 覆盖 ' + s[0].total + ' 国领跑', p: 'iOS ' + s[0].ios + ' 国 + GP ' + s[0].gp + ' 国，全球化程度最高。', tag: 'g' });
-  if (s[1]) ins.push({ h: s[1].n + ' 覆盖 ' + s[1].total + ' 国', p: 'iOS ' + s[1].ios + ' 国 + GP ' + s[1].gp + ' 国，新兴市场发力。', tag: 'p' });
+  if (s[0]) ins.push({ h: s[0].n + ' 覆盖 ' + s[0].total + ' 国领跑', p: 'iOS ' + s[0].ios + ' 国 + GP ' + s[0].gp + ' 国。', tag: 'g' });
+  if (s[1]) ins.push({ h: s[1].n + ' 覆盖 ' + s[1].total + ' 国', p: 'iOS ' + s[1].ios + ' 国 + GP ' + s[1].gp + ' 国。', tag: 'p' });
   const w = s.filter(p => p.total <= 2);
-  if (w.length) ins.push({ h: w.map(p => p.n).join('、') + ' 覆盖面有限', p: '仅少数市场上榜，全球化是挑战。', tag: 'r' });
+  if (w.length) ins.push({ h: w.map(p => p.n).join('、') + ' 覆盖面有限', p: '仅少数市场上榜。', tag: 'r' });
   return ins;
 }
 
-// ─── 组装 & 保存 ───
-function save(date, pd, fd) {
-  console.log('\n💾 保存 data.json...');
+async function main() {
+  console.log('🎬 短剧雷达 v2 · 完整三榜抓取');
+  console.log('='.repeat(40));
+
+  const { paid, free, date } = await findLatest();
+  if (!date) { console.log('⚠️ 无新文章'); return; }
+  console.log('📅 ' + date);
+
+  // ── Parse paid report ──
+  let iosFreeTable = null, iosGrossingTable = null, gpFreeTable = null, rankings = [];
+
+  if (paid) {
+    console.log('\n📄 付费: ' + paid.title);
+    const html = await fetchPage(paid.url);
+    const sections = parseSections(html);
+    console.log('  找到 ' + sections.length + ' 个表格段落');
+
+    // Assign tables by detected type
+    const countryTables = [];
+    for (const sec of sections) {
+      if (sec.type === 'ranking') {
+        rankings = parseRankingTable(sec.rows);
+        console.log('  综合排名: ' + rankings.length + ' 产品');
+      } else if (sec.type === 'ios_free' || sec.type === 'ios_grossing' || sec.type === 'gp_free' || sec.type === 'unknown') {
+        const parsed = parseCountryTable(sec.rows);
+        if (parsed && parsed.r.length > 5) {
+          countryTables.push({ type: sec.type, data: parsed });
+          console.log('  ' + sec.type + ': ' + parsed.h.length + ' 产品 × ' + parsed.r.length + ' 国');
+        }
+      }
+    }
+
+    // If type detection failed, assign by order (iOS Free → iOS Grossing → GP Free)
+    let freeIdx = 0, grossIdx = 1, gpIdx = 2;
+    for (let i = 0; i < countryTables.length; i++) {
+      if (countryTables[i].type === 'ios_free') freeIdx = i;
+      else if (countryTables[i].type === 'ios_grossing') grossIdx = i;
+      else if (countryTables[i].type === 'gp_free') gpIdx = i;
+    }
+
+    // Fallback: if all unknown, assume order
+    if (countryTables.every(t => t.type === 'unknown') && countryTables.length >= 3) {
+      freeIdx = 0; grossIdx = 1; gpIdx = 2;
+    }
+
+    if (countryTables[freeIdx]) iosFreeTable = countryTables[freeIdx].data;
+    if (countryTables[grossIdx]) iosGrossingTable = countryTables[grossIdx].data;
+    if (countryTables[gpIdx]) gpFreeTable = countryTables[gpIdx].data;
+  }
+
+  // ── Parse free report ──
+  let freeProducts = [], freeIosT = [], freeGpT = [];
+  const FA = ['Fr', 'Pd', 'Me', 'MD', 'KT'];
+  const FN = ['Freereels', 'Pinedrama', 'Melolo', 'MicroDrama', 'KukuTV'];
+  const FC = ['昆仑万维', '字节跳动', '字节跳动', '—', '印度本土'];
+
+  if (free) {
+    console.log('\n📄 免费: ' + free.title);
+    const html = await fetchPage(free.url);
+    const sections = parseSections(html);
+    const iosS = FN.map(() => ({ c: 0, tags: [] }));
+    const gpS = FN.map(() => ({ c: 0, tags: [] }));
+
+    let tableCount = 0;
+    for (const sec of sections) {
+      const parsed = parseCountryTable(sec.rows);
+      if (!parsed || parsed.r.length < 3) continue;
+
+      const isIos = tableCount === 0;
+      tableCount++;
+      const target = isIos ? freeIosT : freeGpT;
+      const stats = isIos ? iosS : gpS;
+
+      // Map by header abbreviation
+      for (const row of parsed.r) {
+        const co = row[0];
+        const mapped = [];
+        let best = 999, bi = -1;
+        for (let i = 0; i < FA.length; i++) {
+          const hi = parsed.h.indexOf(FA[i]);
+          const r = hi >= 0 ? (row[hi + 1] === '-' ? null : parseInt(row[hi + 1])) : null;
+          mapped.push(r);
+          if (r !== null) {
+            stats[i].c++;
+            if (r <= 5) stats[i].tags.push({ t: co + ' #' + r, top: true });
+            else if (r <= 20) stats[i].tags.push({ t: co + ' #' + r, top: false });
+            if (r < best) { best = r; bi = i; }
+          }
+        }
+        target.push([co, ...mapped.map(r => r === null ? '-' : r), bi >= 0 ? FA[bi] : '–']);
+      }
+    }
+
+    freeProducts = FN.map((n, i) => ({
+      n, co: FC[i], ios: iosS[i].c, gp: gpS[i].c,
+      total: Math.max(iosS[i].c, gpS[i].c),
+      tags: [...gpS[i].tags, ...iosS[i].tags].slice(0, 7)
+    }));
+  }
+
+  // ── Build & save ──
   let data;
   try { data = JSON.parse(readFileSync('data.json', 'utf-8')); } catch { data = { colors: {}, profiles: [], reports: {} }; }
 
-  if (!data.colors || !data.colors.DramaBox) {
-    data.colors = { DramaBox:'#D97706',NetShort:'#4F46E5',DramaWave:'#06B6D4',ReelShort:'#F97316',GoodShort:'#10B981',ShortMax:'#8B5CF6',VibeShort:'#EC4899',StarDustTV:'#14B8A6',StoryReel:'#EAB308',MoboReels:'#60A5FA',DreameShort:'#EF4444',Freereels:'#F97316',Pinedrama:'#4F46E5',Melolo:'#06B6D4',MicroDrama:'#8B5CF6',KukuTV:'#9CA3AF' };
-  }
-  if (!data.profiles?.length) {
-    data.profiles = [
-      {n:'ReelShort',co:'Crazy Maple Studio / 中文在线',y:2022,d:'全球短剧先驱，TIME100最具影响力公司。'},
-      {n:'DramaBox',co:'点众科技',y:2023,d:'全球#2短剧App，AI推荐引擎驱动付费转化。'},
-      {n:'NetShort',co:'NETSTORY / 麦芽',y:2024,d:'Q1下载增长196%，日韩东南亚强势。'},
-      {n:'DramaWave',co:'SKYWORK AI / 昆仑万维',y:2024,d:'3万+剧集，17种语言。'},
-      {n:'ShortMax',co:'九洲文化',y:2023,d:'5000万+下载，曾为全球三强。'},
-      {n:'GoodShort',co:'新阅时代',y:2023,d:'精品短剧平台，电影级制作品质。'},
-      {n:'MoboReels',co:'畅读科技',y:2023,d:'广告+免费模式，多语言字幕。'},
-      {n:'StoryReel',co:'Equinox Enterprises',y:2024,d:'新兴短剧平台，iOS/Android双端。'},
-      {n:'VibeShort',co:'VibeShort',y:2024,d:'AI漫画短剧平台。'},
-      {n:'DreameShort',co:'Dreame / STARY',y:2024,d:'字节生态短剧平台。'},
-      {n:'StarDustTV',co:'山海星辰',y:2024,d:'新兴短剧平台，多语言支持。'},
-      {n:'Freereels',co:'昆仑万维',y:2024,d:'免费短剧全球第1，累计下载突破2亿。',free:true},
-      {n:'Pinedrama',co:'字节跳动',y:2026,d:'TikTok旗下免费短剧App。',free:true},
-      {n:'Melolo',co:'字节跳动',y:2024,d:'东南亚基本盘稳固。',free:true},
-      {n:'KukuTV',co:'印度本土',y:2024,d:'印度市场龙头，累计下载1.7亿+。',free:true}
-    ];
+  if (!data.colors?.DramaBox) {
+    data.colors = { DramaBox:'#D97706',NetShort:'#4F46E5',DramaWave:'#06B6D4',ReelShort:'#F97316',GoodShort:'#10B981',ShortMax:'#8B5CF6',VibeShort:'#EC4899',StarDustTV:'#14B8A6',StoryReel:'#EAB308',MoboReels:'#60A5FA',DreameShort:'#EF4444',FlareFlow:'#F472B6',FlickReels:'#34D399',KalosTV:'#A3E635',MiniShorts:'#FB923C',Freereels:'#F97316',Pinedrama:'#4F46E5',Melolo:'#06B6D4',MicroDrama:'#8B5CF6',KukuTV:'#9CA3AF' };
   }
 
-  // 趋势：拼接历史
-  const rk = pd?.rankings || [];
+  // Trend: merge history
   const histDates = Object.keys(data.reports || {}).sort().slice(-5);
   const trendData = {};
-  for (const r of rk) {
+  for (const r of rankings) {
     const hist = histDates.map(d => data.reports[d]?.paid?.rankings?.find(x => x.n === r.n)?.s).filter(v => v != null);
     trendData[r.n] = [...hist, r.s];
     if (hist.length > 0) {
@@ -226,25 +307,30 @@ function save(date, pd, fd) {
     }
   }
 
-  const topP = rk[0];
+  const topP = rankings[0];
   const report = {
     meta: {
       type: '日报', period: date, eye: 'Daily Intelligence · ' + date,
-      title: topP ? (topP.n + ' 以 <em>' + topP.s + '分</em> 领跑<br>全球综合排名') : ('短剧出海竞品<em>日报</em>'),
-      sub: date + ' 付费短剧11产品×30国矩阵，免费短剧5产品×16国追踪。',
-      stats: [{l:'追踪付费产品',v:'11',c:'var(--indigo)'},{l:'覆盖国家',v:'30',c:'var(--blue)'},{l:'追踪免费产品',v:'5',c:'var(--cyan)'},{l:'免费覆盖国家',v:'16',c:'var(--green)'}]
+      title: topP ? (topP.n + ' 以 <em>' + topP.s + '分</em> 领跑<br>全球综合排名') : '短剧出海竞品<em>日报</em>',
+      sub: date + ' 付费短剧' + rankings.length + '产品×30国三榜矩阵，免费短剧5产品×16国追踪。',
+      stats: [
+        { l: '追踪付费产品', v: String(rankings.length || '?'), c: 'var(--indigo)' },
+        { l: '覆盖国家', v: '30', c: 'var(--blue)' },
+        { l: '追踪免费产品', v: '5', c: 'var(--cyan)' },
+        { l: '免费覆盖国家', v: '16', c: 'var(--green)' }
+      ]
     },
     paid: {
-      rankings: rk,
+      rankings,
       trends: { dates: [...histDates.map(d => d.slice(5)), date.slice(5)].slice(-6), data: trendData },
-      table: pd?.table || { h: PA, r: [] },
-      insights: paidInsights(rk)
+      iosFree: iosFreeTable ? { h: iosFreeTable.h, r: iosFreeTable.r } : { h: [], r: [] },
+      iosGrossing: iosGrossingTable ? { h: iosGrossingTable.h, r: iosGrossingTable.r } : { h: [], r: [] },
+      gpFree: gpFreeTable ? { h: gpFreeTable.h, r: gpFreeTable.r } : { h: [], r: [] },
+      insights: paidInsights(rankings)
     },
     free: {
-      products: fd?.products || [],
-      iosT: fd?.iosT || [],
-      gpT: fd?.gpT || [],
-      insights: freeInsights(fd?.products || [])
+      products: freeProducts, iosT: freeIosT, gpT: freeGpT,
+      insights: freeInsights(freeProducts)
     }
   };
 
@@ -253,29 +339,9 @@ function save(date, pd, fd) {
   if (dates.length > 30) dates.slice(30).forEach(d => delete data.reports[d]);
 
   writeFileSync('data.json', JSON.stringify(data, null, 2));
-  console.log('  ✅ 写入 ' + date + ' (共 ' + Object.keys(data.reports).length + ' 天)');
+  console.log('\n✅ 写入 ' + date + ' (' + Object.keys(data.reports).length + ' 天)');
+  console.log('  iOS免费: ' + (iosFreeTable?.r.length || 0) + '国 / iOS畅销: ' + (iosGrossingTable?.r.length || 0) + '国 / GP免费: ' + (gpFreeTable?.r.length || 0) + '国');
+  console.log('  综合排名: ' + rankings.length + '产品');
 }
 
-// ─── 主流程 ───
-async function main() {
-  console.log('🎬 短剧雷达 · 自动更新（纯爬虫，零成本）');
-  console.log('='.repeat(40));
-  try {
-    const { paid, free, date } = await findLatest();
-    if (!date) { console.log('\n⚠️ 未找到新文章'); return; }
-    console.log('\n📅 目标: ' + date);
-
-    let pd = null, fd = null;
-    if (paid) pd = parsePaid(await fetchPage(paid.url));
-    if (free) fd = parseFree(await fetchPage(free.url));
-
-    save(date, pd, fd);
-    console.log('\n' + '='.repeat(40));
-    console.log('🎉 完成！零成本，无需 API Key。');
-  } catch (e) {
-    console.error('\n❌ 失败:', e.message);
-    process.exit(1);
-  }
-}
-
-main();
+main().catch(e => { console.error('❌', e.message); process.exit(1); });
