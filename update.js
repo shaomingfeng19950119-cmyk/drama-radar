@@ -202,37 +202,32 @@ async function main() {
     const sections = parseSections(html);
     console.log('  找到 ' + sections.length + ' 个表格段落');
 
-    // Assign tables by detected type
+    // Parse all tables: large country tables assigned by order
+    // narku order is always: iOS Free → iOS Grossing → GP Free → Ranking
     const countryTables = [];
     for (const sec of sections) {
-      if (sec.type === 'ranking') {
+      const parsed = parseCountryTable(sec.rows);
+      if (parsed && parsed.r.length >= 10) {
+        countryTables.push(parsed);
+        console.log('  表格' + countryTables.length + ': ' + parsed.h.length + '产品 × ' + parsed.r.length + '国');
+      } else if (sec.type === 'ranking' || sec.rows.some(r => r.some(c => /综合分|综合/.test(c)))) {
         rankings = parseRankingTable(sec.rows);
-        console.log('  综合排名: ' + rankings.length + ' 产品');
-      } else if (sec.type === 'ios_free' || sec.type === 'ios_grossing' || sec.type === 'gp_free' || sec.type === 'unknown') {
-        const parsed = parseCountryTable(sec.rows);
-        if (parsed && parsed.r.length > 5) {
-          countryTables.push({ type: sec.type, data: parsed });
-          console.log('  ' + sec.type + ': ' + parsed.h.length + ' 产品 × ' + parsed.r.length + ' 国');
+        console.log('  综合排名: ' + rankings.length + '产品');
+      } else {
+        // Try ranking table detection by checking for score-like numbers
+        const maybeRanking = sec.rows.filter(r => r.some(c => /^\d+\.\d+$/.test(c.trim())));
+        if (maybeRanking.length >= 5) {
+          rankings = parseRankingTable(sec.rows);
+          console.log('  综合排名(auto): ' + rankings.length + '产品');
         }
       }
     }
 
-    // If type detection failed, assign by order (iOS Free → iOS Grossing → GP Free)
-    let freeIdx = 0, grossIdx = 1, gpIdx = 2;
-    for (let i = 0; i < countryTables.length; i++) {
-      if (countryTables[i].type === 'ios_free') freeIdx = i;
-      else if (countryTables[i].type === 'ios_grossing') grossIdx = i;
-      else if (countryTables[i].type === 'gp_free') gpIdx = i;
-    }
-
-    // Fallback: if all unknown, assume order
-    if (countryTables.every(t => t.type === 'unknown') && countryTables.length >= 3) {
-      freeIdx = 0; grossIdx = 1; gpIdx = 2;
-    }
-
-    if (countryTables[freeIdx]) iosFreeTable = countryTables[freeIdx].data;
-    if (countryTables[grossIdx]) iosGrossingTable = countryTables[grossIdx].data;
-    if (countryTables[gpIdx]) gpFreeTable = countryTables[gpIdx].data;
+    // Assign by order: 1st=iOS Free, 2nd=iOS Grossing, 3rd=GP Free
+    if (countryTables.length >= 1) iosFreeTable = countryTables[0];
+    if (countryTables.length >= 2) iosGrossingTable = countryTables[1];
+    if (countryTables.length >= 3) gpFreeTable = countryTables[2];
+    console.log('  分配: iOS免费=' + (iosFreeTable?'✓':'✗') + ' iOS畅销=' + (iosGrossingTable?'✓':'✗') + ' GP免费=' + (gpFreeTable?'✓':'✗'));
   }
 
   // ── Parse free report ──
