@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>短剧雷达 · 文章编辑器</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F6FA;--card:#fff;--border:#E5E7EB;--border-l:#F0F1F4;--t1:#1A1D26;--t2:#6B7280;--t3:#9CA3AF;--indigo:#4F46E5;--green:#10B981;--red:#EF4444;--tint-blue:#EFF4FF;--tint-green:#ECFDF5;--s1:0 1px 2px rgba(0,0,0,.04);--s2:0 4px 12px rgba(0,0,0,.06)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t1);font-family:'Inter',-apple-system,sans-serif;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:24px}
+header{text-align:center;padding:24px 0 32px}
+header h1{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;color:var(--indigo);letter-spacing:-.3px}
+header p{font-size:13px;color:var(--t3);margin-top:4px}
+
+.panel{background:var(--card);border:1px solid var(--border-l);border-radius:14px;box-shadow:var(--s1);margin-bottom:16px;overflow:hidden}
+.panel-head{padding:14px 20px;border-bottom:1px solid var(--border-l);font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.panel-body{padding:20px}
+
+label{display:block;font-size:12px;font-weight:600;color:var(--t2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+input[type=text],input[type=date],textarea{width:100%;font-family:'Inter',sans-serif;font-size:14px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;outline:none;color:var(--t1);background:var(--card);transition:border .15s}
+input:focus,textarea:focus{border-color:var(--indigo);box-shadow:0 0 0 3px rgba(79,70,229,.08)}
+.title-input{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;padding:14px 16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.mb{margin-bottom:14px}
+
+.toolbar{display:flex;gap:4px;padding:10px 16px;border-bottom:1px solid var(--border-l);flex-wrap:wrap}
+.tb-btn{padding:6px 12px;border:1px solid var(--border);border-radius:6px;background:var(--card);font-size:12px;font-weight:500;cursor:pointer;color:var(--t2);transition:.15s}
+.tb-btn:hover{background:var(--tint-blue);color:var(--indigo);border-color:rgba(79,70,229,.2)}
+.tb-sep{width:1px;background:var(--border-l);margin:0 4px}
+
+#editor{min-height:300px;padding:20px;font-size:15px;color:var(--t1);line-height:1.9;outline:none}
+#editor:empty::before{content:'开始写文章...';color:var(--t3)}
+#editor p{margin-bottom:14px}
+#editor h3{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:600;margin:20px 0 8px;color:var(--t1)}
+#editor strong{color:var(--indigo);font-weight:600}
+#editor blockquote{margin:14px 0;padding:12px 18px;border-left:3px solid var(--indigo);background:var(--tint-blue);border-radius:0 8px 8px 0;color:var(--t2)}
+#editor ul,#editor ol{margin:12px 0;padding-left:24px}
+#editor li{margin-bottom:6px}
+
+.actions{display:flex;gap:10px;justify-content:center;padding:20px 0}
+.btn{padding:12px 28px;border:none;border-radius:10px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:.15s}
+.btn-primary{background:var(--indigo);color:#fff;box-shadow:0 2px 8px rgba(79,70,229,.3)}
+.btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+.btn-secondary{background:var(--card);color:var(--t2);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--tint-blue);color:var(--indigo)}
+
+.output-box{position:relative}
+#jsonOutput{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.6;background:#1E1E2E;color:#CDD6F4;padding:20px;border-radius:10px;white-space:pre-wrap;word-break:break-all;max-height:400px;overflow-y:auto;display:none}
+.copy-btn{position:absolute;top:12px;right:12px;padding:6px 14px;border:none;border-radius:6px;background:rgba(255,255,255,.1);color:#CDD6F4;font-size:11px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif}
+.copy-btn:hover{background:rgba(255,255,255,.2)}
+.copy-ok{background:var(--green)!important;color:#fff}
+
+.preview{display:none}
+.preview .pv-title{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin-bottom:8px}
+.preview .pv-sum{font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:10px}
+.preview .pv-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.preview .pv-date{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t3)}
+.preview .pv-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--indigo);background:var(--tint-blue);padding:2px 8px;border-radius:4px}
+.preview .pv-content{font-size:15px;color:var(--t1);line-height:1.9;border-top:1px solid var(--border-l);padding-top:20px}
+.preview .pv-content p{margin-bottom:14px}
+.preview .pv-content strong{color:var(--indigo);font-weight:600}
+.preview .pv-content h3{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:600;margin:22px 0 8px}
+.preview .pv-content blockquote{margin:14px 0;padding:12px 18px;border-left:3px solid var(--indigo);background:var(--tint-blue);border-radius:0 8px 8px 0;color:var(--t2);font-size:14px}
+.preview .pv-content ul,.preview .pv-content ol{margin:12px 0;padding-left:24px}
+
+.tabs{display:flex;gap:4px;background:var(--bg);border-radius:8px;padding:3px;width:fit-content;margin:0 auto 16px}
+.tab-btn{padding:6px 20px;border-radius:6px;font-size:12px;font-weight:500;border:none;background:none;color:var(--t2);cursor:pointer}
+.tab-btn.on{background:var(--indigo);color:#fff}
+
+.sop{background:var(--tint-green);border:1px solid rgba(16,185,129,.15);border-radius:10px;padding:14px 18px;font-size:13px;color:#065F46;line-height:1.8;margin-bottom:16px}
+.sop strong{font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <h1>短剧雷达 · 文章编辑器</h1>
+  <p>写文章 → 预览 → 复制 JSON → 粘贴到 data.json → 发布</p>
+</header>
+
+<div class="sop">
+  <strong>发文3步：</strong>
+  ① 在这里写好文章，点"生成 JSON"
+  → ② 去 GitHub 编辑 data.json，在 <code>"articles": [</code> 后面粘贴
+  → ③ Commit，网站自动更新
+</div>
+
+<div class="tabs">
+  <button class="tab-btn on" onclick="showMode('edit',this)">编辑</button>
+  <button class="tab-btn" onclick="showMode('preview',this)">预览</button>
+</div>
+
+<div id="editMode">
+  <div class="panel">
+    <div class="panel-body">
+      <div class="mb">
+        <label>文章标题</label>
+        <input type="text" id="artTitle" class="title-input" placeholder="写一个吸引人的标题">
+      </div>
+      <div class="mb">
+        <label>一句话摘要</label>
+        <input type="text" id="artSummary" placeholder="显示在文章列表里的简介">
+      </div>
+      <div class="row">
+        <div>
+          <label>日期</label>
+          <input type="date" id="artDate">
+        </div>
+        <div>
+          <label>标签（逗号分隔）</label>
+          <input type="text" id="artTags" placeholder="竞品分析, DramaBox">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="toolbar">
+      <button class="tb-btn" onclick="fmt('bold')" title="加粗"><b>B</b></button>
+      <button class="tb-btn" onclick="insertH3()" title="小标题">H3</button>
+      <div class="tb-sep"></div>
+      <button class="tb-btn" onclick="insertQuote()" title="引用框">引用</button>
+      <button class="tb-btn" onclick="fmt('insertUnorderedList')" title="无序列表">列表</button>
+      <div class="tb-sep"></div>
+      <button class="tb-btn" onclick="insertP()" title="新段落">新段落</button>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+  </div>
+</div>
+
+<div id="previewMode" class="preview">
+  <div class="panel">
+    <div class="panel-body">
+      <div class="pv-title" id="pvTitle"></div>
+      <div class="pv-sum" id="pvSummary"></div>
+      <div class="pv-meta">
+        <span class="pv-date" id="pvDate"></span>
+        <span id="pvTags"></span>
+      </div>
+      <div class="pv-content" id="pvContent"></div>
+    </div>
+  </div>
+</div>
+
+<div class="actions">
+  <button class="btn btn-secondary" onclick="clearAll()">清空重写</button>
+  <button class="btn btn-primary" onclick="generateJSON()">生成 JSON 代码</button>
+</div>
+
+<div class="panel output-box" id="outputPanel" style="display:none">
+  <div class="panel-head">生成的 JSON — 复制后粘贴到 data.json</div>
+  <div class="panel-body" style="padding:0">
+    <pre id="jsonOutput"></pre>
+    <button class="copy-btn" id="copyBtn" onclick="copyJSON()">复制代码</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+document.getElementById('artDate').valueAsDate = new Date();
+
+function fmt(cmd) {
+  document.execCommand(cmd, false, null);
+  document.getElementById('editor').focus();
+}
+
+function insertH3() {
+  document.execCommand('formatBlock', false, 'h3');
+  document.getElementById('editor').focus();
+}
+
+function insertQuote() {
+  document.execCommand('formatBlock', false, 'blockquote');
+  document.getElementById('editor').focus();
+}
+
+function insertP() {
+  document.execCommand('formatBlock', false, 'p');
+  document.getElementById('editor').focus();
+}
+
+function showMode(mode, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+
+  if (mode === 'edit') {
+    document.getElementById('editMode').style.display = 'block';
+    document.getElementById('previewMode').style.display = 'none';
+  } else {
+    document.getElementById('editMode').style.display = 'none';
+    document.getElementById('previewMode').style.display = 'block';
+    updatePreview();
+  }
+}
+
+function updatePreview() {
+  document.getElementById('pvTitle').textContent = document.getElementById('artTitle').value || '未命名文章';
+  document.getElementById('pvSummary').textContent = document.getElementById('artSummary').value || '';
+  document.getElementById('pvDate').textContent = document.getElementById('artDate').value || '';
+  
+  var tags = document.getElementById('artTags').value.split(',').map(t => t.trim()).filter(t => t);
+  document.getElementById('pvTags').innerHTML = tags.map(t => '<span class="pv-tag">' + t + '</span>').join(' ');
+  
+  document.getElementById('pvContent').innerHTML = cleanHTML(document.getElementById('editor').innerHTML);
+}
+
+function cleanHTML(html) {
+  // Clean up contenteditable quirks
+  var clean = html
+    .replace(/<div>/gi, '<p>').replace(/<\/div>/gi, '</p>')
+    .replace(/<br\s*\/?>\s*<\/p>/gi, '</p>')
+    .replace(/^<br\s*\/?>/, '')
+    .replace(/<p><br\s*\/?><\/p>/gi, '')
+    .replace(/<p>\s*<\/p>/gi, '');
+  
+  // Ensure paragraphs are wrapped
+  if (clean && !clean.startsWith('<')) {
+    clean = '<p>' + clean + '</p>';
+  }
+  
+  return clean;
+}
+
+function escapeJSON(str) {
+  return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '');
+}
+
+function generateJSON() {
+  var title = document.getElementById('artTitle').value.trim();
+  var summary = document.getElementById('artSummary').value.trim();
+  var date = document.getElementById('artDate').value;
+  var tags = document.getElementById('artTags').value.split(',').map(function(t){return t.trim()}).filter(function(t){return t});
+  var content = cleanHTML(document.getElementById('editor').innerHTML);
+
+  if (!title) { alert('请填写标题'); return; }
+  if (!content || content === '<p></p>') { alert('请写点内容'); return; }
+
+  var json = '    {\n';
+  json += '      "title": "' + escapeJSON(title) + '",\n';
+  json += '      "date": "' + date + '",\n';
+  json += '      "summary": "' + escapeJSON(summary) + '",\n';
+  json += '      "tags": ' + JSON.stringify(tags) + ',\n';
+  json += '      "content": "' + escapeJSON(content) + '"\n';
+  json += '    },';
+
+  var el = document.getElementById('jsonOutput');
+  el.textContent = json;
+  el.style.display = 'block';
+  document.getElementById('outputPanel').style.display = 'block';
+  document.getElementById('outputPanel').scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyJSON() {
+  var text = document.getElementById('jsonOutput').textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = document.getElementById('copyBtn');
+    btn.textContent = '已复制 ✓';
+    btn.classList.add('copy-ok');
+    setTimeout(function() {
+      btn.textContent = '复制代码';
+      btn.classList.remove('copy-ok');
+    }, 2000);
+  });
+}
+
+function clearAll() {
+  if (!confirm('确定要清空所有内容吗？')) return;
+  document.getElementById('artTitle').value = '';
+  document.getElementById('artSummary').value = '';
+  document.getElementById('artTags').value = '';
+  document.getElementById('editor').innerHTML = '';
+  document.getElementById('jsonOutput').style.display = 'none';
+  document.getElementById('outputPanel').style.display = 'none';
+}
+</script>
+</body>
+</html>
