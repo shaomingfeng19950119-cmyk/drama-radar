@@ -36,7 +36,11 @@ footer{padding:36px 0;text-align:center;color:var(--c3);font-size:12px;border-to
     <button class="nt" onclick="sw(this,'profiles')">产品档案</button>
     <button class="nt" onclick="sw(this,'revenue')">收入预估</button>
   </div>
-  <div class="nav-r"><span class="rtype" id="rType"></span><select class="dsel" id="dPick" onchange="loadD(this.value)"></select></div>
+  <div class="nav-r">
+      <span class="rtype" id="rType"></span>
+      <select class="dsel" id="dPick" onchange="loadD(this.value)"></select>
+      <select class="dsel" id="rvPick" onchange="loadRV(this.value)" style="display:none"></select>
+    </div>
 </div></nav>
 <header class="hero"><div class="ctn"><div class="hero-ey" id="hEye"></div><h1 id="hTitle"></h1><p class="hero-sub" id="hSub"></p><div class="hstats" id="hStats"></div></div></header>
 
@@ -82,7 +86,7 @@ footer{padding:36px 0;text-align:center;color:var(--c3);font-size:12px;border-to
 <footer><div class="ctn"><p>数据来源：iTunes RSS · google-play-scraper · 行业数据 · 公开信息</p><p class="fn">短剧雷达 DRAMA RADAR · 每日自动更新</p></div></footer>
 
 <script>
-var DB,curD,MX=25;
+var DB,curD,curRD,MX=25;
 function xc(v){if(v==='-')return'xm';var n=parseInt(v);return n===1?'x1':n<=5?'x5':n<=10?'x10':n<=20?'x20':'';}
 function fm(n){return n>=1e6?'$'+(n/1e6).toFixed(1)+'M':n>=1e3?'$'+(n/1e3).toFixed(0)+'K':'$'+n;}
 
@@ -98,7 +102,7 @@ function renderTbl(id,secId,tbl){
 }
 
 function renderAll(dk){
-  curD=dk;var R=DB.reports[dk];if(!R){renderRevenue();return;}var C=DB.colors;
+  var R=DB.reports[dk];if(!R)return;curD=dk;var C=DB.colors;
   document.getElementById('rType').textContent=R.meta.type;
   document.getElementById('hEye').textContent=R.meta.eye;
   document.getElementById('hTitle').innerHTML=R.meta.title;
@@ -133,11 +137,10 @@ function renderProfiles(){
 
 function getRevenue(){
   if(!DB.revenue)return null;
-  if(DB.revenue[curD])return DB.revenue[curD];
-  // Fallback: find closest date or flat structure
+  if(curRD&&DB.revenue[curRD])return DB.revenue[curRD];
   var keys=Object.keys(DB.revenue);
   if(keys.length&&keys[0].match(/^\d{4}/))return DB.revenue[keys.sort().reverse()[0]];
-  if(DB.revenue.products)return DB.revenue;// old flat format
+  if(DB.revenue.products)return DB.revenue;
   return null;
 }
 
@@ -192,18 +195,33 @@ function askAI(){
   fetch("https://api.deepseek.com/v1/chat/completions",{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer sk-048dafffe25344d5960695d418aaa669"},body:JSON.stringify({model:"deepseek-chat",max_tokens:1000,messages:[{role:"system",content:"你是短剧出海数据分析师。简洁有洞察力，用中文，不用markdown。\n"+ctx}].concat(aiH)})}).then(function(r){return r.json();}).then(function(d){var reply=d.choices&&d.choices[0]?d.choices[0].message.content:'分析失败，请重试。';aiH.push({role:"assistant",content:reply});var el=document.getElementById(lid);if(el)el.innerHTML='<div style="display:inline-block;background:var(--alt);border:1px solid var(--bl);padding:10px 16px;border-radius:12px 12px 12px 2px;font-size:13px;max-width:85%;line-height:1.7;color:var(--c1)">'+reply.replace(/\n/g,'<br>')+'</div>';ms.scrollTop=ms.scrollHeight;}).catch(function(e){var el=document.getElementById(lid);if(el)el.innerHTML='<div style="color:var(--red);font-size:13px;padding:8px">请求失败：'+e.message+'</div>';});
 }
 
-function sw(btn,tab){document.querySelectorAll('.tab').forEach(function(e){e.classList.remove('on');});document.querySelectorAll('.nt').forEach(function(e){e.classList.remove('on');});document.getElementById('tab-'+tab).classList.add('on');btn.classList.add('on');if(tab==='profiles')renderProfiles();if(tab==='revenue')renderRevenue();}
-function loadD(dk){renderAll(dk);renderProfiles();renderRevenue();window.scrollTo({top:0,behavior:'smooth'});}
+function loadRV(dk){curRD=dk;renderRevenue();}
+function sw(btn,tab){
+  document.querySelectorAll('.tab').forEach(function(e){e.classList.remove('on');});
+  document.querySelectorAll('.nt').forEach(function(e){e.classList.remove('on');});
+  document.getElementById('tab-'+tab).classList.add('on');btn.classList.add('on');
+  // Toggle date pickers
+  document.getElementById('dPick').style.display=tab==='revenue'?'none':'';
+  document.getElementById('rvPick').style.display=tab==='revenue'?'':'none';
+  document.getElementById('rType').style.display=tab==='revenue'?'none':'';
+  if(tab==='profiles')renderProfiles();
+  if(tab==='revenue')renderRevenue();
+}
+function loadD(dk){renderAll(dk);renderProfiles();window.scrollTo({top:0,behavior:'smooth'});}
 
 (async function(){
-  try{var res=await fetch('./data.json?t='+Date.now());DB=await res.json();var picker=document.getElementById('dPick');
-    // Collect all dates from reports + revenue
-    var allDates={};
-    Object.keys(DB.reports).forEach(function(d){allDates[d]=(allDates[d]||'')+DB.reports[d].meta.type;});
-    if(DB.revenue){Object.keys(DB.revenue).forEach(function(d){if(!allDates[d])allDates[d]='收入';else allDates[d]+=' + 收入';});}
-    var dates=Object.keys(allDates).sort().reverse();
-    dates.forEach(function(d){var opt=document.createElement('option');opt.value=d;opt.textContent=d+' '+allDates[d];picker.appendChild(opt);});
-    renderAll(dates[0]);renderProfiles();}
+  try{var res=await fetch('./data.json?t='+Date.now());DB=await res.json();// Report date picker (left 3 tabs)
+    var picker=document.getElementById('dPick');
+    var rDates=Object.keys(DB.reports).sort().reverse();
+    rDates.forEach(function(d){var opt=document.createElement('option');opt.value=d;opt.textContent=d+' '+DB.reports[d].meta.type;picker.appendChild(opt);});
+    // Revenue date picker (right tab)
+    var rvPicker=document.getElementById('rvPick');
+    if(DB.revenue){
+      var rvDates=Object.keys(DB.revenue).sort().reverse();
+      rvDates.forEach(function(d){var opt=document.createElement('option');opt.value=d;opt.textContent=d+' 收入';rvPicker.appendChild(opt);});
+      if(rvDates.length>0)curRD=rvDates[0];
+    }
+    renderAll(rDates[0]);renderProfiles();}
   catch(e){document.querySelector('.hero').innerHTML='<div class="ctn"><h1 style="color:var(--red)">加载失败</h1><p style="color:var(--c2);margin-top:12px">'+e.message+'</p></div>';}
 })();
 </script>
