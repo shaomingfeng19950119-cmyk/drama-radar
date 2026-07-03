@@ -21,19 +21,1175 @@
     "MicroDrama": "#8B5CF6",
     "KukuTV": "#9CA3AF"
   },
-  "profiles": [],
+  "profiles": [
+    {
+      "n": "ReelShort",
+      "co": "Crazy Maple Studio / 中文在线",
+      "y": 2022,
+      "d": "全球短剧先驱，TIME100最具影响力公司。"
+    },
+    {
+      "n": "DramaBox",
+      "co": "点众科技",
+      "y": 2023,
+      "d": "全球#2短剧App，AI推荐引擎驱动付费转化。"
+    },
+    {
+      "n": "NetShort",
+      "co": "NETSTORY / 麦芽",
+      "y": 2024,
+      "d": "Q1下载增长196%，日韩东南亚强势。"
+    },
+    {
+      "n": "DramaWave",
+      "co": "SKYWORK AI / 昆仑万维",
+      "y": 2024,
+      "d": "3万+剧集，17种语言。"
+    },
+    {
+      "n": "ShortMax",
+      "co": "九洲文化",
+      "y": 2023,
+      "d": "5000万+下载，曾为全球三强。"
+    },
+    {
+      "n": "GoodShort",
+      "co": "新阅时代",
+      "y": 2023,
+      "d": "精品短剧，电影级制作品质。"
+    },
+    {
+      "n": "MoboReels",
+      "co": "畅读科技",
+      "y": 2023,
+      "d": "广告+免费模式，多语言字幕。"
+    },
+    {
+      "n": "StoryReel",
+      "co": "Equinox Enterprises",
+      "y": 2024,
+      "d": "新兴短剧平台。"
+    },
+    {
+      "n": "VibeShort",
+      "co": "VibeShort",
+      "y": 2024,
+      "d": "AI漫画短剧平台。"
+    },
+    {
+      "n": "DreameShort",
+      "co": "Dreame / STARY",
+      "y": 2024,
+      "d": "字节生态短剧平台。"
+    },
+    {
+      "n": "StarDustTV",
+      "co": "山海星辰",
+      "y": 2024,
+      "d": "新兴短剧平台，多语言支持。"
+    },
+    {
+      "n": "FlareFlow",
+      "co": "—",
+      "y": 2025,
+      "d": "新入局者，快速扩张中。"
+    },
+    {
+      "n": "FlickReels",
+      "co": "—",
+      "y": 2025,
+      "d": "新入局者，多国上榜。"
+    },
+    {
+      "n": "KalosTV",
+      "co": "—",
+      "y": 2025,
+      "d": "新入局者，亚洲市场为主。"
+    },
+    {
+      "n": "MiniShorts",
+      "co": "—",
+      "y": 2025,
+      "d": "新入局者，起步阶段。"
+    },
+    {
+      "n": "Freereels",
+      "co": "昆仑万维",
+      "y": 2024,
+      "d": "免费短剧全球第1，累计下载突破2亿。",
+      "free": true
+    },
+    {
+      "n": "Pinedrama",
+      "co": "字节跳动",
+      "y": 2026,
+      "d": "TikTok旗下免费短剧App。",
+      "free": true
+    },
+    {
+      "n": "Melolo",
+      "co": "字节跳动",
+      "y": 2024,
+      "d": "东南亚基本盘稳固。",
+      "free": true
+    },
+    {
+      "n": "MicroDrama",
+      "co": "—",
+      "y": 2024,
+      "d": "GP端东南亚有存在感。",
+      "free": true
+    },
+    {
+      "n": "KukuTV",
+      "co": "印度本土",
+      "y": 2024,
+      "d": "印度市场龙头。",
+      "free": true
+    }
+  ],
+  "revenue": {
+    "2026-06-29": {
+      "updated": "2026-06-29",
+      "source": "行业数据",
+      "period": "2026-06-29 单日",
+      "note": "双平台全球收入（iOS + Google Play）",
+      "products": [
+        {
+          "name": "DramaBox",
+          "daily": 2762474,
+          "monthly": 82874206,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 702914
+            },
+            {
+              "country": "JP",
+              "revenue": 229587
+            },
+            {
+              "country": "GB",
+              "revenue": 156172
+            },
+            {
+              "country": "AU",
+              "revenue": 126065
+            },
+            {
+              "country": "BR",
+              "revenue": 112480
+            },
+            {
+              "country": "KR",
+              "revenue": 109094
+            },
+            {
+              "country": "CA",
+              "revenue": 102669
+            },
+            {
+              "country": "DE",
+              "revenue": 91820
+            },
+            {
+              "country": "TW",
+              "revenue": 85307
+            },
+            {
+              "country": "TH",
+              "revenue": 77895
+            },
+            {
+              "country": "MX",
+              "revenue": 69089
+            },
+            {
+              "country": "MY",
+              "revenue": 66380
+            },
+            {
+              "country": "FR",
+              "revenue": 65842
+            },
+            {
+              "country": "PH",
+              "revenue": 61674
+            },
+            {
+              "country": "IN",
+              "revenue": 59353
+            }
+          ]
+        },
+        {
+          "name": "ReelShort",
+          "daily": 2523062,
+          "monthly": 75691869,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 1069768
+            },
+            {
+              "country": "GB",
+              "revenue": 116976
+            },
+            {
+              "country": "MX",
+              "revenue": 92221
+            },
+            {
+              "country": "JP",
+              "revenue": 89957
+            },
+            {
+              "country": "AU",
+              "revenue": 73806
+            },
+            {
+              "country": "DE",
+              "revenue": 71644
+            },
+            {
+              "country": "CA",
+              "revenue": 67799
+            },
+            {
+              "country": "FR",
+              "revenue": 53535
+            },
+            {
+              "country": "BR",
+              "revenue": 53234
+            },
+            {
+              "country": "RO",
+              "revenue": 40333
+            },
+            {
+              "country": "PL",
+              "revenue": 34720
+            },
+            {
+              "country": "CH",
+              "revenue": 33930
+            },
+            {
+              "country": "TR",
+              "revenue": 31582
+            },
+            {
+              "country": "TH",
+              "revenue": 30171
+            },
+            {
+              "country": "CZ",
+              "revenue": 30049
+            }
+          ]
+        },
+        {
+          "name": "NetShort",
+          "daily": 2143914,
+          "monthly": 64317419,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 352570
+            },
+            {
+              "country": "TW",
+              "revenue": 179885
+            },
+            {
+              "country": "KR",
+              "revenue": 176671
+            },
+            {
+              "country": "JP",
+              "revenue": 129091
+            },
+            {
+              "country": "BR",
+              "revenue": 92993
+            },
+            {
+              "country": "FR",
+              "revenue": 79804
+            },
+            {
+              "country": "DE",
+              "revenue": 77840
+            },
+            {
+              "country": "TR",
+              "revenue": 71009
+            },
+            {
+              "country": "TH",
+              "revenue": 66983
+            },
+            {
+              "country": "GB",
+              "revenue": 58067
+            },
+            {
+              "country": "MY",
+              "revenue": 54276
+            },
+            {
+              "country": "AU",
+              "revenue": 53874
+            },
+            {
+              "country": "ID",
+              "revenue": 50692
+            },
+            {
+              "country": "IN",
+              "revenue": 49072
+            },
+            {
+              "country": "MX",
+              "revenue": 48621
+            }
+          ]
+        },
+        {
+          "name": "DramaWave",
+          "daily": 1955199,
+          "monthly": 58655970,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 564107
+            },
+            {
+              "country": "KR",
+              "revenue": 128119
+            },
+            {
+              "country": "JP",
+              "revenue": 107978
+            },
+            {
+              "country": "TR",
+              "revenue": 70397
+            },
+            {
+              "country": "MX",
+              "revenue": 67809
+            },
+            {
+              "country": "GB",
+              "revenue": 64812
+            },
+            {
+              "country": "DE",
+              "revenue": 58658
+            },
+            {
+              "country": "ID",
+              "revenue": 50941
+            },
+            {
+              "country": "TW",
+              "revenue": 49632
+            },
+            {
+              "country": "RO",
+              "revenue": 47752
+            },
+            {
+              "country": "AU",
+              "revenue": 45230
+            },
+            {
+              "country": "CA",
+              "revenue": 45045
+            },
+            {
+              "country": "PH",
+              "revenue": 44061
+            },
+            {
+              "country": "BR",
+              "revenue": 42210
+            },
+            {
+              "country": "TH",
+              "revenue": 40231
+            }
+          ]
+        },
+        {
+          "name": "GoodShort",
+          "daily": 1261849,
+          "monthly": 37855480,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 401776
+            },
+            {
+              "country": "JP",
+              "revenue": 111512
+            },
+            {
+              "country": "BR",
+              "revenue": 96900
+            },
+            {
+              "country": "TH",
+              "revenue": 60052
+            },
+            {
+              "country": "MX",
+              "revenue": 58887
+            },
+            {
+              "country": "GB",
+              "revenue": 39371
+            },
+            {
+              "country": "AU",
+              "revenue": 34818
+            },
+            {
+              "country": "CA",
+              "revenue": 29778
+            },
+            {
+              "country": "DE",
+              "revenue": 28334
+            },
+            {
+              "country": "PH",
+              "revenue": 25909
+            },
+            {
+              "country": "ID",
+              "revenue": 23075
+            },
+            {
+              "country": "PL",
+              "revenue": 20330
+            },
+            {
+              "country": "CL",
+              "revenue": 17643
+            },
+            {
+              "country": "FR",
+              "revenue": 17635
+            },
+            {
+              "country": "AE",
+              "revenue": 17510
+            }
+          ]
+        },
+        {
+          "name": "ShortMax",
+          "daily": 747618,
+          "monthly": 22428539,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 339125
+            },
+            {
+              "country": "GB",
+              "revenue": 37980
+            },
+            {
+              "country": "AU",
+              "revenue": 36883
+            },
+            {
+              "country": "CA",
+              "revenue": 28655
+            },
+            {
+              "country": "JP",
+              "revenue": 25120
+            },
+            {
+              "country": "BR",
+              "revenue": 19886
+            },
+            {
+              "country": "DE",
+              "revenue": 17457
+            },
+            {
+              "country": "MX",
+              "revenue": 17241
+            },
+            {
+              "country": "TH",
+              "revenue": 14171
+            },
+            {
+              "country": "FR",
+              "revenue": 12560
+            },
+            {
+              "country": "ID",
+              "revenue": 12203
+            },
+            {
+              "country": "MY",
+              "revenue": 8513
+            },
+            {
+              "country": "AE",
+              "revenue": 8159
+            },
+            {
+              "country": "NL",
+              "revenue": 7197
+            },
+            {
+              "country": "IT",
+              "revenue": 7071
+            }
+          ]
+        },
+        {
+          "name": "FlickReels",
+          "daily": 547556,
+          "monthly": 16426683,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 132521
+            },
+            {
+              "country": "JP",
+              "revenue": 63301
+            },
+            {
+              "country": "BR",
+              "revenue": 26084
+            },
+            {
+              "country": "TW",
+              "revenue": 25958
+            },
+            {
+              "country": "AU",
+              "revenue": 22198
+            },
+            {
+              "country": "PH",
+              "revenue": 22093
+            },
+            {
+              "country": "CA",
+              "revenue": 19566
+            },
+            {
+              "country": "GB",
+              "revenue": 19409
+            },
+            {
+              "country": "TH",
+              "revenue": 17106
+            },
+            {
+              "country": "MY",
+              "revenue": 16738
+            },
+            {
+              "country": "IN",
+              "revenue": 14999
+            },
+            {
+              "country": "ID",
+              "revenue": 14948
+            },
+            {
+              "country": "FR",
+              "revenue": 14325
+            },
+            {
+              "country": "MX",
+              "revenue": 14116
+            },
+            {
+              "country": "KR",
+              "revenue": 12092
+            }
+          ]
+        },
+        {
+          "name": "VibeShort",
+          "daily": 478982,
+          "monthly": 14369467,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 70979
+            },
+            {
+              "country": "AU",
+              "revenue": 34320
+            },
+            {
+              "country": "GB",
+              "revenue": 30187
+            },
+            {
+              "country": "MX",
+              "revenue": 25661
+            },
+            {
+              "country": "CA",
+              "revenue": 24328
+            },
+            {
+              "country": "FR",
+              "revenue": 21305
+            },
+            {
+              "country": "DE",
+              "revenue": 18190
+            },
+            {
+              "country": "TH",
+              "revenue": 16212
+            },
+            {
+              "country": "IT",
+              "revenue": 13952
+            },
+            {
+              "country": "CL",
+              "revenue": 12865
+            },
+            {
+              "country": "BR",
+              "revenue": 11966
+            },
+            {
+              "country": "JP",
+              "revenue": 11941
+            },
+            {
+              "country": "VN",
+              "revenue": 10083
+            },
+            {
+              "country": "MY",
+              "revenue": 9904
+            },
+            {
+              "country": "TR",
+              "revenue": 9226
+            }
+          ]
+        },
+        {
+          "name": "StoryReel",
+          "daily": 322372,
+          "monthly": 9671170,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 64021
+            },
+            {
+              "country": "GB",
+              "revenue": 35658
+            },
+            {
+              "country": "AU",
+              "revenue": 31459
+            },
+            {
+              "country": "CA",
+              "revenue": 23292
+            },
+            {
+              "country": "MX",
+              "revenue": 13122
+            },
+            {
+              "country": "FR",
+              "revenue": 9993
+            },
+            {
+              "country": "DE",
+              "revenue": 9901
+            },
+            {
+              "country": "MY",
+              "revenue": 9341
+            },
+            {
+              "country": "NL",
+              "revenue": 9188
+            },
+            {
+              "country": "NO",
+              "revenue": 7903
+            },
+            {
+              "country": "CL",
+              "revenue": 5918
+            },
+            {
+              "country": "ZA",
+              "revenue": 5689
+            },
+            {
+              "country": "CH",
+              "revenue": 4771
+            },
+            {
+              "country": "ES",
+              "revenue": 4657
+            },
+            {
+              "country": "BE",
+              "revenue": 4507
+            }
+          ]
+        },
+        {
+          "name": "StarDustTV",
+          "daily": 296898,
+          "monthly": 8906939,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 58109
+            },
+            {
+              "country": "TW",
+              "revenue": 28792
+            },
+            {
+              "country": "KR",
+              "revenue": 13644
+            },
+            {
+              "country": "ID",
+              "revenue": 13361
+            },
+            {
+              "country": "BR",
+              "revenue": 12464
+            },
+            {
+              "country": "TH",
+              "revenue": 12463
+            },
+            {
+              "country": "MY",
+              "revenue": 8940
+            },
+            {
+              "country": "JP",
+              "revenue": 8340
+            },
+            {
+              "country": "PH",
+              "revenue": 7960
+            },
+            {
+              "country": "HK",
+              "revenue": 7911
+            },
+            {
+              "country": "AU",
+              "revenue": 7587
+            },
+            {
+              "country": "MX",
+              "revenue": 7368
+            },
+            {
+              "country": "GB",
+              "revenue": 6539
+            },
+            {
+              "country": "CA",
+              "revenue": 6531
+            },
+            {
+              "country": "IN",
+              "revenue": 6417
+            }
+          ]
+        },
+        {
+          "name": "MoboReels",
+          "daily": 238305,
+          "monthly": 7149139,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 84370
+            },
+            {
+              "country": "JP",
+              "revenue": 16288
+            },
+            {
+              "country": "KR",
+              "revenue": 14507
+            },
+            {
+              "country": "BR",
+              "revenue": 9670
+            },
+            {
+              "country": "DE",
+              "revenue": 9191
+            },
+            {
+              "country": "FR",
+              "revenue": 8006
+            },
+            {
+              "country": "MX",
+              "revenue": 6536
+            },
+            {
+              "country": "GB",
+              "revenue": 6217
+            },
+            {
+              "country": "AU",
+              "revenue": 6213
+            },
+            {
+              "country": "IT",
+              "revenue": 5615
+            },
+            {
+              "country": "TH",
+              "revenue": 5286
+            },
+            {
+              "country": "CA",
+              "revenue": 4585
+            },
+            {
+              "country": "UA",
+              "revenue": 4228
+            },
+            {
+              "country": "IL",
+              "revenue": 3065
+            },
+            {
+              "country": "CH",
+              "revenue": 3013
+            }
+          ]
+        },
+        {
+          "name": "KalosTV",
+          "daily": 222098,
+          "monthly": 6662951,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 55861
+            },
+            {
+              "country": "JP",
+              "revenue": 18186
+            },
+            {
+              "country": "FR",
+              "revenue": 11183
+            },
+            {
+              "country": "CA",
+              "revenue": 10510
+            },
+            {
+              "country": "AU",
+              "revenue": 10198
+            },
+            {
+              "country": "GB",
+              "revenue": 8723
+            },
+            {
+              "country": "PH",
+              "revenue": 8554
+            },
+            {
+              "country": "BR",
+              "revenue": 8223
+            },
+            {
+              "country": "DE",
+              "revenue": 6743
+            },
+            {
+              "country": "ID",
+              "revenue": 5749
+            },
+            {
+              "country": "TH",
+              "revenue": 5692
+            },
+            {
+              "country": "MX",
+              "revenue": 5278
+            },
+            {
+              "country": "MY",
+              "revenue": 4461
+            },
+            {
+              "country": "SG",
+              "revenue": 4361
+            },
+            {
+              "country": "IN",
+              "revenue": 4248
+            }
+          ]
+        },
+        {
+          "name": "DreameShort",
+          "daily": 142156,
+          "monthly": 4264681,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 90353
+            },
+            {
+              "country": "AU",
+              "revenue": 6444
+            },
+            {
+              "country": "GB",
+              "revenue": 5805
+            },
+            {
+              "country": "CA",
+              "revenue": 5018
+            },
+            {
+              "country": "DE",
+              "revenue": 3964
+            },
+            {
+              "country": "PH",
+              "revenue": 2464
+            },
+            {
+              "country": "PL",
+              "revenue": 2021
+            },
+            {
+              "country": "NL",
+              "revenue": 1757
+            },
+            {
+              "country": "FR",
+              "revenue": 1692
+            },
+            {
+              "country": "IT",
+              "revenue": 1553
+            },
+            {
+              "country": "IN",
+              "revenue": 1341
+            },
+            {
+              "country": "BR",
+              "revenue": 1290
+            },
+            {
+              "country": "DK",
+              "revenue": 1220
+            },
+            {
+              "country": "MY",
+              "revenue": 922
+            },
+            {
+              "country": "CH",
+              "revenue": 920
+            }
+          ]
+        },
+        {
+          "name": "FlareFlow",
+          "daily": 87946,
+          "monthly": 2638390,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 27218
+            },
+            {
+              "country": "BR",
+              "revenue": 8363
+            },
+            {
+              "country": "DE",
+              "revenue": 6873
+            },
+            {
+              "country": "PH",
+              "revenue": 3087
+            },
+            {
+              "country": "MX",
+              "revenue": 2959
+            },
+            {
+              "country": "CH",
+              "revenue": 2785
+            },
+            {
+              "country": "GB",
+              "revenue": 2673
+            },
+            {
+              "country": "JP",
+              "revenue": 2377
+            },
+            {
+              "country": "AU",
+              "revenue": 2291
+            },
+            {
+              "country": "FR",
+              "revenue": 2290
+            },
+            {
+              "country": "TH",
+              "revenue": 2054
+            },
+            {
+              "country": "IT",
+              "revenue": 2025
+            },
+            {
+              "country": "ID",
+              "revenue": 1611
+            },
+            {
+              "country": "AT",
+              "revenue": 1515
+            },
+            {
+              "country": "CA",
+              "revenue": 1469
+            }
+          ]
+        },
+        {
+          "name": "MiniShorts",
+          "daily": 40304,
+          "monthly": 1209114,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 21754
+            },
+            {
+              "country": "GB",
+              "revenue": 1924
+            },
+            {
+              "country": "AU",
+              "revenue": 1866
+            },
+            {
+              "country": "JP",
+              "revenue": 1679
+            },
+            {
+              "country": "PH",
+              "revenue": 1423
+            },
+            {
+              "country": "CA",
+              "revenue": 1259
+            },
+            {
+              "country": "TH",
+              "revenue": 909
+            },
+            {
+              "country": "MX",
+              "revenue": 773
+            },
+            {
+              "country": "MY",
+              "revenue": 740
+            },
+            {
+              "country": "DE",
+              "revenue": 703
+            },
+            {
+              "country": "BR",
+              "revenue": 702
+            },
+            {
+              "country": "SG",
+              "revenue": 535
+            },
+            {
+              "country": "CH",
+              "revenue": 423
+            },
+            {
+              "country": "NL",
+              "revenue": 407
+            },
+            {
+              "country": "FR",
+              "revenue": 359
+            }
+          ]
+        }
+      ]
+    }
+  },
   "reports": {
-    "2026-07-02": {
+    "2026-06-29": {
       "meta": {
-        "type": "日报",
-        "period": "2026-07-02",
-        "eye": "Daily Intelligence · 2026-07-02",
-        "title": "DramaBox 以 <em>22.3分</em> 领跑<br>全球综合排名",
-        "sub": "2026-07-02 付费短剧15产品×30国三榜矩阵，免费短剧5产品×16国追踪。",
+        "type": "周报",
+        "period": "2026-06-23 → 06-29",
+        "eye": "Weekly Intelligence · W26 2026",
+        "title": "DramaBox 登顶，<em>23.1分</em><br>刷新本季综合分纪录",
+        "sub": "本周11款付费短剧全部在30国上榜，DramaBox以17国畅销领先超越ReelShort坐稳榜首。免费赛道Freereels覆盖15国GP榜单持续全球化领跑。",
         "stats": [
           {
             "l": "追踪付费产品",
-            "v": "15",
+            "v": "11",
             "c": "var(--indigo)"
           },
           {
@@ -57,193 +1213,205 @@
         "rankings": [
           {
             "n": "DramaBox",
-            "s": 22.3,
-            "gl": 16,
-            "fl": 6,
+            "s": 23.1,
+            "gl": 17,
+            "fl": 16,
             "c": "30/30",
-            "t": "flat",
-            "ch": "+0.0"
-          },
-          {
-            "n": "DramaWave",
-            "s": 22.3,
-            "gl": 3,
-            "fl": 38,
-            "c": "30/30",
-            "t": "flat",
-            "ch": "+0.0"
+            "t": "up",
+            "ch": "+1.3"
           },
           {
             "n": "NetShort",
-            "s": 21.4,
-            "gl": 10,
-            "fl": 6,
+            "s": 22,
+            "gl": 8,
+            "fl": 20,
             "c": "30/30",
             "t": "flat",
-            "ch": "+0.0"
+            "ch": "+0.1"
+          },
+          {
+            "n": "DramaWave",
+            "s": 21.8,
+            "gl": 1,
+            "fl": 12,
+            "c": "30/30",
+            "t": "flat",
+            "ch": "-0.1"
           },
           {
             "n": "ReelShort",
-            "s": 20.4,
-            "gl": 1,
-            "fl": 6,
+            "s": 20.6,
+            "gl": 4,
+            "fl": 10,
             "c": "30/30",
-            "t": "flat",
-            "ch": "+0.0"
+            "t": "up",
+            "ch": "+1.1"
           },
           {
             "n": "GoodShort",
-            "s": 17.5,
-            "gl": 1,
-            "fl": 0,
+            "s": 17.2,
+            "gl": 0,
+            "fl": 2,
             "c": "30/30",
-            "t": "flat",
-            "ch": "+0.0"
-          },
-          {
-            "n": "VibeShort",
-            "s": 16.9,
-            "gl": 3,
-            "fl": 0,
-            "c": "30/30",
-            "t": "flat",
-            "ch": "+0.0"
+            "t": "up",
+            "ch": "+0.9"
           },
           {
             "n": "ShortMax",
-            "s": 16.6,
+            "s": 16,
+            "gl": 0,
+            "fl": 0,
+            "c": "30/30",
+            "t": "up",
+            "ch": "+0.7"
+          },
+          {
+            "n": "VibeShort",
+            "s": 15.5,
             "gl": 0,
             "fl": 0,
             "c": "30/30",
             "t": "flat",
-            "ch": "+0.0"
-          },
-          {
-            "n": "StoryReel",
-            "s": 13.7,
-            "gl": 0,
-            "fl": 0,
-            "c": "28/30",
-            "t": "flat",
-            "ch": "+0.0"
-          },
-          {
-            "n": "FlickReels",
-            "s": 12.8,
-            "gl": 0,
-            "fl": 0,
-            "c": "30/30",
-            "t": "flat",
-            "ch": "+0.0"
+            "ch": "+0.2"
           },
           {
             "n": "StarDustTV",
-            "s": 12.5,
+            "s": 13.7,
             "gl": 0,
             "fl": 0,
             "c": "30/30",
-            "t": "flat",
-            "ch": "+0.0"
+            "t": "down",
+            "ch": "-0.8"
           },
           {
-            "n": "KalosTV",
-            "s": 8.4,
+            "n": "StoryReel",
+            "s": 13.4,
             "gl": 0,
             "fl": 0,
-            "c": "29/30",
-            "t": "flat",
-            "ch": "+0.0"
+            "c": "28/30",
+            "t": "up",
+            "ch": "+2.3"
           },
           {
             "n": "MoboReels",
-            "s": 7.6,
+            "s": 8.5,
             "gl": 0,
             "fl": 0,
             "c": "30/30",
             "t": "flat",
-            "ch": "+0.0"
-          },
-          {
-            "n": "FlareFlow",
-            "s": 5.2,
-            "gl": 0,
-            "fl": 0,
-            "c": "22/30",
-            "t": "flat",
-            "ch": "+0.0"
+            "ch": "-0.2"
           },
           {
             "n": "DreameShort",
-            "s": 5.1,
+            "s": 4.7,
             "gl": 0,
             "fl": 0,
-            "c": "24/30",
-            "t": "flat",
-            "ch": "+0.0"
-          },
-          {
-            "n": "MiniShorts",
-            "s": 1.3,
-            "gl": 0,
-            "fl": 0,
-            "c": "11/30",
-            "t": "flat",
-            "ch": "+0.0"
+            "c": "23/30",
+            "t": "down",
+            "ch": "-1.5"
           }
         ],
         "trends": {
           "dates": [
-            "07-02"
+            "06-23",
+            "06-24",
+            "06-25",
+            "06-26",
+            "06-27",
+            "06-29"
           ],
           "data": {
             "DramaBox": [
-              22.3
-            ],
-            "DramaWave": [
-              22.3
+              21.8,
+              21.8,
+              21.9,
+              18.2,
+              21.6,
+              23.1
             ],
             "NetShort": [
-              21.4
+              21.9,
+              21.9,
+              21.8,
+              17.9,
+              21.2,
+              22
+            ],
+            "DramaWave": [
+              21.9,
+              22,
+              21.8,
+              17.6,
+              21,
+              21.8
             ],
             "ReelShort": [
-              20.4
+              19.5,
+              19.6,
+              19.5,
+              15.9,
+              19.4,
+              20.6
             ],
             "GoodShort": [
-              17.5
-            ],
-            "VibeShort": [
-              16.9
+              16.3,
+              16.5,
+              16.6,
+              14,
+              16.8,
+              17.2
             ],
             "ShortMax": [
-              16.6
+              15.3,
+              15,
+              14.9,
+              12.3,
+              14.7,
+              16
             ],
-            "StoryReel": [
-              13.7
-            ],
-            "FlickReels": [
-              12.8
+            "VibeShort": [
+              15.3,
+              15.7,
+              15.5,
+              12.6,
+              14.9,
+              15.5
             ],
             "StarDustTV": [
-              12.5
+              14.5,
+              14.2,
+              13.9,
+              10.7,
+              13.6,
+              13.7
             ],
-            "KalosTV": [
-              8.4
+            "StoryReel": [
+              11.1,
+              11.5,
+              12,
+              10.3,
+              12.4,
+              13.4
             ],
             "MoboReels": [
-              7.6
-            ],
-            "FlareFlow": [
-              5.2
+              8.7,
+              8.8,
+              8.3,
+              5.8,
+              7.5,
+              8.5
             ],
             "DreameShort": [
-              5.1
-            ],
-            "MiniShorts": [
-              1.3
+              6.2,
+              5,
+              5.1,
+              4.5,
+              4.8,
+              4.7
             ]
           }
         },
-        "iosFree": {
+        "table": {
           "h": [
             "RS",
             "DB",
@@ -255,1782 +1423,481 @@
             "SR",
             "VS",
             "DS",
-            "ST",
-            "FF",
-            "FR",
-            "KL",
-            "MS"
+            "ST"
           ],
           "r": [
             [
               "US",
-              21,
-              8,
-              25,
-              5,
-              34,
-              38,
-              "-",
               9,
-              23,
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "DW"
+              5,
+              22,
+              11,
+              38,
+              33,
+              181,
+              19,
+              39,
+              41,
+              27,
+              "DB"
             ],
             [
               "JP",
-              17,
-              16,
-              26,
-              10,
-              58,
-              2,
-              "-",
-              "-",
-              67,
-              "-",
-              "-",
-              "-",
-              80,
-              "-",
-              "-",
-              "GS"
-            ],
-            [
-              "GB",
-              15,
-              7,
-              21,
-              3,
+              14,
+              20,
+              4,
               25,
-              22,
-              "-",
-              10,
-              8,
-              "-",
-              "-",
-              "-",
-              89,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "KR",
-              34,
-              9,
-              4,
-              1,
-              "-",
-              17,
-              "-",
-              "-",
-              "-",
-              "-",
-              65,
-              "-",
-              "-",
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "DE",
-              14,
-              9,
-              22,
-              2,
-              33,
-              35,
-              "-",
-              25,
-              17,
-              "-",
-              "-",
-              77,
-              "-",
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "FR",
-              9,
-              29,
+              104,
               15,
-              5,
-              47,
-              68,
-              "-",
-              35,
-              6,
-              "-",
-              86,
-              "-",
-              83,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "CA",
-              16,
-              3,
-              21,
-              4,
-              26,
-              35,
-              "-",
-              7,
-              20,
-              "-",
-              92,
-              "-",
-              79,
-              "-",
-              "-",
-              "DB"
-            ],
-            [
-              "AU",
-              18,
-              7,
-              30,
-              4,
-              28,
-              32,
-              "-",
-              10,
-              17,
-              "-",
-              83,
-              "-",
-              77,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "TW",
-              34,
-              7,
-              3,
-              4,
-              60,
-              "-",
-              64,
-              "-",
-              6,
-              "-",
-              10,
-              "-",
-              9,
-              "-",
-              "-",
-              "NS"
-            ],
-            [
-              "HK",
-              23,
-              10,
-              5,
-              3,
-              56,
-              69,
-              94,
-              65,
-              9,
-              "-",
-              12,
-              "-",
-              15,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "BR",
-              15,
-              11,
-              4,
-              2,
-              17,
-              12,
-              99,
-              "-",
-              53,
-              "-",
-              "-",
-              70,
-              63,
-              82,
-              "-",
-              "DW"
-            ],
-            [
-              "MX",
-              15,
-              18,
-              16,
-              10,
-              22,
-              24,
-              "-",
-              19,
-              13,
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "IT",
-              5,
-              18,
-              22,
-              6,
-              52,
-              77,
-              "-",
-              59,
-              10,
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "RS"
-            ],
-            [
-              "ES",
-              19,
-              20,
-              17,
-              5,
-              27,
-              22,
-              "-",
-              13,
-              2,
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "VS"
-            ],
-            [
-              "NL",
-              18,
-              6,
-              34,
-              2,
-              26,
-              37,
-              "-",
-              9,
-              13,
-              "-",
-              78,
-              "-",
-              93,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "SE",
-              14,
-              4,
-              24,
-              2,
-              20,
-              28,
-              "-",
-              8,
-              7,
-              100,
-              80,
-              "-",
-              70,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "TR",
-              14,
-              1,
-              3,
-              2,
-              5,
-              30,
-              "-",
-              91,
-              9,
-              "-",
-              95,
-              "-",
-              "-",
-              "-",
-              "-",
-              "DB"
-            ],
-            [
-              "TH",
-              3,
-              8,
-              2,
-              1,
-              28,
-              6,
-              61,
-              75,
-              22,
-              "-",
-              62,
-              "-",
-              42,
-              36,
-              "-",
-              "DW"
-            ],
-            [
-              "ID",
-              8,
-              9,
-              6,
-              1,
-              10,
-              12,
-              99,
-              65,
-              53,
-              "-",
-              46,
-              "-",
-              54,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "PH",
-              7,
-              2,
-              16,
-              1,
-              12,
-              8,
-              99,
-              94,
-              41,
-              59,
-              51,
-              86,
-              33,
-              57,
-              "-",
-              "DW"
-            ],
-            [
-              "MY",
-              25,
-              3,
-              7,
-              2,
-              21,
-              17,
-              "-",
-              19,
-              28,
-              "-",
-              38,
-              "-",
-              34,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "VN",
-              8,
-              5,
-              3,
-              2,
-              75,
-              "-",
-              "-",
-              "-",
-              16,
-              "-",
-              54,
-              "-",
-              "-",
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "SA",
-              26,
-              24,
-              10,
-              3,
-              31,
-              23,
-              "-",
-              93,
-              4,
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "AE",
-              14,
-              5,
-              3,
-              1,
-              16,
-              26,
-              "-",
-              12,
-              6,
-              "-",
-              56,
-              "-",
-              63,
-              86,
-              "-",
-              "DW"
-            ],
-            [
-              "ZA",
-              21,
-              6,
-              18,
-              3,
-              23,
-              30,
-              "-",
-              9,
-              16,
-              54,
-              42,
-              70,
-              24,
-              38,
-              "-",
-              "DW"
-            ],
-            [
-              "CO",
-              13,
-              18,
-              9,
-              10,
-              19,
-              21,
-              99,
-              37,
-              6,
-              "-",
-              79,
-              "-",
-              93,
-              89,
-              "-",
-              "VS"
-            ],
-            [
-              "AR",
-              11,
-              15,
-              12,
-              14,
-              33,
-              17,
-              "-",
-              16,
-              9,
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "VS"
-            ],
-            [
-              "IN",
-              21,
-              7,
-              9,
-              63,
-              57,
-              35,
-              87,
-              78,
-              73,
-              "-",
-              97,
-              "-",
-              81,
-              "-",
-              "-",
-              "DB"
-            ],
-            [
-              "SG",
-              13,
-              10,
-              4,
-              2,
-              24,
-              20,
-              64,
-              9,
-              16,
-              "-",
-              22,
-              "-",
-              27,
-              54,
-              "-",
-              "DW"
-            ],
-            [
-              "NZ",
-              15,
-              7,
-              27,
-              5,
-              23,
-              20,
-              "-",
-              13,
-              16,
+              159,
               "-",
               71,
               "-",
-              46,
-              "-",
-              "-",
-              "DW"
-            ]
-          ]
-        },
-        "iosGrossing": {
-          "h": [
-            "RS",
-            "DB",
-            "NS",
-            "DW",
-            "SM",
-            "GS",
-            "MR",
-            "SR",
-            "VS",
-            "DS",
-            "ST",
-            "FF",
-            "FR",
-            "KL",
-            "MS"
-          ],
-          "r": [
-            [
-              "US",
-              9,
-              11,
               19,
-              12,
-              13,
-              17,
-              55,
-              41,
-              40,
-              36,
-              47,
-              74,
-              37,
-              53,
-              "-",
-              "RS"
-            ],
-            [
-              "JP",
-              21,
-              11,
-              17,
-              14,
-              32,
-              13,
-              68,
-              "-",
-              67,
-              "-",
-              73,
-              "-",
-              30,
-              48,
-              "-",
-              "DB"
+              "NS"
             ],
             [
               "GB",
-              10,
-              7,
-              14,
-              12,
-              17,
-              16,
-              83,
-              21,
-              20,
-              43,
-              46,
-              70,
-              34,
-              40,
-              "-",
-              "DB"
-            ],
-            [
-              "KR",
-              29,
-              12,
-              7,
-              9,
-              54,
-              28,
-              69,
-              76,
-              62,
-              "-",
-              37,
-              "-",
-              41,
-              "-",
-              "-",
-              "NS"
-            ],
-            [
-              "DE",
-              12,
-              9,
-              11,
-              16,
-              27,
-              23,
-              96,
-              33,
-              28,
-              61,
-              52,
-              43,
-              54,
-              47,
-              "-",
-              "DB"
-            ],
-            [
-              "FR",
-              13,
-              10,
-              8,
-              14,
-              28,
-              23,
-              76,
-              29,
-              22,
-              89,
-              34,
-              46,
-              35,
-              38,
-              "-",
-              "NS"
-            ],
-            [
-              "CA",
               8,
               5,
               10,
-              9,
-              13,
-              11,
-              61,
-              15,
-              18,
-              40,
-              37,
-              57,
-              25,
-              39,
-              91,
-              "DB"
-            ],
-            [
-              "AU",
-              9,
-              6,
-              10,
-              15,
-              12,
-              13,
-              53,
-              14,
-              17,
-              41,
-              35,
-              67,
-              25,
-              28,
-              77,
-              "DB"
-            ],
-            [
-              "TW",
-              23,
-              6,
               3,
-              9,
-              45,
-              93,
-              62,
-              "-",
-              32,
-              "-",
-              15,
-              "-",
-              17,
-              41,
-              "-",
-              "NS"
-            ],
-            [
-              "HK",
-              16,
-              3,
-              2,
-              5,
-              40,
               31,
-              86,
-              52,
-              19,
-              92,
-              14,
-              "-",
-              13,
-              39,
-              "-",
-              "NS"
-            ],
-            [
-              "BR",
-              12,
-              8,
-              9,
-              11,
-              17,
-              10,
-              31,
-              58,
-              28,
-              72,
-              20,
-              24,
-              18,
-              21,
-              89,
-              "DB"
-            ],
-            [
-              "MX",
-              10,
-              9,
-              12,
-              8,
-              13,
-              11,
-              36,
-              18,
-              14,
-              71,
-              22,
-              43,
-              23,
-              26,
-              78,
-              "DW"
-            ],
-            [
-              "IT",
-              8,
-              10,
-              5,
-              11,
-              19,
-              20,
-              27,
-              30,
-              16,
-              46,
-              62,
-              22,
-              49,
-              51,
-              "-",
-              "NS"
-            ],
-            [
-              "ES",
-              16,
-              11,
-              14,
-              17,
-              18,
-              15,
-              61,
-              22,
-              20,
-              85,
-              31,
-              53,
-              27,
-              30,
-              "-",
-              "DB"
-            ],
-            [
-              "NL",
-              10,
-              8,
-              12,
-              13,
-              15,
-              14,
-              76,
-              16,
-              19,
-              39,
-              42,
-              62,
-              33,
-              44,
-              "-",
-              "DB"
-            ],
-            [
-              "SE",
-              11,
-              9,
-              14,
-              16,
-              17,
-              15,
-              "-",
-              18,
-              21,
-              40,
-              29,
-              65,
-              27,
-              36,
-              "-",
-              "DB"
-            ],
-            [
-              "TR",
-              11,
-              7,
-              2,
-              3,
-              15,
-              21,
-              46,
-              40,
-              14,
-              58,
-              22,
-              "-",
-              62,
-              32,
-              "-",
-              "NS"
-            ],
-            [
-              "TH",
-              12,
-              5,
-              7,
-              9,
-              20,
-              8,
-              45,
-              42,
-              24,
-              "-",
-              28,
-              53,
-              21,
-              18,
-              82,
-              "DB"
-            ],
-            [
-              "ID",
-              8,
-              2,
-              3,
-              4,
-              12,
-              5,
-              41,
-              33,
-              24,
-              68,
-              13,
-              43,
-              14,
-              17,
-              66,
-              "DB"
-            ],
-            [
-              "PH",
-              9,
-              2,
-              3,
-              6,
-              18,
-              5,
-              45,
-              52,
-              28,
-              33,
-              17,
-              43,
-              11,
-              13,
-              63,
-              "DB"
-            ],
-            [
-              "MY",
-              9,
-              2,
-              3,
-              6,
-              11,
-              8,
-              53,
-              18,
-              16,
-              69,
-              19,
-              82,
-              15,
-              25,
-              "-",
-              "DB"
-            ],
-            [
-              "VN",
-              9,
-              4,
-              2,
-              3,
-              16,
               35,
-              24,
-              47,
-              12,
-              "-",
-              13,
-              "-",
-              40,
-              43,
-              "-",
-              "NS"
-            ],
-            [
-              "SA",
-              18,
-              16,
-              5,
-              15,
-              22,
-              13,
-              43,
-              50,
-              17,
-              "-",
-              30,
-              83,
-              64,
-              36,
-              "-",
-              "NS"
-            ],
-            [
-              "AE",
-              9,
-              12,
-              4,
-              15,
-              18,
-              10,
-              46,
-              20,
-              17,
-              97,
-              22,
-              43,
-              32,
-              25,
-              "-",
-              "NS"
-            ],
-            [
-              "ZA",
-              9,
-              4,
-              6,
-              5,
-              10,
-              11,
-              33,
-              12,
-              13,
-              27,
-              15,
-              32,
-              16,
-              14,
-              94,
-              "DB"
-            ],
-            [
-              "CO",
-              9,
-              8,
-              11,
-              7,
-              13,
-              10,
-              29,
-              15,
-              12,
-              88,
-              22,
-              42,
-              17,
-              27,
-              66,
-              "DW"
-            ],
-            [
-              "AR",
-              8,
-              7,
-              6,
-              9,
-              14,
-              10,
-              28,
-              16,
-              13,
-              63,
-              22,
-              50,
-              21,
-              34,
-              94,
-              "NS"
-            ],
-            [
-              "IN",
-              10,
-              5,
-              6,
-              11,
-              40,
-              8,
-              57,
-              54,
-              38,
-              50,
-              28,
-              59,
-              20,
-              25,
-              "-",
-              "DB"
-            ],
-            [
-              "SG",
-              11,
-              8,
-              7,
-              3,
-              14,
-              13,
-              93,
-              19,
-              17,
-              "-",
-              20,
-              "-",
-              15,
-              18,
-              "-",
-              "DW"
-            ],
-            [
-              "NZ",
-              6,
-              4,
-              7,
-              9,
-              13,
-              10,
-              86,
-              12,
-              11,
-              45,
-              30,
-              "-",
-              18,
-              29,
-              87,
-              "DB"
-            ]
-          ]
-        },
-        "gpFree": {
-          "h": [
-            "RS",
-            "DB",
-            "NS",
-            "DW",
-            "SM",
-            "GS",
-            "MR",
-            "SR",
-            "VS",
-            "DS",
-            "ST",
-            "FF",
-            "FR",
-            "KL",
-            "MS"
-          ],
-          "r": [
-            [
-              "US",
-              9,
-              4,
-              26,
-              5,
-              41,
-              29,
               153,
               11,
-              33,
-              "-",
-              42,
-              "-",
-              64,
-              "-",
-              "-",
-              "DB"
-            ],
-            [
-              "JP",
-              17,
-              23,
-              7,
-              13,
-              90,
-              14,
-              124,
-              "-",
-              64,
-              "-",
-              21,
-              "-",
-              48,
-              68,
-              "-",
-              "NS"
-            ],
-            [
-              "GB",
-              6,
-              4,
-              12,
-              3,
-              28,
+              15,
               43,
-              123,
-              10,
-              13,
-              "-",
-              52,
-              156,
-              22,
-              167,
-              "-",
+              23,
               "DW"
             ],
             [
               "KR",
-              6,
+              7,
               4,
-              2,
               1,
-              170,
-              22,
-              42,
-              "-",
-              "-",
+              2,
+              195,
+              26,
+              50,
+              92,
+              72,
               "-",
               12,
-              "-",
-              178,
-              "-",
-              "-",
-              "DW"
+              "NS"
             ],
             [
               "DE",
-              8,
-              7,
               17,
-              3,
-              34,
-              40,
-              76,
-              45,
+              6,
+              14,
+              7,
+              32,
+              50,
+              97,
+              46,
               41,
-              138,
-              66,
-              48,
-              108,
-              "-",
-              "-",
-              "DW"
+              154,
+              43,
+              "DB"
             ],
             [
               "FR",
-              3,
-              28,
-              14,
               2,
-              33,
-              78,
-              80,
-              34,
+              27,
               9,
-              "-",
-              52,
-              184,
-              49,
-              138,
-              "-",
-              "DW"
+              3,
+              35,
+              65,
+              106,
+              66,
+              23,
+              59,
+              39,
+              "RS"
             ],
             [
               "CA",
-              5,
-              3,
-              12,
+              2,
               1,
+              7,
+              3,
+              22,
+              37,
+              139,
+              14,
+              27,
+              185,
               21,
-              43,
-              120,
-              9,
-              19,
-              158,
-              51,
-              "-",
-              34,
-              181,
-              "-",
-              "DW"
+              "DB"
             ],
             [
               "AU",
+              12,
+              5,
               13,
               4,
-              17,
-              3,
-              26,
-              38,
-              105,
-              14,
-              19,
-              122,
-              41,
-              "-",
+              29,
+              34,
+              140,
+              16,
               22,
-              118,
-              "-",
+              145,
+              23,
               "DW"
             ],
             [
               "TW",
-              10,
               8,
-              2,
+              6,
+              1,
               3,
-              44,
-              119,
-              35,
+              40,
+              109,
+              43,
               "-",
-              61,
+              76,
               "-",
               4,
-              "-",
-              7,
-              59,
-              "-",
               "NS"
             ],
             [
               "HK",
-              13,
               10,
-              5,
+              11,
+              3,
               2,
-              21,
-              52,
-              36,
-              141,
-              78,
-              155,
-              7,
-              "-",
-              9,
-              47,
-              "-",
+              25,
+              41,
+              51,
+              110,
+              95,
+              153,
+              6,
               "DW"
             ],
             [
               "BR",
-              3,
-              14,
-              8,
+              2,
+              10,
               6,
-              25,
-              11,
-              116,
-              "-",
-              56,
-              "-",
-              17,
-              95,
-              57,
-              121,
-              "-",
+              12,
+              18,
+              5,
+              177,
+              60,
+              96,
+              58,
+              15,
               "RS"
             ],
             [
               "MX",
-              1,
-              13,
-              6,
-              4,
+              2,
               10,
-              9,
-              150,
-              39,
+              3,
+              6,
+              7,
               12,
-              "-",
-              16,
-              "-",
-              104,
-              "-",
-              "-",
+              187,
+              54,
+              28,
+              68,
+              9,
               "RS"
             ],
             [
               "IT",
-              4,
-              15,
-              10,
               2,
-              29,
-              89,
-              44,
-              71,
-              19,
-              152,
-              110,
-              81,
-              82,
-              "-",
-              "-",
-              "DW"
-            ],
-            [
-              "ES",
-              3,
-              22,
               9,
-              6,
-              28,
-              15,
-              81,
+              10,
+              4,
               30,
-              16,
-              "-",
-              18,
-              "-",
+              79,
+              51,
               76,
-              165,
-              "-",
+              26,
+              186,
+              81,
               "RS"
             ],
             [
-              "NL",
+              "ES",
               6,
-              2,
-              18,
-              1,
-              23,
-              37,
-              98,
-              10,
-              20,
-              87,
-              40,
-              179,
-              31,
-              162,
+              17,
+              5,
+              8,
+              24,
+              14,
+              104,
+              35,
+              36,
               "-",
+              13,
+              "NS"
+            ],
+            [
+              "NL",
+              5,
+              3,
+              13,
+              1,
+              21,
+              33,
+              126,
+              12,
+              25,
+              103,
+              23,
               "DW"
             ],
             [
               "SE",
-              13,
+              11,
+              9,
+              17,
               6,
-              27,
-              3,
-              29,
-              45,
-              96,
-              12,
-              19,
-              76,
-              63,
-              "-",
-              28,
-              156,
-              "-",
+              24,
+              44,
+              121,
+              15,
+              22,
+              101,
+              34,
               "DW"
             ],
             [
               "TR",
+              2,
+              5,
               3,
               4,
-              5,
-              2,
-              48,
-              63,
-              "-",
-              "-",
-              65,
-              "-",
-              32,
-              "-",
-              "-",
-              "-",
-              "-",
-              "DW"
+              25,
+              50,
+              33,
+              47,
+              68,
+              55,
+              22,
+              "RS"
             ],
             [
               "TH",
-              5,
-              14,
               3,
-              6,
-              56,
-              19,
-              84,
+              16,
+              1,
+              9,
+              96,
+              25,
+              102,
+              38,
+              50,
               "-",
-              22,
-              "-",
-              12,
-              "-",
-              64,
-              120,
-              "-",
+              11,
               "NS"
             ],
             [
               "ID",
               6,
-              21,
-              4,
-              9,
-              31,
-              48,
-              "-",
-              "-",
-              "-",
-              "-",
-              20,
-              "-",
-              102,
-              "-",
-              "-",
+              16,
+              3,
+              12,
+              39,
+              33,
+              46,
+              34,
+              23,
+              52,
+              10,
               "NS"
             ],
             [
               "PH",
+              9,
+              5,
               7,
-              2,
-              11,
               3,
               12,
-              22,
-              81,
-              "-",
-              "-",
-              "-",
-              31,
-              45,
-              16,
-              69,
-              "-",
-              "DB"
+              23,
+              151,
+              68,
+              55,
+              38,
+              17,
+              "DW"
             ],
             [
               "MY",
               13,
               8,
-              5,
-              4,
-              33,
-              41,
-              90,
-              38,
-              78,
-              195,
-              18,
-              "-",
-              14,
-              178,
-              "-",
-              "DW"
+              3,
+              6,
+              42,
+              28,
+              125,
+              36,
+              71,
+              56,
+              12,
+              "NS"
             ],
             [
               "VN",
               17,
-              14,
-              5,
-              4,
-              127,
-              "-",
-              196,
-              "-",
-              29,
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "DW"
+              15,
+              2,
+              12,
+              139,
+              37,
+              26,
+              41,
+              65,
+              79,
+              12,
+              "NS"
             ],
             [
               "SA",
-              13,
-              16,
-              9,
+              14,
+              11,
               3,
-              48,
-              94,
+              9,
+              49,
+              109,
+              50,
+              60,
+              199,
               "-",
-              "-",
-              127,
-              "-",
-              67,
-              "-",
-              126,
-              "-",
-              "-",
-              "DW"
+              37,
+              "NS"
             ],
             [
               "AE",
-              18,
-              11,
-              9,
-              3,
-              22,
-              65,
-              "-",
-              101,
-              99,
-              "-",
-              34,
-              "-",
-              55,
-              137,
-              "-",
-              "DW"
+              20,
+              13,
+              4,
+              8,
+              26,
+              67,
+              47,
+              97,
+              125,
+              72,
+              17,
+              "NS"
             ],
             [
               "ZA",
-              9,
+              8,
               4,
-              21,
-              7,
-              18,
-              56,
-              "-",
-              32,
-              54,
-              185,
-              31,
-              155,
-              27,
-              139,
-              "-",
+              17,
+              12,
+              15,
+              68,
+              28,
+              55,
+              65,
+              34,
+              16,
               "DB"
             ],
             [
               "CO",
-              1,
-              12,
-              6,
-              3,
-              22,
+              2,
               9,
-              115,
-              54,
-              15,
-              "-",
-              10,
-              "-",
-              67,
-              66,
-              "-",
+              4,
+              8,
+              18,
+              13,
+              139,
+              43,
+              26,
+              99,
+              6,
               "RS"
             ],
             [
               "AR",
-              2,
-              19,
-              11,
+              4,
+              13,
               6,
-              21,
-              15,
-              "-",
-              48,
+              9,
+              14,
+              18,
+              22,
+              58,
               30,
               "-",
-              23,
-              "-",
-              110,
-              120,
-              "-",
+              11,
               "RS"
             ],
             [
               "IN",
-              77,
-              27,
-              10,
-              "-",
-              191,
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              "-",
-              98,
-              "-",
-              "-",
+              80,
+              33,
+              11,
+              11,
+              23,
+              157,
+              57,
+              48,
+              65,
+              47,
+              22,
               "NS"
             ],
             [
               "SG",
-              14,
-              16,
-              7,
-              2,
-              18,
-              46,
-              45,
-              31,
-              54,
-              155,
-              6,
-              "-",
               11,
-              64,
-              "-",
-              "DW"
+              17,
+              1,
+              3,
+              24,
+              30,
+              55,
+              42,
+              46,
+              182,
+              4,
+              "NS"
             ],
             [
               "NZ",
-              10,
+              8,
               4,
-              14,
+              6,
               3,
-              22,
-              30,
-              131,
-              9,
+              23,
+              29,
+              122,
+              14,
+              18,
+              175,
               17,
-              169,
-              31,
-              "-",
-              13,
-              101,
-              "-",
               "DW"
             ]
           ]
         },
         "insights": [
           {
-            "h": "DramaBox 以 22.3 分领跑综合排名",
-            "p": "畅销榜 16 国领先，免费榜 6 国领先，覆盖 30/30 个市场。",
+            "h": "DramaBox 周涨1.3分拿下榜首",
+            "p": "点众科技旗下DramaBox以23.1分超越NetShort，17国畅销榜领先。Q1收入约$1.4亿，AI推荐引擎是核心壁垒。",
             "tag": "g"
           },
           {
-            "h": "DramaWave 在 38 国免费榜领先",
-            "p": "下载获取能力全场最强。",
+            "h": "StoryReel 单周飙升+2.3分",
+            "p": "本周涨幅最大，从11.1升至13.4。覆盖28国说明正在加大全球化投放。",
             "tag": "p"
           },
           {
-            "h": "MiniShorts 综合分仅 1.3",
-            "p": "排名末位，覆盖 11/30。",
+            "h": "DreameShort 连续下滑至4.7分",
+            "p": "字节生态短剧平台再跌1.5分，仅23国上榜，GP覆盖仅9国。可能面临战略收缩。",
             "tag": "r"
+          },
+          {
+            "h": "NetShort 稳守亚军增长乏力",
+            "p": "22.0分居第二，20国免费领先全场最多。但周变化仅+0.1，呈高位平台期。",
+            "tag": "p"
           }
         ]
       },
@@ -2039,12 +1906,12 @@
           {
             "n": "Freereels",
             "co": "昆仑万维",
-            "ios": 6,
+            "ios": 7,
             "gp": 15,
-            "total": 15,
+            "total": 16,
             "tags": [
               {
-                "t": "US #5",
+                "t": "PH #1",
                 "top": true
               },
               {
@@ -2052,24 +1919,24 @@
                 "top": true
               },
               {
-                "t": "BR #5",
+                "t": "US #4",
                 "top": true
               },
               {
-                "t": "ID #2",
+                "t": "ID #4",
                 "top": true
               },
               {
-                "t": "TH #4",
+                "t": "MY #4",
                 "top": true
               },
               {
-                "t": "PH #1",
-                "top": true
+                "t": "TH #5",
+                "top": false
               },
               {
-                "t": "MY #2",
-                "top": true
+                "t": "BR #7",
+                "top": false
               }
             ]
           },
@@ -2078,14 +1945,14 @@
             "co": "字节跳动",
             "ios": 7,
             "gp": 7,
-            "total": 7,
+            "total": 10,
             "tags": [
               {
-                "t": "US #7",
-                "top": false
+                "t": "BR #1",
+                "top": true
               },
               {
-                "t": "BR #1",
+                "t": "ID #1",
                 "top": true
               },
               {
@@ -2093,19 +1960,15 @@
                 "top": true
               },
               {
-                "t": "ID #3",
+                "t": "VN #5",
                 "top": true
               },
               {
-                "t": "VN #6",
+                "t": "US #6",
                 "top": false
               },
               {
-                "t": "TH #8",
-                "top": false
-              },
-              {
-                "t": "PH #13",
+                "t": "TH #7",
                 "top": false
               }
             ]
@@ -2115,30 +1978,22 @@
             "co": "字节跳动",
             "ios": 5,
             "gp": 6,
-            "total": 6,
+            "total": 9,
             "tags": [
               {
-                "t": "BR #15",
-                "top": false
-              },
-              {
-                "t": "ID #1",
+                "t": "ID #2",
                 "top": true
               },
               {
-                "t": "TH #2",
+                "t": "TH #4",
                 "top": true
               },
               {
-                "t": "PH #8",
+                "t": "PH #10",
                 "top": false
               },
               {
                 "t": "MY #10",
-                "top": false
-              },
-              {
-                "t": "ID #6",
                 "top": false
               }
             ]
@@ -2147,9 +2002,22 @@
             "n": "MicroDrama",
             "co": "—",
             "ios": 0,
-            "gp": 8,
-            "total": 8,
-            "tags": []
+            "gp": 9,
+            "total": 9,
+            "tags": [
+              {
+                "t": "TH #47",
+                "top": false
+              },
+              {
+                "t": "ID #48",
+                "top": false
+              },
+              {
+                "t": "MX #65",
+                "top": false
+              }
+            ]
           },
           {
             "n": "KukuTV",
@@ -2159,7 +2027,7 @@
             "total": 1,
             "tags": [
               {
-                "t": "IN #7",
+                "t": "IN iOS #13",
                 "top": false
               }
             ]
@@ -2168,7 +2036,7 @@
         "iosT": [
           [
             "US",
-            84,
+            96,
             51,
             "-",
             "-",
@@ -2177,18 +2045,18 @@
           ],
           [
             "JP",
+            73,
             "-",
             "-",
             "-",
             "-",
-            "-",
-            "–"
+            "Fr"
           ],
           [
             "BR",
-            27,
-            34,
-            58,
+            23,
+            37,
+            61,
             "-",
             "-",
             "Fr"
@@ -2196,7 +2064,7 @@
           [
             "MX",
             "-",
-            80,
+            86,
             "-",
             "-",
             "-",
@@ -2204,17 +2072,17 @@
           ],
           [
             "ID",
-            5,
+            10,
             12,
-            6,
+            7,
             "-",
             "-",
-            "Fr"
+            "Me"
           ],
           [
             "VN",
             "-",
-            17,
+            14,
             "-",
             "-",
             "-",
@@ -2222,27 +2090,27 @@
           ],
           [
             "TH",
-            16,
-            32,
-            21,
+            22,
+            27,
+            25,
             "-",
             "-",
             "Fr"
           ],
           [
             "PH",
-            3,
-            77,
-            28,
+            5,
+            87,
+            29,
             "-",
             "-",
             "Fr"
           ],
           [
             "MY",
-            42,
+            50,
             "-",
-            34,
+            35,
             "-",
             "-",
             "Me"
@@ -2262,7 +2130,7 @@
             "-",
             "-",
             "-",
-            7,
+            13,
             "KT"
           ],
           [
@@ -2314,8 +2182,8 @@
         "gpT": [
           [
             "US",
-            5,
-            7,
+            4,
+            6,
             "-",
             "-",
             "-",
@@ -2326,41 +2194,41 @@
             2,
             "-",
             "-",
-            86,
+            98,
             "-",
             "Fr"
           ],
           [
             "BR",
-            5,
+            7,
             1,
-            15,
-            121,
+            17,
+            115,
             "-",
             "Pd"
           ],
           [
             "MX",
-            89,
+            95,
             5,
-            30,
-            67,
+            39,
+            65,
             "-",
             "Pd"
           ],
           [
             "ID",
-            2,
-            3,
+            4,
             1,
-            40,
+            2,
+            48,
             "-",
-            "Me"
+            "Pd"
           ],
           [
             "VN",
-            77,
-            6,
+            76,
+            5,
             "-",
             "-",
             "-",
@@ -2368,43 +2236,43 @@
           ],
           [
             "TH",
+            5,
+            7,
             4,
-            8,
-            2,
-            35,
+            47,
             "-",
             "Me"
           ],
           [
             "PH",
             1,
-            13,
-            8,
-            79,
+            15,
+            10,
+            81,
             "-",
             "Fr"
           ],
           [
             "MY",
-            2,
+            4,
             "-",
             10,
-            147,
+            125,
             "-",
             "Fr"
           ],
           [
             "KR",
-            158,
+            150,
             "-",
             "-",
-            "-",
+            167,
             "-",
             "Fr"
           ],
           [
             "IN",
-            50,
+            57,
             "-",
             "-",
             "-",
@@ -2431,16 +2299,16 @@
           ],
           [
             "FR",
-            119,
+            122,
             "-",
             "-",
-            166,
+            180,
             "-",
             "Fr"
           ],
           [
             "AU",
-            60,
+            53,
             "-",
             "-",
             "-",
@@ -2449,7 +2317,7 @@
           ],
           [
             "CA",
-            65,
+            64,
             "-",
             "-",
             "-",
@@ -2459,19 +2327,1176 @@
         ],
         "insights": [
           {
-            "h": "Freereels 覆盖 15 国领跑",
-            "p": "iOS 6 国 + GP 15 国。",
+            "h": "Freereels 全球化碾压式领先",
+            "p": "16国中15国进入GP免费榜，菲律宾#1。Q1下载增长137%至1.15亿次。",
             "tag": "g"
           },
           {
-            "h": "MicroDrama 覆盖 8 国",
-            "p": "iOS 0 国 + GP 8 国。",
+            "h": "Pinedrama 以免费+无广告模式搅动格局",
+            "p": "字节切入短剧市场，巴西和印尼双料冠军。流量优势正在兑现。",
             "tag": "p"
           },
           {
-            "h": "KukuTV 覆盖面有限",
-            "p": "仅少数市场上榜。",
+            "h": "KukuTV 印度独大但出不去",
+            "p": "1.7亿下载集中在印度，其余15国均未上榜。全球化仍是待解难题。",
             "tag": "r"
+          }
+        ]
+      }
+    },
+    "2026-06-27": {
+      "meta": {
+        "type": "日报",
+        "period": "2026-06-27",
+        "eye": "Daily Intelligence · 2026-06-27",
+        "title": "NetShort 9国免费领先，<em>GoodShort</em><br>巴西墨西哥突然杀入前十",
+        "sub": "11款付费短剧产品30国矩阵。NetShort在日韩东南亚大面积领跑免费榜，DramaBox畅销榜称霸。GoodShort在拉美表现亮眼。",
+        "stats": [
+          {
+            "l": "追踪付费产品",
+            "v": "11",
+            "c": "var(--indigo)"
+          },
+          {
+            "l": "覆盖国家",
+            "v": "30",
+            "c": "var(--blue)"
+          },
+          {
+            "l": "追踪免费产品",
+            "v": "5",
+            "c": "var(--cyan)"
+          },
+          {
+            "l": "免费覆盖国家",
+            "v": "16",
+            "c": "var(--green)"
+          }
+        ]
+      },
+      "paid": {
+        "rankings": [
+          {
+            "n": "DramaBox",
+            "s": 21.6,
+            "gl": 20,
+            "fl": 7,
+            "c": "30/30",
+            "t": "flat",
+            "ch": "+0.0"
+          },
+          {
+            "n": "NetShort",
+            "s": 21.2,
+            "gl": 6,
+            "fl": 14,
+            "c": "30/30",
+            "t": "down",
+            "ch": "-0.6"
+          },
+          {
+            "n": "DramaWave",
+            "s": 21,
+            "gl": 2,
+            "fl": 13,
+            "c": "30/30",
+            "t": "down",
+            "ch": "-0.8"
+          },
+          {
+            "n": "ReelShort",
+            "s": 19.4,
+            "gl": 2,
+            "fl": 5,
+            "c": "30/30",
+            "t": "flat",
+            "ch": "-0.1"
+          },
+          {
+            "n": "GoodShort",
+            "s": 16.8,
+            "gl": 0,
+            "fl": 5,
+            "c": "30/30",
+            "t": "up",
+            "ch": "+0.2"
+          },
+          {
+            "n": "VibeShort",
+            "s": 14.9,
+            "gl": 0,
+            "fl": 1,
+            "c": "30/30",
+            "t": "down",
+            "ch": "-0.6"
+          },
+          {
+            "n": "ShortMax",
+            "s": 14.7,
+            "gl": 0,
+            "fl": 0,
+            "c": "30/30",
+            "t": "down",
+            "ch": "-0.2"
+          },
+          {
+            "n": "StarDustTV",
+            "s": 13.6,
+            "gl": 0,
+            "fl": 0,
+            "c": "30/30",
+            "t": "down",
+            "ch": "-0.3"
+          },
+          {
+            "n": "StoryReel",
+            "s": 12.4,
+            "gl": 0,
+            "fl": 1,
+            "c": "28/30",
+            "t": "up",
+            "ch": "+0.4"
+          },
+          {
+            "n": "MoboReels",
+            "s": 7.5,
+            "gl": 0,
+            "fl": 0,
+            "c": "28/30",
+            "t": "down",
+            "ch": "-0.8"
+          },
+          {
+            "n": "DreameShort",
+            "s": 4.8,
+            "gl": 0,
+            "fl": 0,
+            "c": "22/30",
+            "t": "flat",
+            "ch": "+0.0"
+          }
+        ],
+        "trends": {
+          "dates": [
+            "06-22",
+            "06-23",
+            "06-24",
+            "06-25",
+            "06-26",
+            "06-27"
+          ],
+          "data": {
+            "DramaBox": [
+              21.5,
+              21.8,
+              21.8,
+              21.9,
+              18.2,
+              21.6
+            ],
+            "NetShort": [
+              21.4,
+              21.9,
+              21.9,
+              21.8,
+              17.9,
+              21.2
+            ],
+            "DramaWave": [
+              21.3,
+              21.9,
+              22,
+              21.8,
+              17.6,
+              21
+            ],
+            "ReelShort": [
+              19.2,
+              19.5,
+              19.6,
+              19.5,
+              15.9,
+              19.4
+            ],
+            "GoodShort": [
+              16,
+              16.3,
+              16.5,
+              16.6,
+              14,
+              16.8
+            ],
+            "ShortMax": [
+              15,
+              15.3,
+              15,
+              14.9,
+              12.3,
+              14.7
+            ],
+            "VibeShort": [
+              15,
+              15.3,
+              15.7,
+              15.5,
+              12.6,
+              14.9
+            ],
+            "StarDustTV": [
+              14.2,
+              14.5,
+              14.2,
+              13.9,
+              10.7,
+              13.6
+            ],
+            "StoryReel": [
+              10.8,
+              11.1,
+              11.5,
+              12,
+              10.3,
+              12.4
+            ],
+            "MoboReels": [
+              8.5,
+              8.7,
+              8.8,
+              8.3,
+              5.8,
+              7.5
+            ],
+            "DreameShort": [
+              5.5,
+              6.2,
+              5,
+              5.1,
+              4.5,
+              4.8
+            ]
+          }
+        },
+        "table": {
+          "h": [
+            "RS",
+            "DB",
+            "NS",
+            "DW",
+            "SM",
+            "GS",
+            "MR",
+            "SR",
+            "VS",
+            "DS",
+            "ST"
+          ],
+          "r": [
+            [
+              "US",
+              24,
+              11,
+              26,
+              14,
+              41,
+              36,
+              "-",
+              18,
+              31,
+              "-",
+              67,
+              "DB"
+            ],
+            [
+              "JP",
+              27,
+              15,
+              10,
+              22,
+              "-",
+              2,
+              "-",
+              "-",
+              "-",
+              "-",
+              "-",
+              "GS"
+            ],
+            [
+              "GB",
+              21,
+              9,
+              25,
+              6,
+              36,
+              28,
+              "-",
+              12,
+              17,
+              "-",
+              64,
+              "DW"
+            ],
+            [
+              "KR",
+              57,
+              17,
+              2,
+              5,
+              "-",
+              35,
+              "-",
+              "-",
+              "-",
+              "-",
+              94,
+              "NS"
+            ],
+            [
+              "DE",
+              34,
+              12,
+              23,
+              9,
+              51,
+              58,
+              "-",
+              32,
+              30,
+              "-",
+              89,
+              "DW"
+            ],
+            [
+              "FR",
+              4,
+              25,
+              23,
+              5,
+              63,
+              60,
+              "-",
+              68,
+              12,
+              "-",
+              84,
+              "RS"
+            ],
+            [
+              "CA",
+              15,
+              10,
+              14,
+              11,
+              30,
+              37,
+              "-",
+              12,
+              22,
+              "-",
+              46,
+              "DB"
+            ],
+            [
+              "AU",
+              27,
+              8,
+              20,
+              9,
+              42,
+              31,
+              "-",
+              12,
+              17,
+              "-",
+              49,
+              "DB"
+            ],
+            [
+              "TW",
+              23,
+              7,
+              2,
+              4,
+              53,
+              "-",
+              51,
+              "-",
+              "-",
+              "-",
+              8,
+              "NS"
+            ],
+            [
+              "HK",
+              34,
+              10,
+              3,
+              4,
+              55,
+              71,
+              "-",
+              68,
+              59,
+              "-",
+              11,
+              "NS"
+            ],
+            [
+              "BR",
+              16,
+              8,
+              3,
+              11,
+              17,
+              1,
+              "-",
+              "-",
+              78,
+              "-",
+              82,
+              "GS"
+            ],
+            [
+              "MX",
+              14,
+              17,
+              9,
+              16,
+              25,
+              7,
+              97,
+              22,
+              18,
+              "-",
+              83,
+              "GS"
+            ],
+            [
+              "IT",
+              16,
+              13,
+              20,
+              7,
+              68,
+              67,
+              "-",
+              55,
+              18,
+              "-",
+              "-",
+              "DW"
+            ],
+            [
+              "ES",
+              27,
+              25,
+              20,
+              15,
+              56,
+              12,
+              "-",
+              8,
+              19,
+              "-",
+              "-",
+              "SR"
+            ],
+            [
+              "NL",
+              32,
+              10,
+              38,
+              6,
+              37,
+              41,
+              "-",
+              12,
+              24,
+              "-",
+              57,
+              "DW"
+            ],
+            [
+              "SE",
+              26,
+              11,
+              47,
+              8,
+              41,
+              48,
+              "-",
+              13,
+              21,
+              "-",
+              66,
+              "DW"
+            ],
+            [
+              "TR",
+              33,
+              4,
+              2,
+              8,
+              36,
+              34,
+              "-",
+              96,
+              16,
+              "-",
+              61,
+              "NS"
+            ],
+            [
+              "TH",
+              8,
+              9,
+              1,
+              2,
+              51,
+              7,
+              48,
+              87,
+              29,
+              "-",
+              42,
+              "NS"
+            ],
+            [
+              "ID",
+              18,
+              11,
+              1,
+              7,
+              27,
+              16,
+              "-",
+              "-",
+              86,
+              100,
+              57,
+              "NS"
+            ],
+            [
+              "PH",
+              28,
+              3,
+              2,
+              1,
+              11,
+              10,
+              "-",
+              91,
+              "-",
+              61,
+              29,
+              "DW"
+            ],
+            [
+              "MY",
+              43,
+              6,
+              3,
+              2,
+              49,
+              15,
+              "-",
+              17,
+              22,
+              71,
+              31,
+              "DW"
+            ],
+            [
+              "VN",
+              21,
+              6,
+              1,
+              4,
+              73,
+              "-",
+              92,
+              "-",
+              11,
+              "-",
+              27,
+              "NS"
+            ],
+            [
+              "SA",
+              31,
+              27,
+              2,
+              18,
+              "-",
+              76,
+              "-",
+              "-",
+              25,
+              "-",
+              99,
+              "NS"
+            ],
+            [
+              "AE",
+              34,
+              9,
+              3,
+              6,
+              25,
+              43,
+              "-",
+              19,
+              27,
+              "-",
+              61,
+              "NS"
+            ],
+            [
+              "ZA",
+              32,
+              15,
+              16,
+              12,
+              20,
+              41,
+              "-",
+              14,
+              22,
+              99,
+              48,
+              "DW"
+            ],
+            [
+              "CO",
+              13,
+              20,
+              6,
+              18,
+              22,
+              4,
+              92,
+              19,
+              11,
+              "-",
+              54,
+              "GS"
+            ],
+            [
+              "AR",
+              28,
+              15,
+              11,
+              23,
+              32,
+              8,
+              "-",
+              29,
+              16,
+              "-",
+              "-",
+              "GS"
+            ],
+            [
+              "IN",
+              50,
+              13,
+              8,
+              54,
+              68,
+              42,
+              84,
+              "-",
+              "-",
+              "-",
+              75,
+              "NS"
+            ],
+            [
+              "SG",
+              31,
+              22,
+              2,
+              3,
+              25,
+              12,
+              53,
+              17,
+              13,
+              "-",
+              21,
+              "NS"
+            ],
+            [
+              "NZ",
+              20,
+              7,
+              15,
+              5,
+              27,
+              19,
+              94,
+              10,
+              12,
+              "-",
+              38,
+              "DW"
+            ]
+          ]
+        },
+        "insights": [
+          {
+            "h": "NetShort 日韩东南亚大面积领跑",
+            "p": "免费榜在14国领先，韩国#2、泰国#1、印尼#1、越南#1。06-26全线暴跌后还在恢复中。",
+            "tag": "p"
+          },
+          {
+            "h": "GoodShort 拉美黑马",
+            "p": "巴西免费榜#1、墨西哥#7，此前未见的强势，可能与新剧上线或定向投放有关。",
+            "tag": "g"
+          },
+          {
+            "h": "DramaBox 畅销榜绝对王者",
+            "p": "在20国畅销榜领先，远超其他竞品。付费转化效率是核心优势。",
+            "tag": "g"
+          },
+          {
+            "h": "06-26数据异常恢复中",
+            "p": "全产品06-26综合分暴跌（疑似数据源异常），06-27已基本恢复至正常水平。",
+            "tag": "p"
+          }
+        ]
+      },
+      "free": {
+        "products": [
+          {
+            "n": "Freereels",
+            "co": "昆仑万维",
+            "ios": 6,
+            "gp": 16,
+            "total": 16,
+            "tags": [
+              {
+                "t": "PH #1",
+                "top": true
+              },
+              {
+                "t": "US #2",
+                "top": true
+              },
+              {
+                "t": "JP #2",
+                "top": true
+              },
+              {
+                "t": "MY #3",
+                "top": true
+              },
+              {
+                "t": "ID #3",
+                "top": true
+              },
+              {
+                "t": "TH #5",
+                "top": false
+              }
+            ]
+          },
+          {
+            "n": "Pinedrama",
+            "co": "字节跳动",
+            "ios": 6,
+            "gp": 7,
+            "total": 7,
+            "tags": [
+              {
+                "t": "BR #1",
+                "top": true
+              },
+              {
+                "t": "ID #2",
+                "top": true
+              },
+              {
+                "t": "VN #5",
+                "top": true
+              },
+              {
+                "t": "MX #6",
+                "top": false
+              },
+              {
+                "t": "US #7",
+                "top": false
+              }
+            ]
+          },
+          {
+            "n": "Melolo",
+            "co": "字节跳动",
+            "ios": 5,
+            "gp": 6,
+            "total": 6,
+            "tags": [
+              {
+                "t": "ID #1",
+                "top": true
+              },
+              {
+                "t": "TH #2",
+                "top": true
+              },
+              {
+                "t": "MY #8",
+                "top": false
+              },
+              {
+                "t": "PH #9",
+                "top": false
+              }
+            ]
+          },
+          {
+            "n": "MicroDrama",
+            "co": "—",
+            "ios": 0,
+            "gp": 8,
+            "total": 8,
+            "tags": [
+              {
+                "t": "TH #36",
+                "top": false
+              },
+              {
+                "t": "ID #58",
+                "top": false
+              },
+              {
+                "t": "MX #61",
+                "top": false
+              }
+            ]
+          },
+          {
+            "n": "KukuTV",
+            "co": "印度本土",
+            "ios": 1,
+            "gp": 0,
+            "total": 1,
+            "tags": [
+              {
+                "t": "IN iOS #12",
+                "top": false
+              }
+            ]
+          }
+        ],
+        "iosT": [
+          [
+            "US",
+            86,
+            50,
+            "-",
+            "-",
+            "-",
+            "Pd"
+          ],
+          [
+            "JP",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "–"
+          ],
+          [
+            "BR",
+            23,
+            32,
+            56,
+            "-",
+            "-",
+            "Fr"
+          ],
+          [
+            "MX",
+            "-",
+            84,
+            "-",
+            "-",
+            "-",
+            "Pd"
+          ],
+          [
+            "ID",
+            6,
+            8,
+            5,
+            "-",
+            "-",
+            "Me"
+          ],
+          [
+            "VN",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "–"
+          ],
+          [
+            "TH",
+            26,
+            30,
+            17,
+            "-",
+            "-",
+            "Me"
+          ],
+          [
+            "PH",
+            4,
+            88,
+            30,
+            "-",
+            "-",
+            "Fr"
+          ],
+          [
+            "MY",
+            42,
+            "-",
+            33,
+            "-",
+            "-",
+            "Me"
+          ],
+          [
+            "KR",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "–"
+          ],
+          [
+            "IN",
+            "-",
+            "-",
+            "-",
+            "-",
+            12,
+            "KT"
+          ],
+          [
+            "GB",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "–"
+          ],
+          [
+            "DE",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "–"
+          ],
+          [
+            "FR",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "–"
+          ],
+          [
+            "AU",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "–"
+          ],
+          [
+            "CA",
+            "-",
+            "-",
+            "-",
+            "-",
+            "-",
+            "–"
+          ]
+        ],
+        "gpT": [
+          [
+            "US",
+            2,
+            7,
+            "-",
+            "-",
+            "-",
+            "Fr"
+          ],
+          [
+            "JP",
+            2,
+            "-",
+            "-",
+            130,
+            "-",
+            "Fr"
+          ],
+          [
+            "BR",
+            8,
+            1,
+            15,
+            100,
+            "-",
+            "Pd"
+          ],
+          [
+            "MX",
+            75,
+            6,
+            31,
+            61,
+            "-",
+            "Pd"
+          ],
+          [
+            "ID",
+            3,
+            2,
+            1,
+            58,
+            "-",
+            "Me"
+          ],
+          [
+            "VN",
+            59,
+            5,
+            "-",
+            "-",
+            "-",
+            "Pd"
+          ],
+          [
+            "TH",
+            5,
+            6,
+            2,
+            36,
+            "-",
+            "Me"
+          ],
+          [
+            "PH",
+            1,
+            12,
+            9,
+            74,
+            "-",
+            "Fr"
+          ],
+          [
+            "MY",
+            3,
+            "-",
+            8,
+            123,
+            "-",
+            "Fr"
+          ],
+          [
+            "KR",
+            116,
+            "-",
+            "-",
+            119,
+            "-",
+            "Fr"
+          ],
+          [
+            "IN",
+            40,
+            "-",
+            "-",
+            "-",
+            "-",
+            "Fr"
+          ],
+          [
+            "GB",
+            72,
+            "-",
+            "-",
+            "-",
+            "-",
+            "Fr"
+          ],
+          [
+            "DE",
+            166,
+            "-",
+            "-",
+            "-",
+            "-",
+            "Fr"
+          ],
+          [
+            "FR",
+            103,
+            "-",
+            "-",
+            154,
+            "-",
+            "Fr"
+          ],
+          [
+            "AU",
+            38,
+            "-",
+            "-",
+            "-",
+            "-",
+            "Fr"
+          ],
+          [
+            "CA",
+            41,
+            "-",
+            "-",
+            "-",
+            "-",
+            "Fr"
+          ]
+        ],
+        "insights": [
+          {
+            "h": "Freereels GP美国#2、日本#2",
+            "p": "首次进入美国GP娱乐免费榜头部，菲律宾保持#1。全球化势头最猛。",
+            "tag": "g"
+          },
+          {
+            "h": "Melolo 印尼GP #1",
+            "p": "在印尼GP排名超越Freereels和Pinedrama拿下冠军，东南亚深耕策略见效。",
+            "tag": "g"
+          },
+          {
+            "h": "巴西竞争最激烈",
+            "p": "4款产品同时进入巴西GP榜单，Pinedrama#1、Freereels#8、Melolo#15、MicroDrama#100。",
+            "tag": "p"
           }
         ]
       }
