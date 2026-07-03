@@ -98,7 +98,7 @@ function renderTbl(id,secId,tbl){
 }
 
 function renderAll(dk){
-  var R=DB.reports[dk];if(!R)return;curD=dk;var C=DB.colors;
+  curD=dk;var R=DB.reports[dk];if(!R){renderRevenue();return;}var C=DB.colors;
   document.getElementById('rType').textContent=R.meta.type;
   document.getElementById('hEye').textContent=R.meta.eye;
   document.getElementById('hTitle').innerHTML=R.meta.title;
@@ -196,7 +196,14 @@ function sw(btn,tab){document.querySelectorAll('.tab').forEach(function(e){e.cla
 function loadD(dk){renderAll(dk);renderProfiles();renderRevenue();window.scrollTo({top:0,behavior:'smooth'});}
 
 (async function(){
-  try{var res=await fetch('./data.json?t='+Date.now());DB=await res.json();var picker=document.getElementById('dPick'),dates=Object.keys(DB.reports).sort().reverse();dates.forEach(function(d){var opt=document.createElement('option');opt.value=d;opt.textContent=d+' '+DB.reports[d].meta.type;picker.appendChild(opt);});renderAll(dates[0]);renderProfiles();}
+  try{var res=await fetch('./data.json?t='+Date.now());DB=await res.json();var picker=document.getElementById('dPick');
+    // Collect all dates from reports + revenue
+    var allDates={};
+    Object.keys(DB.reports).forEach(function(d){allDates[d]=(allDates[d]||'')+DB.reports[d].meta.type;});
+    if(DB.revenue){Object.keys(DB.revenue).forEach(function(d){if(!allDates[d])allDates[d]='收入';else allDates[d]+=' + 收入';});}
+    var dates=Object.keys(allDates).sort().reverse();
+    dates.forEach(function(d){var opt=document.createElement('option');opt.value=d;opt.textContent=d+' '+allDates[d];picker.appendChild(opt);});
+    renderAll(dates[0]);renderProfiles();}
   catch(e){document.querySelector('.hero').innerHTML='<div class="ctn"><h1 style="color:var(--red)">加载失败</h1><p style="color:var(--c2);margin-top:12px">'+e.message+'</p></div>';}
 })();
 </script>
