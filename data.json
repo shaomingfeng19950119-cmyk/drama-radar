@@ -12591,6 +12591,1034 @@
           ]
         }
       ]
+    },
+    "2026-07-04": {
+      "updated": "2026-07-04",
+      "source": "行业数据",
+      "period": "2026-07-04 单日",
+      "note": "双平台全球收入（iOS + Google Play）",
+      "products": [
+        {
+          "name": "DramaBox",
+          "daily": 3005980,
+          "monthly": 90179400,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 744829
+            },
+            {
+              "country": "GB",
+              "revenue": 236178
+            },
+            {
+              "country": "JP",
+              "revenue": 193667
+            },
+            {
+              "country": "AU",
+              "revenue": 176579
+            },
+            {
+              "country": "KR",
+              "revenue": 131380
+            },
+            {
+              "country": "CA",
+              "revenue": 126696
+            },
+            {
+              "country": "DE",
+              "revenue": 103534
+            },
+            {
+              "country": "BR",
+              "revenue": 96867
+            },
+            {
+              "country": "TW",
+              "revenue": 87214
+            },
+            {
+              "country": "TH",
+              "revenue": 80830
+            },
+            {
+              "country": "FR",
+              "revenue": 69012
+            },
+            {
+              "country": "MY",
+              "revenue": 68776
+            },
+            {
+              "country": "MX",
+              "revenue": 62564
+            },
+            {
+              "country": "PH",
+              "revenue": 60352
+            },
+            {
+              "country": "IN",
+              "revenue": 59649
+            }
+          ]
+        },
+        {
+          "name": "ReelShort",
+          "daily": 2600988,
+          "monthly": 78029640,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 1103371
+            },
+            {
+              "country": "GB",
+              "revenue": 125934
+            },
+            {
+              "country": "JP",
+              "revenue": 96327
+            },
+            {
+              "country": "DE",
+              "revenue": 79657
+            },
+            {
+              "country": "AU",
+              "revenue": 77423
+            },
+            {
+              "country": "MX",
+              "revenue": 70511
+            },
+            {
+              "country": "CA",
+              "revenue": 68519
+            },
+            {
+              "country": "BR",
+              "revenue": 50565
+            },
+            {
+              "country": "FR",
+              "revenue": 47525
+            },
+            {
+              "country": "TH",
+              "revenue": 42783
+            },
+            {
+              "country": "PL",
+              "revenue": 40253
+            },
+            {
+              "country": "IT",
+              "revenue": 37499
+            },
+            {
+              "country": "TR",
+              "revenue": 34919
+            },
+            {
+              "country": "CH",
+              "revenue": 34483
+            },
+            {
+              "country": "RO",
+              "revenue": 32129
+            }
+          ]
+        },
+        {
+          "name": "NetShort",
+          "daily": 2302549,
+          "monthly": 69076470,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 483344
+            },
+            {
+              "country": "KR",
+              "revenue": 190968
+            },
+            {
+              "country": "JP",
+              "revenue": 151889
+            },
+            {
+              "country": "TW",
+              "revenue": 142371
+            },
+            {
+              "country": "DE",
+              "revenue": 85685
+            },
+            {
+              "country": "FR",
+              "revenue": 84037
+            },
+            {
+              "country": "TH",
+              "revenue": 70331
+            },
+            {
+              "country": "BR",
+              "revenue": 67272
+            },
+            {
+              "country": "TR",
+              "revenue": 62312
+            },
+            {
+              "country": "GB",
+              "revenue": 60883
+            },
+            {
+              "country": "AU",
+              "revenue": 58229
+            },
+            {
+              "country": "MY",
+              "revenue": 56896
+            },
+            {
+              "country": "ID",
+              "revenue": 53162
+            },
+            {
+              "country": "IN",
+              "revenue": 48886
+            },
+            {
+              "country": "HK",
+              "revenue": 48184
+            }
+          ]
+        },
+        {
+          "name": "DramaWave",
+          "daily": 2150996,
+          "monthly": 64529880,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 654509
+            },
+            {
+              "country": "KR",
+              "revenue": 139975
+            },
+            {
+              "country": "JP",
+              "revenue": 136267
+            },
+            {
+              "country": "TR",
+              "revenue": 69356
+            },
+            {
+              "country": "DE",
+              "revenue": 66417
+            },
+            {
+              "country": "GB",
+              "revenue": 64177
+            },
+            {
+              "country": "MX",
+              "revenue": 58724
+            },
+            {
+              "country": "RO",
+              "revenue": 56597
+            },
+            {
+              "country": "ID",
+              "revenue": 53738
+            },
+            {
+              "country": "TW",
+              "revenue": 47387
+            },
+            {
+              "country": "BR",
+              "revenue": 46805
+            },
+            {
+              "country": "AU",
+              "revenue": 45380
+            },
+            {
+              "country": "TH",
+              "revenue": 43488
+            },
+            {
+              "country": "PH",
+              "revenue": 41995
+            },
+            {
+              "country": "FR",
+              "revenue": 41853
+            }
+          ]
+        },
+        {
+          "name": "GoodShort",
+          "daily": 1433220,
+          "monthly": 42996600,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 525822
+            },
+            {
+              "country": "JP",
+              "revenue": 151453
+            },
+            {
+              "country": "BR",
+              "revenue": 82054
+            },
+            {
+              "country": "TH",
+              "revenue": 60733
+            },
+            {
+              "country": "MX",
+              "revenue": 48537
+            },
+            {
+              "country": "GB",
+              "revenue": 43990
+            },
+            {
+              "country": "AU",
+              "revenue": 37125
+            },
+            {
+              "country": "DE",
+              "revenue": 30962
+            },
+            {
+              "country": "ID",
+              "revenue": 28486
+            },
+            {
+              "country": "CA",
+              "revenue": 27837
+            },
+            {
+              "country": "PH",
+              "revenue": 27338
+            },
+            {
+              "country": "PL",
+              "revenue": 20039
+            },
+            {
+              "country": "SA",
+              "revenue": 19955
+            },
+            {
+              "country": "AE",
+              "revenue": 19844
+            },
+            {
+              "country": "IN",
+              "revenue": 19534
+            }
+          ]
+        },
+        {
+          "name": "ShortMax",
+          "daily": 929969,
+          "monthly": 27899070,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 466868
+            },
+            {
+              "country": "GB",
+              "revenue": 45509
+            },
+            {
+              "country": "AU",
+              "revenue": 37779
+            },
+            {
+              "country": "CA",
+              "revenue": 26991
+            },
+            {
+              "country": "JP",
+              "revenue": 26578
+            },
+            {
+              "country": "DE",
+              "revenue": 22664
+            },
+            {
+              "country": "BR",
+              "revenue": 20305
+            },
+            {
+              "country": "MX",
+              "revenue": 18374
+            },
+            {
+              "country": "ID",
+              "revenue": 14744
+            },
+            {
+              "country": "TH",
+              "revenue": 13761
+            },
+            {
+              "country": "AE",
+              "revenue": 12324
+            },
+            {
+              "country": "FR",
+              "revenue": 11889
+            },
+            {
+              "country": "CH",
+              "revenue": 10095
+            },
+            {
+              "country": "MY",
+              "revenue": 10017
+            },
+            {
+              "country": "TR",
+              "revenue": 8980
+            }
+          ]
+        },
+        {
+          "name": "FlickReels",
+          "daily": 566875,
+          "monthly": 17006250,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 130241
+            },
+            {
+              "country": "JP",
+              "revenue": 69394
+            },
+            {
+              "country": "TH",
+              "revenue": 35905
+            },
+            {
+              "country": "BR",
+              "revenue": 29273
+            },
+            {
+              "country": "ID",
+              "revenue": 21877
+            },
+            {
+              "country": "PH",
+              "revenue": 20209
+            },
+            {
+              "country": "TW",
+              "revenue": 20045
+            },
+            {
+              "country": "CA",
+              "revenue": 18473
+            },
+            {
+              "country": "MY",
+              "revenue": 15593
+            },
+            {
+              "country": "IN",
+              "revenue": 14991
+            },
+            {
+              "country": "AU",
+              "revenue": 14842
+            },
+            {
+              "country": "MX",
+              "revenue": 14551
+            },
+            {
+              "country": "GB",
+              "revenue": 14507
+            },
+            {
+              "country": "KR",
+              "revenue": 14246
+            },
+            {
+              "country": "FR",
+              "revenue": 13289
+            }
+          ]
+        },
+        {
+          "name": "VibeShort",
+          "daily": 516780,
+          "monthly": 15503400,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 87130
+            },
+            {
+              "country": "GB",
+              "revenue": 32111
+            },
+            {
+              "country": "AU",
+              "revenue": 31332
+            },
+            {
+              "country": "MX",
+              "revenue": 24061
+            },
+            {
+              "country": "CA",
+              "revenue": 19608
+            },
+            {
+              "country": "FR",
+              "revenue": 19537
+            },
+            {
+              "country": "DE",
+              "revenue": 16908
+            },
+            {
+              "country": "BR",
+              "revenue": 14229
+            },
+            {
+              "country": "IT",
+              "revenue": 14064
+            },
+            {
+              "country": "JP",
+              "revenue": 13162
+            },
+            {
+              "country": "CL",
+              "revenue": 13058
+            },
+            {
+              "country": "TH",
+              "revenue": 12632
+            },
+            {
+              "country": "AE",
+              "revenue": 11452
+            },
+            {
+              "country": "TR",
+              "revenue": 11159
+            },
+            {
+              "country": "CH",
+              "revenue": 10638
+            }
+          ]
+        },
+        {
+          "name": "StarDustTV",
+          "daily": 379393,
+          "monthly": 11381790,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 109620
+            },
+            {
+              "country": "KR",
+              "revenue": 21034
+            },
+            {
+              "country": "TW",
+              "revenue": 19205
+            },
+            {
+              "country": "ID",
+              "revenue": 15112
+            },
+            {
+              "country": "CA",
+              "revenue": 13171
+            },
+            {
+              "country": "BR",
+              "revenue": 12997
+            },
+            {
+              "country": "JP",
+              "revenue": 10177
+            },
+            {
+              "country": "GB",
+              "revenue": 9523
+            },
+            {
+              "country": "PH",
+              "revenue": 9515
+            },
+            {
+              "country": "IN",
+              "revenue": 9208
+            },
+            {
+              "country": "TH",
+              "revenue": 9180
+            },
+            {
+              "country": "MY",
+              "revenue": 8857
+            },
+            {
+              "country": "AU",
+              "revenue": 8248
+            },
+            {
+              "country": "HK",
+              "revenue": 8065
+            },
+            {
+              "country": "AE",
+              "revenue": 7861
+            }
+          ]
+        },
+        {
+          "name": "StoryReel",
+          "daily": 358309,
+          "monthly": 10749270,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 83634
+            },
+            {
+              "country": "AU",
+              "revenue": 36324
+            },
+            {
+              "country": "GB",
+              "revenue": 32507
+            },
+            {
+              "country": "CA",
+              "revenue": 22449
+            },
+            {
+              "country": "MX",
+              "revenue": 14734
+            },
+            {
+              "country": "DE",
+              "revenue": 11283
+            },
+            {
+              "country": "FR",
+              "revenue": 10637
+            },
+            {
+              "country": "MY",
+              "revenue": 9606
+            },
+            {
+              "country": "NL",
+              "revenue": 8671
+            },
+            {
+              "country": "CH",
+              "revenue": 7861
+            },
+            {
+              "country": "ZA",
+              "revenue": 7814
+            },
+            {
+              "country": "CL",
+              "revenue": 7239
+            },
+            {
+              "country": "ES",
+              "revenue": 6361
+            },
+            {
+              "country": "AE",
+              "revenue": 6325
+            },
+            {
+              "country": "NO",
+              "revenue": 6065
+            }
+          ]
+        },
+        {
+          "name": "KalosTV",
+          "daily": 266860,
+          "monthly": 8005800,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 76690
+            },
+            {
+              "country": "JP",
+              "revenue": 20787
+            },
+            {
+              "country": "CA",
+              "revenue": 15244
+            },
+            {
+              "country": "AU",
+              "revenue": 14228
+            },
+            {
+              "country": "TH",
+              "revenue": 12138
+            },
+            {
+              "country": "BR",
+              "revenue": 10597
+            },
+            {
+              "country": "GB",
+              "revenue": 9131
+            },
+            {
+              "country": "DE",
+              "revenue": 7450
+            },
+            {
+              "country": "PH",
+              "revenue": 7086
+            },
+            {
+              "country": "ID",
+              "revenue": 6392
+            },
+            {
+              "country": "IN",
+              "revenue": 6155
+            },
+            {
+              "country": "SG",
+              "revenue": 5887
+            },
+            {
+              "country": "MX",
+              "revenue": 5250
+            },
+            {
+              "country": "FR",
+              "revenue": 5101
+            },
+            {
+              "country": "MY",
+              "revenue": 4977
+            }
+          ]
+        },
+        {
+          "name": "MoboReels",
+          "daily": 250881,
+          "monthly": 7526430,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 96821
+            },
+            {
+              "country": "JP",
+              "revenue": 18166
+            },
+            {
+              "country": "KR",
+              "revenue": 17336
+            },
+            {
+              "country": "DE",
+              "revenue": 10282
+            },
+            {
+              "country": "BR",
+              "revenue": 7387
+            },
+            {
+              "country": "FR",
+              "revenue": 6297
+            },
+            {
+              "country": "GB",
+              "revenue": 5877
+            },
+            {
+              "country": "AU",
+              "revenue": 5759
+            },
+            {
+              "country": "MX",
+              "revenue": 5430
+            },
+            {
+              "country": "CA",
+              "revenue": 4898
+            },
+            {
+              "country": "IT",
+              "revenue": 4833
+            },
+            {
+              "country": "UA",
+              "revenue": 4500
+            },
+            {
+              "country": "IL",
+              "revenue": 3958
+            },
+            {
+              "country": "CH",
+              "revenue": 3278
+            },
+            {
+              "country": "PL",
+              "revenue": 3176
+            }
+          ]
+        },
+        {
+          "name": "DreameShort",
+          "daily": 151257,
+          "monthly": 4537710,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 102834
+            },
+            {
+              "country": "GB",
+              "revenue": 5612
+            },
+            {
+              "country": "AU",
+              "revenue": 5153
+            },
+            {
+              "country": "CA",
+              "revenue": 4932
+            },
+            {
+              "country": "DE",
+              "revenue": 4082
+            },
+            {
+              "country": "PH",
+              "revenue": 2195
+            },
+            {
+              "country": "NL",
+              "revenue": 2122
+            },
+            {
+              "country": "PL",
+              "revenue": 1763
+            },
+            {
+              "country": "IN",
+              "revenue": 1262
+            },
+            {
+              "country": "MY",
+              "revenue": 1233
+            },
+            {
+              "country": "FR",
+              "revenue": 1165
+            },
+            {
+              "country": "DK",
+              "revenue": 1162
+            },
+            {
+              "country": "IT",
+              "revenue": 1143
+            },
+            {
+              "country": "SE",
+              "revenue": 1135
+            },
+            {
+              "country": "BE",
+              "revenue": 1034
+            }
+          ]
+        },
+        {
+          "name": "FlareFlow",
+          "daily": 97692,
+          "monthly": 2930760,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 33329
+            },
+            {
+              "country": "BR",
+              "revenue": 10727
+            },
+            {
+              "country": "DE",
+              "revenue": 7745
+            },
+            {
+              "country": "JP",
+              "revenue": 3473
+            },
+            {
+              "country": "MX",
+              "revenue": 2939
+            },
+            {
+              "country": "GB",
+              "revenue": 2720
+            },
+            {
+              "country": "CH",
+              "revenue": 2550
+            },
+            {
+              "country": "FR",
+              "revenue": 2352
+            },
+            {
+              "country": "AU",
+              "revenue": 2278
+            },
+            {
+              "country": "IT",
+              "revenue": 2267
+            },
+            {
+              "country": "PH",
+              "revenue": 1898
+            },
+            {
+              "country": "CA",
+              "revenue": 1749
+            },
+            {
+              "country": "AE",
+              "revenue": 1662
+            },
+            {
+              "country": "KR",
+              "revenue": 1656
+            },
+            {
+              "country": "TH",
+              "revenue": 1541
+            }
+          ]
+        },
+        {
+          "name": "MiniShorts",
+          "daily": 36209,
+          "monthly": 1086270,
+          "change": 0,
+          "countries": [
+            {
+              "country": "US",
+              "revenue": 21443
+            },
+            {
+              "country": "GB",
+              "revenue": 1724
+            },
+            {
+              "country": "AU",
+              "revenue": 1579
+            },
+            {
+              "country": "CA",
+              "revenue": 1497
+            },
+            {
+              "country": "JP",
+              "revenue": 1394
+            },
+            {
+              "country": "MY",
+              "revenue": 699
+            },
+            {
+              "country": "NL",
+              "revenue": 570
+            },
+            {
+              "country": "DE",
+              "revenue": 547
+            },
+            {
+              "country": "MX",
+              "revenue": 507
+            },
+            {
+              "country": "PH",
+              "revenue": 449
+            },
+            {
+              "country": "TH",
+              "revenue": 444
+            },
+            {
+              "country": "BR",
+              "revenue": 397
+            },
+            {
+              "country": "FR",
+              "revenue": 334
+            },
+            {
+              "country": "CH",
+              "revenue": 318
+            },
+            {
+              "country": "DK",
+              "revenue": 262
+            }
+          ]
+        }
+      ]
     }
   }
 }
