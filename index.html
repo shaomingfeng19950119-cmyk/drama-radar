@@ -158,7 +158,7 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
   <div class="nav-tabs">
     <button class="nt on" onclick="sw(this,'paid')">付费短剧</button>
     <button class="nt" onclick="sw(this,'free')">免费短剧</button>
-    <button class="nt" onclick="sw(this,'revenue')">各家产品收入</button>
+    <button class="nt" onclick="sw(this,'revenue')" id="rvTab">各家产品收入 <span id="rvLock">🔒</span></button>
   </div>
   <div class="nav-r">
       <span class="pw-ok" id="proBadge">PRO ✓</span><span class="rtype" id="rType"></span>
@@ -262,6 +262,7 @@ function applyPaywall(){
   if(aiSec&&aiSec.innerHTML.includes('AI'))aiSec.style.display='none';
   document.querySelectorAll('.dlbtn').forEach(function(b){b.style.display='none';});
   document.getElementById('proBadge').classList.remove('on');
+  var lk=document.getElementById('rvLock');if(lk)lk.style.display='';
 }
 function removePaywall(){
   document.querySelectorAll('.pw-blur').forEach(function(el){el.classList.remove('pw-blur');});
@@ -270,6 +271,7 @@ function removePaywall(){
   if(aiSec)aiSec.style.display='';
   document.querySelectorAll('.dlbtn').forEach(function(b){b.style.display='';});
   document.getElementById('proBadge').classList.add('on');
+  var lk=document.getElementById('rvLock');if(lk)lk.style.display='none';
 }
 function tryCode(){
   var input=document.getElementById('pwInput');
