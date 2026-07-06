@@ -28,9 +28,9 @@ footer{padding:36px 0;text-align:center;color:var(--c3);font-size:12px;border-to
 
 
 
-.pw-blur{filter:blur(8px);pointer-events:none;user-select:none;opacity:.6}
-.pw-wrap{position:relative}
-.pw-wrap #pwWall{position:absolute;top:0;left:0;right:0;z-index:5;padding-top:20px}
+.pw-blur{filter:blur(8px);pointer-events:none;user-select:none;opacity:.5}
+.pw-locked-sec{max-height:300px;overflow:hidden;position:relative}
+.pw-locked-sec::after{content:'';position:absolute;bottom:0;left:0;right:0;height:150px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
 .pw-blur::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(245,246,250,.8))}
 .pw-wall{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:36px 32px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.08);max-width:440px;margin:24px auto}
 .pw-wall h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
@@ -96,9 +96,9 @@ footer{padding:36px 0;text-align:center;color:var(--c3);font-size:12px;border-to
 
 
 
-.pw-blur{filter:blur(8px);pointer-events:none;user-select:none;opacity:.6}
-.pw-wrap{position:relative}
-.pw-wrap #pwWall{position:absolute;top:0;left:0;right:0;z-index:5;padding-top:20px}
+.pw-blur{filter:blur(8px);pointer-events:none;user-select:none;opacity:.5}
+.pw-locked-sec{max-height:300px;overflow:hidden;position:relative}
+.pw-locked-sec::after{content:'';position:absolute;bottom:0;left:0;right:0;height:150px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
 .pw-blur::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(245,246,250,.8))}
 .pw-wall{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:36px 32px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.08);max-width:440px;margin:24px auto}
 .pw-wall h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
@@ -195,12 +195,9 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
   </div></section>
   
   <section class="sec"><div class="ctn">
-    <div class="pw-wrap"><div class="sh"><h2 class="st">收入预估排名</h2><span class="sb">双平台全球收入</span><button class="dlbtn" onclick="dlCSV()">⬇ 下载数据</button></div>
+    <div class="sh"><h2 class="st">收入预估排名</h2><span class="sb">双平台全球收入</span><button class="dlbtn" onclick="dlCSV()">⬇ 下载数据</button></div>
     <div id="rvList"></div>
-    </div><div class="nb">⚠️ 收入数据为行业估算值，含 iOS + Google Play 全球收入。仅供竞争格局参考，不代表真实财务数据。</div>
-  </div></section>
-  <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">市场份额</h2><span class="sb">Top 6 产品</span></div><div class="rvs" id="rvSh"></div></div></section>
-  <div id="pwWall" style="display:none"><div class="pw-wall" style="max-width:520px">
+    <div id="pwWall" style="display:none"><div class="pw-wall" style="max-width:520px">
       <h3>解锁 Pro 完整数据</h3>
       <p>短剧出海从业者的竞品情报工具</p>
       <div style="text-align:left;background:var(--bg);border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:13px;color:var(--c2);line-height:2.2">
@@ -230,6 +227,10 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
         <div class="pw-err" id="pwErr">访问码无效</div>
       </div>
     </div></div>
+    <div class="nb">⚠️ 收入数据为行业估算值，含 iOS + Google Play 全球收入。仅供竞争格局参考，不代表真实财务数据。</div>
+  </div></section>
+  <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">市场份额</h2><span class="sb">Top 6 产品</span></div><div class="rvs" id="rvSh"></div></div></section>
+  
   <section class="sec"><div class="ctn">
     <div class="sh"><h2 class="st">AI 智能分析</h2><span class="sb">问任何关于收入数据的问题</span></div>
     <div style="background:var(--card);border:1px solid var(--bl);border-radius:14px;overflow:hidden;box-shadow:var(--s1)">
@@ -252,7 +253,9 @@ function isPro(){
   return DB.access.codes.map(function(c){return c.toUpperCase();}).indexOf(code.toUpperCase())>=0;
 }
 function applyPaywall(){
-  // Blur ALL ranking items (show blurred background)
+  // Limit height and blur ranking items
+  var rvList=document.getElementById('rvList');
+  if(rvList)rvList.classList.add('pw-locked-sec');
   var items=document.querySelectorAll('#rvList .rvi');
   items.forEach(function(el){el.classList.add('pw-blur');});
   document.querySelectorAll('.ctry').forEach(function(el){el.style.display='none';});
@@ -268,6 +271,7 @@ function applyPaywall(){
 }
 function removePaywall(){
   document.querySelectorAll('.pw-blur').forEach(function(el){el.classList.remove('pw-blur');});
+  var rvList=document.getElementById('rvList');if(rvList)rvList.classList.remove('pw-locked-sec');
   document.getElementById('pwWall').style.display='none';
   var aiSec=document.querySelector('#tab-revenue .sec:last-of-type');
   if(aiSec)aiSec.style.display='';
