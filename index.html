@@ -196,17 +196,35 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
     <div class="nb">⚠️ 收入数据为行业估算值，含 iOS + Google Play 全球收入。仅供竞争格局参考，不代表真实财务数据。</div>
   </div></section>
   <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">市场份额</h2><span class="sb">Top 6 产品</span></div><div class="rvs" id="rvSh"></div></div></section>
-  <div id="pwWall" style="display:none"><div class="pw-wall">
-      <h3>解锁全部收入数据</h3>
-      <p>查看15款产品完整收入金额、国家下钻明细、日环比涨跌、AI智能分析</p>
-      <div class="pw-prices">
-        <div class="pw-opt"><div class="pw-opt-price">¥49<span>/月</span></div><div class="pw-opt-sub">按月订阅</div></div>
-        <div class="pw-opt hot"><div class="pw-opt-price">¥399<span>/年</span></div><div class="pw-opt-sub">月均¥33 省32%</div></div>
+  <div id="pwWall" style="display:none"><div class="pw-wall" style="max-width:520px">
+      <h3>解锁 Pro 完整数据</h3>
+      <p>短剧出海从业者的竞品情报工具</p>
+      <div style="text-align:left;background:var(--bg);border-radius:10px;padding:14px 18px;margin-bottom:20px;font-size:13px;color:var(--c2);line-height:2.2">
+        <div style="font-weight:600;color:var(--c1);margin-bottom:4px">Pro 会员权益：</div>
+        <div>✅ <b style="color:var(--c1)">15款产品完整收入金额</b>（日收入 + 月收入）</div>
+        <div>✅ <b style="color:var(--c1)">国家下钻</b>（点击展开 Top 15 国家收入明细）</div>
+        <div>✅ <b style="color:var(--c1)">日环比涨跌</b>（每个产品、每个国家的变化趋势）</div>
+        <div>✅ <b style="color:var(--c1)">30天历史回溯</b>（切换日期对比不同天的数据）</div>
+        <div>✅ <b style="color:var(--c1)">CSV数据下载</b>（导出后自定义分析）</div>
+        <div>✅ <b style="color:var(--c1)">AI智能分析</b>（直接提问，AI 帮你找洞察）</div>
       </div>
-      <a class="pw-buy" href="https://afdian.com/a/dramaradar" target="_blank">前往订阅 →</a>
-      <div class="pw-or">已有访问码？</div>
-      <div class="pw-code"><input id="pwInput" placeholder="输入访问码" maxlength="20" onkeydown="if(event.key==='Enter')tryCode()"><button onclick="tryCode()">解锁</button></div>
-      <div class="pw-err" id="pwErr">访问码无效</div>
+      <div class="pw-prices" style="margin-bottom:12px">
+        <a class="pw-opt" id="pwMonth" href="https://afdian.com/a/dramaradar" target="_blank" style="text-decoration:none;color:inherit;display:block" onclick="this.classList.add('hot');document.getElementById('pwYear').classList.remove('hot')">
+          <div class="pw-opt-price">¥49<span>/月</span></div>
+          <div class="pw-opt-sub">按月订阅 · 随时取消</div>
+        </a>
+        <a class="pw-opt hot" id="pwYear" href="https://afdian.com/a/dramaradar" target="_blank" style="text-decoration:none;color:inherit;display:block;position:relative" onclick="this.classList.add('hot');document.getElementById('pwMonth').classList.remove('hot')">
+          <div style="position:absolute;top:-10px;right:-6px;background:var(--ind);color:#fff;font-size:9px;padding:2px 8px;border-radius:10px;font-weight:600">推荐</div>
+          <div class="pw-opt-price">¥399<span>/年</span></div>
+          <div class="pw-opt-sub">月均¥33 · 省32%</div>
+        </a>
+      </div>
+      <div style="font-size:11px;color:var(--c3);margin-bottom:16px;text-align:center">点击上方价格方案，前往爱发电完成支付</div>
+      <div style="border-top:1px solid var(--bl);padding-top:14px">
+        <div class="pw-or">已有访问码？</div>
+        <div class="pw-code" style="margin-top:8px"><input id="pwInput" placeholder="输入访问码" maxlength="20" onkeydown="if(event.key==='Enter')tryCode()"><button onclick="tryCode()">解锁</button></div>
+        <div class="pw-err" id="pwErr">访问码无效</div>
+      </div>
     </div></div>
   <section class="sec"><div class="ctn">
     <div class="sh"><h2 class="st">AI 智能分析</h2><span class="sb">问任何关于收入数据的问题</span></div>
