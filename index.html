@@ -110,8 +110,7 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
   <div class="nav-tabs">
     <button class="nt on" onclick="sw(this,'paid')">付费短剧</button>
     <button class="nt" onclick="sw(this,'free')">免费短剧</button>
-    <button class="nt" onclick="sw(this,'profiles')">产品档案</button>
-    <button class="nt" onclick="sw(this,'revenue')">收入预估</button>
+    <button class="nt" onclick="sw(this,'revenue')">各家产品收入</button>
   </div>
   <div class="nav-r">
       <span class="rtype" id="rType"></span>
@@ -135,10 +134,6 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
   <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">iOS 排名矩阵</h2><span class="sb">Entertainment 免费榜</span></div><div class="tw"><table class="dt" id="fIT"></table></div></div></section>
   <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">Google Play 排名矩阵</h2><span class="sb">Entertainment 免费榜</span></div><div class="tw"><table class="dt" id="fGT"></table></div></div></section>
   <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">免费赛道洞察</h2></div><div class="ig" id="fIns"></div></div></section>
-</div>
-
-<div id="tab-profiles" class="tab">
-  <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">产品档案</h2><span class="sb" id="prB"></span></div><div class="pg" id="prG"></div></div></section>
 </div>
 
 <div id="tab-revenue" class="tab">
@@ -363,7 +358,7 @@ function sw(btn,tab){
   document.getElementById('rType').style.display=tab==='revenue'?'none':'';
   // Hide hero on revenue tab
   document.querySelector('.hero').style.display=tab==='revenue'?'none':'';
-  if(tab==='profiles')renderProfiles();
+  
   if(tab==='revenue')renderRevenue();
 }
 function loadD(dk){renderAll(dk);renderProfiles();window.scrollTo({top:0,behavior:'smooth'});}
@@ -380,7 +375,7 @@ function loadD(dk){renderAll(dk);renderProfiles();window.scrollTo({top:0,behavio
       rvDates.forEach(function(d){var opt=document.createElement('option');opt.value=d;opt.textContent=d+' 收入';rvPicker.appendChild(opt);});
       if(rvDates.length>0)curRD=rvDates[0];
     }
-    renderAll(rDates[0]);renderProfiles();}
+    renderAll(rDates[0]);}
   catch(e){document.querySelector('.hero').innerHTML='<div class="ctn"><h1 style="color:var(--red)">加载失败</h1><p style="color:var(--c2);margin-top:12px">'+e.message+'</p></div>';}
 })();
 </script>
