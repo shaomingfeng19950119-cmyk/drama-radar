@@ -27,6 +27,30 @@ footer{padding:36px 0;text-align:center;color:var(--c3);font-size:12px;border-to
 @media(max-width:768px){.ri,.rh,.rvi{grid-template-columns:28px 80px 1fr 44px}.rm,.rh .hm,.rvi .rm{display:none}.hstats{grid-template-columns:repeat(2,1fr)}.nav-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;width:100%}.nt{white-space:nowrap;font-size:11px;padding:6px 12px}.nav-r{width:100%;justify-content:flex-end}.ig,.pg{grid-template-columns:1fr}.fg{grid-template-columns:repeat(2,1fr)}.rvi{grid-template-columns:28px 70px 1fr 50px}nav .ctn{gap:10px}}
 
 
+
+.pw-blur{filter:blur(12px);pointer-events:none;user-select:none;position:relative}
+.pw-blur::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(245,246,250,.8))}
+.pw-wall{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:36px 32px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.08);max-width:440px;margin:24px auto}
+.pw-wall h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
+.pw-wall p{font-size:13px;color:var(--c2);margin-bottom:20px;line-height:1.7}
+.pw-prices{display:flex;gap:10px;margin-bottom:20px;justify-content:center}
+.pw-opt{flex:1;background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:14px 12px;cursor:pointer;transition:.2s;max-width:180px}
+.pw-opt:hover{border-color:var(--ind)}
+.pw-opt.hot{border-color:var(--ind);background:var(--tb)}
+.pw-opt-price{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--ind)}
+.pw-opt-price span{font-size:12px;color:var(--c3);font-weight:400}
+.pw-opt-sub{font-size:11px;color:var(--c3);margin-top:2px}
+.pw-buy{display:block;width:100%;padding:12px;background:var(--ind);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;text-decoration:none;text-align:center;transition:.2s}
+.pw-buy:hover{opacity:.9}
+.pw-or{font-size:12px;color:var(--c3);margin-bottom:10px}
+.pw-code{display:flex;gap:8px}
+.pw-code input{flex:1;padding:10px 14px;border:1px solid var(--bd);border-radius:8px;font-size:13px;outline:none;font-family:'JetBrains Mono',monospace;text-align:center;letter-spacing:2px}
+.pw-code input:focus{border-color:var(--ind)}
+.pw-code button{padding:10px 16px;background:var(--bg);border:1px solid var(--bd);border-radius:8px;font-size:13px;cursor:pointer;font-weight:500;color:var(--c2)}
+.pw-code button:hover{background:var(--hover)}
+.pw-err{font-size:12px;color:var(--red);margin-top:6px;display:none}
+.pw-ok{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--grn);background:var(--tgr);padding:3px 10px;border-radius:6px;display:none}
+.pw-ok.on{display:inline-block}
 </style>
 </head>
 <body>
@@ -69,6 +93,30 @@ footer{padding:36px 0;text-align:center;color:var(--c3);font-size:12px;border-to
 @media(max-width:600px){.sp-radar{width:280px;height:280px}.sp-r1{width:280px;height:280px}.sp-r2{width:200px;height:200px}.sp-r3{width:120px;height:120px}.sp-sweep{width:140px}.sp-product{width:46px;height:46px;border-radius:11px}}
 
 
+
+.pw-blur{filter:blur(12px);pointer-events:none;user-select:none;position:relative}
+.pw-blur::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(245,246,250,.8))}
+.pw-wall{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:36px 32px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.08);max-width:440px;margin:24px auto}
+.pw-wall h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
+.pw-wall p{font-size:13px;color:var(--c2);margin-bottom:20px;line-height:1.7}
+.pw-prices{display:flex;gap:10px;margin-bottom:20px;justify-content:center}
+.pw-opt{flex:1;background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:14px 12px;cursor:pointer;transition:.2s;max-width:180px}
+.pw-opt:hover{border-color:var(--ind)}
+.pw-opt.hot{border-color:var(--ind);background:var(--tb)}
+.pw-opt-price{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:var(--ind)}
+.pw-opt-price span{font-size:12px;color:var(--c3);font-weight:400}
+.pw-opt-sub{font-size:11px;color:var(--c3);margin-top:2px}
+.pw-buy{display:block;width:100%;padding:12px;background:var(--ind);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-bottom:14px;text-decoration:none;text-align:center;transition:.2s}
+.pw-buy:hover{opacity:.9}
+.pw-or{font-size:12px;color:var(--c3);margin-bottom:10px}
+.pw-code{display:flex;gap:8px}
+.pw-code input{flex:1;padding:10px 14px;border:1px solid var(--bd);border-radius:8px;font-size:13px;outline:none;font-family:'JetBrains Mono',monospace;text-align:center;letter-spacing:2px}
+.pw-code input:focus{border-color:var(--ind)}
+.pw-code button{padding:10px 16px;background:var(--bg);border:1px solid var(--bd);border-radius:8px;font-size:13px;cursor:pointer;font-weight:500;color:var(--c2)}
+.pw-code button:hover{background:var(--hover)}
+.pw-err{font-size:12px;color:var(--red);margin-top:6px;display:none}
+.pw-ok{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--grn);background:var(--tgr);padding:3px 10px;border-radius:6px;display:none}
+.pw-ok.on{display:inline-block}
 </style>
 <div class="sp-bg"></div>
 <div class="sp-stars"><div class="sp-star" style="left:81%;top:14%;animation-delay:1.1000430208906677s;width:1.5500586367382385px;height:1.5500586367382385px"></div><div class="sp-star" style="left:28%;top:17%;animation-delay:3.9458848566560496s;width:2.3533989748458226px;height:2.3533989748458226px"></div><div class="sp-star" style="left:69%;top:11%;animation-delay:3.3619700497961587s;width:1.0635653589635672px;height:1.0635653589635672px"></div><div class="sp-star" style="left:11%;top:27%;animation-delay:1.9306435735629583s;width:2.2040374580999607px;height:2.2040374580999607px"></div><div class="sp-star" style="left:71%;top:25%;animation-delay:3.864078451689614s;width:2.402649947180472px;height:2.402649947180472px"></div><div class="sp-star" style="left:53%;top:28%;animation-delay:2.7968361851354144s;width:1.5563814164613254px;height:1.5563814164613254px"></div><div class="sp-star" style="left:0%;top:97%;animation-delay:4.223277007331232s;width:2.3962787899764537px;height:2.3962787899764537px"></div><div class="sp-star" style="left:43%;top:35%;animation-delay:1.6219179992471262s;width:2.9144261444135626px;height:2.9144261444135626px"></div><div class="sp-star" style="left:43%;top:13%;animation-delay:1.3709833735205916s;width:1.193432753666928px;height:1.193432753666928px"></div><div class="sp-star" style="left:44%;top:77%;animation-delay:2.0580834688880523s;width:1.0869008858461944px;height:1.0869008858461944px"></div><div class="sp-star" style="left:58%;top:68%;animation-delay:1.4993046514128374s;width:2.84459074405632px;height:2.84459074405632px"></div><div class="sp-star" style="left:10%;top:70%;animation-delay:2.1727131256283716s;width:2.2572795989888865px;height:2.2572795989888865px"></div><div class="sp-star" style="left:46%;top:73%;animation-delay:1.7691543610266396s;width:1.1391102976474818px;height:1.1391102976474818px"></div><div class="sp-star" style="left:84%;top:29%;animation-delay:4.092273363154767s;width:2.9704430413215155px;height:2.9704430413215155px"></div><div class="sp-star" style="left:29%;top:12%;animation-delay:2.5205049001566646s;width:1.906820604736871px;height:1.906820604736871px"></div><div class="sp-star" style="left:46%;top:20%;animation-delay:2.4807238684675306s;width:1.4190140615429754px;height:1.4190140615429754px"></div><div class="sp-star" style="left:34%;top:89%;animation-delay:4.746618350849976s;width:2.296070770493187px;height:2.296070770493187px"></div><div class="sp-star" style="left:77%;top:81%;animation-delay:1.684554592792388s;width:2.4582535959006986px;height:2.4582535959006986px"></div><div class="sp-star" style="left:20%;top:59%;animation-delay:2.517821767030591s;width:2.9790467012731905px;height:2.9790467012731905px"></div><div class="sp-star" style="left:81%;top:88%;animation-delay:3.227798975098585s;width:2.369228501979749px;height:2.369228501979749px"></div><div class="sp-star" style="left:98%;top:99%;animation-delay:1.2237517901971358s;width:2.6436051880136167px;height:2.6436051880136167px"></div><div class="sp-star" style="left:40%;top:51%;animation-delay:2.070963503902811s;width:1.421965687172653px;height:1.421965687172653px"></div><div class="sp-star" style="left:72%;top:91%;animation-delay:2.2587115231939117s;width:2.31087733058976px;height:2.31087733058976px"></div><div class="sp-star" style="left:50%;top:82%;animation-delay:2.835407410349595s;width:1.529760332996105px;height:1.529760332996105px"></div><div class="sp-star" style="left:31%;top:95%;animation-delay:3.245472536652603s;width:1.5254832170458705px;height:1.5254832170458705px"></div><div class="sp-star" style="left:74%;top:54%;animation-delay:4.591291534409908s;width:1.7988010102807945px;height:1.7988010102807945px"></div><div class="sp-star" style="left:28%;top:17%;animation-delay:3.038105174705858s;width:1.1818188243475878px;height:1.1818188243475878px"></div><div class="sp-star" style="left:6%;top:14%;animation-delay:1.6113652773930442s;width:1.3199640034449005px;height:1.3199640034449005px"></div><div class="sp-star" style="left:87%;top:54%;animation-delay:3.3856361229278953s;width:1.7695346233490001px;height:1.7695346233490001px"></div><div class="sp-star" style="left:76%;top:59%;animation-delay:3.116457380396548s;width:2.942156755227236px;height:2.942156755227236px"></div><div class="sp-star" style="left:1%;top:87%;animation-delay:3.8828872774407786s;width:2.36342073805315px;height:2.36342073805315px"></div><div class="sp-star" style="left:68%;top:96%;animation-delay:2.067300759810171s;width:2.281923597159616px;height:2.281923597159616px"></div><div class="sp-star" style="left:14%;top:37%;animation-delay:2.73906100267642s;width:1.9074474126584129px;height:1.9074474126584129px"></div><div class="sp-star" style="left:92%;top:92%;animation-delay:2.053556203004363s;width:2.0011722261005964px;height:2.0011722261005964px"></div><div class="sp-star" style="left:22%;top:64%;animation-delay:4.650511357379282s;width:2.7410371396735336px;height:2.7410371396735336px"></div><div class="sp-star" style="left:38%;top:81%;animation-delay:3.030651527910537s;width:1.397822203529466px;height:1.397822203529466px"></div><div class="sp-star" style="left:47%;top:97%;animation-delay:1.6461961430126135s;width:2.9069994953070055px;height:2.9069994953070055px"></div><div class="sp-star" style="left:67%;top:0%;animation-delay:3.395778337840916s;width:1.9772114160578957px;height:1.9772114160578957px"></div><div class="sp-star" style="left:14%;top:46%;animation-delay:4.514887511292737s;width:2.663331058722359px;height:2.663331058722359px"></div><div class="sp-star" style="left:39%;top:30%;animation-delay:1.2317006659767502s;width:2.7560191984080813px;height:2.7560191984080813px"></div></div>
@@ -113,7 +161,7 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
     <button class="nt" onclick="sw(this,'revenue')">各家产品收入</button>
   </div>
   <div class="nav-r">
-      <span class="rtype" id="rType"></span>
+      <span class="pw-ok" id="proBadge">PRO ✓</span><span class="rtype" id="rType"></span>
       <select class="dsel" id="dPick" onchange="loadD(this.value)"></select>
       <select class="dsel" id="rvPick" onchange="loadRV(this.value)" style="display:none"></select>
     </div>
@@ -148,6 +196,18 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
     <div class="nb">⚠️ 收入数据为行业估算值，含 iOS + Google Play 全球收入。仅供竞争格局参考，不代表真实财务数据。</div>
   </div></section>
   <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">市场份额</h2><span class="sb">Top 6 产品</span></div><div class="rvs" id="rvSh"></div></div></section>
+  <div id="pwWall" style="display:none"><div class="pw-wall">
+      <h3>解锁全部收入数据</h3>
+      <p>查看15款产品完整收入金额、国家下钻明细、日环比涨跌、AI智能分析</p>
+      <div class="pw-prices">
+        <div class="pw-opt"><div class="pw-opt-price">¥49<span>/月</span></div><div class="pw-opt-sub">按月订阅</div></div>
+        <div class="pw-opt hot"><div class="pw-opt-price">¥399<span>/年</span></div><div class="pw-opt-sub">月均¥33 省32%</div></div>
+      </div>
+      <a class="pw-buy" href="https://afdian.com/a/dramaradar" target="_blank">前往订阅 →</a>
+      <div class="pw-or">已有访问码？</div>
+      <div class="pw-code"><input id="pwInput" placeholder="输入访问码" maxlength="20" onkeydown="if(event.key==='Enter')tryCode()"><button onclick="tryCode()">解锁</button></div>
+      <div class="pw-err" id="pwErr">访问码无效</div>
+    </div></div>
   <section class="sec"><div class="ctn">
     <div class="sh"><h2 class="st">AI 智能分析</h2><span class="sb">问任何关于收入数据的问题</span></div>
     <div style="background:var(--card);border:1px solid var(--bl);border-radius:14px;overflow:hidden;box-shadow:var(--s1)">
@@ -164,6 +224,47 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
 
 <script>
 var DB,curD,curRD,MX=25;
+function isPro(){
+  var code=localStorage.getItem('dr_code');
+  if(!code||!DB.access||!DB.access.codes)return false;
+  return DB.access.codes.map(function(c){return c.toUpperCase();}).indexOf(code.toUpperCase())>=0;
+}
+function applyPaywall(){
+  // Blur ranking items after top 5
+  var items=document.querySelectorAll('#rvList .rvi');
+  items.forEach(function(el,i){if(i>=5)el.classList.add('pw-blur');});
+  // Hide country drilldowns
+  document.querySelectorAll('.ctry').forEach(function(el){el.style.display='none';});
+  // Blur share section
+  var sh=document.getElementById('rvSh');if(sh)sh.classList.add('pw-blur');
+  // Show paywall
+  document.getElementById('pwWall').style.display='block';
+  // Hide AI section and CSV button
+  var aiSec=document.querySelector('#tab-revenue .sec:last-of-type');
+  if(aiSec&&aiSec.innerHTML.includes('AI'))aiSec.style.display='none';
+  document.querySelectorAll('.dlbtn').forEach(function(b){b.style.display='none';});
+  document.getElementById('proBadge').classList.remove('on');
+}
+function removePaywall(){
+  document.querySelectorAll('.pw-blur').forEach(function(el){el.classList.remove('pw-blur');});
+  document.getElementById('pwWall').style.display='none';
+  var aiSec=document.querySelector('#tab-revenue .sec:last-of-type');
+  if(aiSec)aiSec.style.display='';
+  document.querySelectorAll('.dlbtn').forEach(function(b){b.style.display='';});
+  document.getElementById('proBadge').classList.add('on');
+}
+function tryCode(){
+  var input=document.getElementById('pwInput');
+  var code=input.value.trim();if(!code)return;
+  if(DB.access&&DB.access.codes&&DB.access.codes.map(function(c){return c.toUpperCase();}).indexOf(code.toUpperCase())>=0){
+    localStorage.setItem('dr_code',code);
+    removePaywall();renderRevenue();
+  }else{
+    document.getElementById('pwErr').style.display='block';
+    setTimeout(function(){document.getElementById('pwErr').style.display='none';},3000);
+  }
+}
+
 
 // Paywall
 
@@ -313,6 +414,12 @@ function renderRevenue(){
     }
   }
   document.getElementById('rvList').innerHTML=h;
+  // Apply paywall if not pro
+  if(!isPro()){
+    applyPaywall();
+  }else{
+    removePaywall();
+  }
 
   // Market share cards
   var sh='';for(var i=0;i<Math.min(6,prods.length);i++){var p=prods[i],clr=C[p.name]||'#888',val=p.daily||p.monthly;sh+='<div class="rvc"><div class="rvp" style="color:'+clr+'">'+(val/total*100).toFixed(1)+'%</div><div class="rvn">'+p.name+'</div><div class="rvv">'+fm(val)+'/日</div></div>';}
