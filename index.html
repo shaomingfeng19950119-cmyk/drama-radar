@@ -143,6 +143,7 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
 
 <div id="tab-revenue" class="tab">
   <section class="sec"><div class="ctn">
+    <div style="margin-bottom:24px"><div class="hero-ey">REVENUE INTELLIGENCE</div><h1 style="font-family:Space Grotesk,sans-serif;font-size:clamp(26px,4vw,42px);font-weight:700;line-height:1.15;letter-spacing:-1px;margin-bottom:14px">全球短剧出海<em style="font-style:normal;background:linear-gradient(135deg,var(--ind),var(--pur));-webkit-background-clip:text;-webkit-text-fill-color:transparent">大盘收入</em></h1><p style="font-size:14px;color:var(--c2);max-width:600px;line-height:1.7">双平台（iOS + Google Play）全球收入追踪，覆盖15款付费短剧产品 × 30国市场</p></div>
     <div id="rvMarket" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px"></div>
   </div></section>
   
@@ -357,10 +358,11 @@ function sw(btn,tab){
   document.querySelectorAll('.tab').forEach(function(e){e.classList.remove('on');});
   document.querySelectorAll('.nt').forEach(function(e){e.classList.remove('on');});
   document.getElementById('tab-'+tab).classList.add('on');btn.classList.add('on');
-  // Toggle date pickers
   document.getElementById('dPick').style.display=tab==='revenue'?'none':'';
   document.getElementById('rvPick').style.display=tab==='revenue'?'':'none';
   document.getElementById('rType').style.display=tab==='revenue'?'none':'';
+  // Hide hero on revenue tab
+  document.querySelector('.hero').style.display=tab==='revenue'?'none':'';
   if(tab==='profiles')renderProfiles();
   if(tab==='revenue')renderRevenue();
 }
