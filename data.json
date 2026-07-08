@@ -24316,5 +24316,61 @@
     "codes": [
       "PRO2026"
     ]
+  },
+  "weekly": {
+    "week": "",
+    "period": "",
+    "picks": [
+      {
+        "title": "The Rise of the lycan queen",
+        "platform": "DramaWave",
+        "genre": "逆袭，复仇，狼人，AI仿真人",
+        "lang": "英语",
+        "tag": "hot",
+        "desc": "助力Dramawave超越点众，登上美国畅销榜Top2，日耗峰值200万美金以上，全球多语种拓量。预计累计消耗峰值1000万美金以上",
+        "metric": "Top2",
+        "metricLabel": ""
+      },
+      {
+        "title": "My Olympian Brothers Loved Me Too Late",
+        "platform": "DramaBox",
+        "genre": "西方神话，AI仿真人，情感",
+        "lang": "英语",
+        "tag": "hot",
+        "desc": "日耗过百万美金，Dramabox热榜第一",
+        "metric": "Top2",
+        "metricLabel": ""
+      },
+      {
+        "title": "Sorry Alpha, I'm Done Waiting",
+        "platform": "ShortMax",
+        "genre": "狼人，仿真人",
+        "lang": "英语",
+        "tag": "hot",
+        "desc": "助力shortmax登上美国畅销榜Top3，日耗过百万美金",
+        "metric": "Top3",
+        "metricLabel": ""
+      },
+      {
+        "title": "Sister Stole My Guy, I Got the Emperor",
+        "platform": "DramaWave",
+        "genre": "情感，仿真人",
+        "lang": "英语",
+        "tag": "hot",
+        "desc": "日耗近百万美金，最近Dramawave的AI剧改编能力非常强。",
+        "metric": "Top4",
+        "metricLabel": "本周Dramawave 爆款"
+      },
+      {
+        "title": "My X-Ray Vision Sees Right Through You",
+        "platform": "ReelShort",
+        "genre": "真人剧，Young Adults",
+        "lang": "英语",
+        "tag": "hot",
+        "desc": "唯一上榜的真人剧，日耗50万美金以上，真人剧看看就行，成本高风险大，搞AI剧性价比高点。",
+        "metric": "Top1",
+        "metricLabel": ""
+      }
+    ]
   }
 }
