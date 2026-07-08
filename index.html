@@ -53,6 +53,24 @@ footer{padding:36px 0;text-align:center;color:var(--c3);font-size:12px;border-to
 .pw-err{font-size:12px;color:var(--red);margin-top:6px;display:none}
 .pw-ok{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--grn);background:var(--tgr);padding:3px 10px;border-radius:6px;display:none}
 .pw-ok.on{display:inline-block}
+
+.wk-grid{display:flex;flex-direction:column;gap:8px}
+.wk-card{background:var(--card);border:1px solid var(--bl);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:start;box-shadow:var(--s1);transition:.2s}
+.wk-card:hover{box-shadow:var(--s2)}
+.wk-card:first-child{border-left:3px solid var(--amb)}
+.wk-rk{width:40px;height:40px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:8px;color:var(--c3);background:var(--bg)}
+.wk-rk span{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--c1);line-height:1}
+.wk-name{font-weight:600;font-size:14px;margin-bottom:4px}
+.wk-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.wk-tag{font-size:9px;padding:2px 7px;border-radius:4px;background:var(--bg);color:var(--c2);border:1px solid var(--bd);font-family:'JetBrains Mono',monospace}
+.wk-tag.hot{background:rgba(239,68,68,.06);color:var(--red);border-color:rgba(239,68,68,.15)}
+.wk-tag.new{background:var(--tgr);color:var(--grn);border-color:rgba(16,185,129,.15)}
+.wk-tag.rise{background:var(--tg);color:var(--gld);border-color:rgba(217,119,6,.15)}
+.wk-desc{font-size:12px;color:var(--c2);line-height:1.7}
+.wk-stats{text-align:right;min-width:70px}
+.wk-stats-v{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700}
+.wk-stats-l{font-size:9px;color:var(--c3);font-family:'JetBrains Mono',monospace}
+@media(max-width:768px){.wk-card{grid-template-columns:1fr;gap:8px}.wk-rk{display:none}.wk-stats{text-align:left}}
 </style>
 </head>
 <body>
@@ -121,6 +139,24 @@ footer{padding:36px 0;text-align:center;color:var(--c3);font-size:12px;border-to
 .pw-err{font-size:12px;color:var(--red);margin-top:6px;display:none}
 .pw-ok{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--grn);background:var(--tgr);padding:3px 10px;border-radius:6px;display:none}
 .pw-ok.on{display:inline-block}
+
+.wk-grid{display:flex;flex-direction:column;gap:8px}
+.wk-card{background:var(--card);border:1px solid var(--bl);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:start;box-shadow:var(--s1);transition:.2s}
+.wk-card:hover{box-shadow:var(--s2)}
+.wk-card:first-child{border-left:3px solid var(--amb)}
+.wk-rk{width:40px;height:40px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:8px;color:var(--c3);background:var(--bg)}
+.wk-rk span{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--c1);line-height:1}
+.wk-name{font-weight:600;font-size:14px;margin-bottom:4px}
+.wk-meta{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}
+.wk-tag{font-size:9px;padding:2px 7px;border-radius:4px;background:var(--bg);color:var(--c2);border:1px solid var(--bd);font-family:'JetBrains Mono',monospace}
+.wk-tag.hot{background:rgba(239,68,68,.06);color:var(--red);border-color:rgba(239,68,68,.15)}
+.wk-tag.new{background:var(--tgr);color:var(--grn);border-color:rgba(16,185,129,.15)}
+.wk-tag.rise{background:var(--tg);color:var(--gld);border-color:rgba(217,119,6,.15)}
+.wk-desc{font-size:12px;color:var(--c2);line-height:1.7}
+.wk-stats{text-align:right;min-width:70px}
+.wk-stats-v{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700}
+.wk-stats-l{font-size:9px;color:var(--c3);font-family:'JetBrains Mono',monospace}
+@media(max-width:768px){.wk-card{grid-template-columns:1fr;gap:8px}.wk-rk{display:none}.wk-stats{text-align:left}}
 </style>
 <div class="sp-bg"></div>
 <div class="sp-stars"><div class="sp-star" style="left:81%;top:14%;animation-delay:1.1000430208906677s;width:1.5500586367382385px;height:1.5500586367382385px"></div><div class="sp-star" style="left:28%;top:17%;animation-delay:3.9458848566560496s;width:2.3533989748458226px;height:2.3533989748458226px"></div><div class="sp-star" style="left:69%;top:11%;animation-delay:3.3619700497961587s;width:1.0635653589635672px;height:1.0635653589635672px"></div><div class="sp-star" style="left:11%;top:27%;animation-delay:1.9306435735629583s;width:2.2040374580999607px;height:2.2040374580999607px"></div><div class="sp-star" style="left:71%;top:25%;animation-delay:3.864078451689614s;width:2.402649947180472px;height:2.402649947180472px"></div><div class="sp-star" style="left:53%;top:28%;animation-delay:2.7968361851354144s;width:1.5563814164613254px;height:1.5563814164613254px"></div><div class="sp-star" style="left:0%;top:97%;animation-delay:4.223277007331232s;width:2.3962787899764537px;height:2.3962787899764537px"></div><div class="sp-star" style="left:43%;top:35%;animation-delay:1.6219179992471262s;width:2.9144261444135626px;height:2.9144261444135626px"></div><div class="sp-star" style="left:43%;top:13%;animation-delay:1.3709833735205916s;width:1.193432753666928px;height:1.193432753666928px"></div><div class="sp-star" style="left:44%;top:77%;animation-delay:2.0580834688880523s;width:1.0869008858461944px;height:1.0869008858461944px"></div><div class="sp-star" style="left:58%;top:68%;animation-delay:1.4993046514128374s;width:2.84459074405632px;height:2.84459074405632px"></div><div class="sp-star" style="left:10%;top:70%;animation-delay:2.1727131256283716s;width:2.2572795989888865px;height:2.2572795989888865px"></div><div class="sp-star" style="left:46%;top:73%;animation-delay:1.7691543610266396s;width:1.1391102976474818px;height:1.1391102976474818px"></div><div class="sp-star" style="left:84%;top:29%;animation-delay:4.092273363154767s;width:2.9704430413215155px;height:2.9704430413215155px"></div><div class="sp-star" style="left:29%;top:12%;animation-delay:2.5205049001566646s;width:1.906820604736871px;height:1.906820604736871px"></div><div class="sp-star" style="left:46%;top:20%;animation-delay:2.4807238684675306s;width:1.4190140615429754px;height:1.4190140615429754px"></div><div class="sp-star" style="left:34%;top:89%;animation-delay:4.746618350849976s;width:2.296070770493187px;height:2.296070770493187px"></div><div class="sp-star" style="left:77%;top:81%;animation-delay:1.684554592792388s;width:2.4582535959006986px;height:2.4582535959006986px"></div><div class="sp-star" style="left:20%;top:59%;animation-delay:2.517821767030591s;width:2.9790467012731905px;height:2.9790467012731905px"></div><div class="sp-star" style="left:81%;top:88%;animation-delay:3.227798975098585s;width:2.369228501979749px;height:2.369228501979749px"></div><div class="sp-star" style="left:98%;top:99%;animation-delay:1.2237517901971358s;width:2.6436051880136167px;height:2.6436051880136167px"></div><div class="sp-star" style="left:40%;top:51%;animation-delay:2.070963503902811s;width:1.421965687172653px;height:1.421965687172653px"></div><div class="sp-star" style="left:72%;top:91%;animation-delay:2.2587115231939117s;width:2.31087733058976px;height:2.31087733058976px"></div><div class="sp-star" style="left:50%;top:82%;animation-delay:2.835407410349595s;width:1.529760332996105px;height:1.529760332996105px"></div><div class="sp-star" style="left:31%;top:95%;animation-delay:3.245472536652603s;width:1.5254832170458705px;height:1.5254832170458705px"></div><div class="sp-star" style="left:74%;top:54%;animation-delay:4.591291534409908s;width:1.7988010102807945px;height:1.7988010102807945px"></div><div class="sp-star" style="left:28%;top:17%;animation-delay:3.038105174705858s;width:1.1818188243475878px;height:1.1818188243475878px"></div><div class="sp-star" style="left:6%;top:14%;animation-delay:1.6113652773930442s;width:1.3199640034449005px;height:1.3199640034449005px"></div><div class="sp-star" style="left:87%;top:54%;animation-delay:3.3856361229278953s;width:1.7695346233490001px;height:1.7695346233490001px"></div><div class="sp-star" style="left:76%;top:59%;animation-delay:3.116457380396548s;width:2.942156755227236px;height:2.942156755227236px"></div><div class="sp-star" style="left:1%;top:87%;animation-delay:3.8828872774407786s;width:2.36342073805315px;height:2.36342073805315px"></div><div class="sp-star" style="left:68%;top:96%;animation-delay:2.067300759810171s;width:2.281923597159616px;height:2.281923597159616px"></div><div class="sp-star" style="left:14%;top:37%;animation-delay:2.73906100267642s;width:1.9074474126584129px;height:1.9074474126584129px"></div><div class="sp-star" style="left:92%;top:92%;animation-delay:2.053556203004363s;width:2.0011722261005964px;height:2.0011722261005964px"></div><div class="sp-star" style="left:22%;top:64%;animation-delay:4.650511357379282s;width:2.7410371396735336px;height:2.7410371396735336px"></div><div class="sp-star" style="left:38%;top:81%;animation-delay:3.030651527910537s;width:1.397822203529466px;height:1.397822203529466px"></div><div class="sp-star" style="left:47%;top:97%;animation-delay:1.6461961430126135s;width:2.9069994953070055px;height:2.9069994953070055px"></div><div class="sp-star" style="left:67%;top:0%;animation-delay:3.395778337840916s;width:1.9772114160578957px;height:1.9772114160578957px"></div><div class="sp-star" style="left:14%;top:46%;animation-delay:4.514887511292737s;width:2.663331058722359px;height:2.663331058722359px"></div><div class="sp-star" style="left:39%;top:30%;animation-delay:1.2317006659767502s;width:2.7560191984080813px;height:2.7560191984080813px"></div></div>
@@ -162,6 +198,7 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
   <div class="nav-tabs">
     <button class="nt on" onclick="sw(this,'paid')">付费短剧</button>
     <button class="nt" onclick="sw(this,'free')">免费短剧</button>
+    <button class="nt" onclick="sw(this,'weekly')">爆款推荐</button>
     <button class="nt" onclick="sw(this,'revenue')" id="rvTab">各家产品收入 <span id="rvLock">🔒</span></button>
   </div>
   <div class="nav-r">
@@ -186,6 +223,14 @@ setTimeout(function(){if(document.getElementById('splash').style.display!=='none
   <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">iOS 排名矩阵</h2><span class="sb">Entertainment 免费榜</span></div><div class="tw"><table class="dt" id="fIT"></table></div></div></section>
   <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">Google Play 排名矩阵</h2><span class="sb">Entertainment 免费榜</span></div><div class="tw"><table class="dt" id="fGT"></table></div></div></section>
   <section class="sec"><div class="ctn"><div class="sh"><h2 class="st">免费赛道洞察</h2></div><div class="ig" id="fIns"></div></div></section>
+</div>
+
+<div id="tab-weekly" class="tab">
+  <section class="sec"><div class="ctn">
+    <div class="sh"><h2 class="st">每周爆款推荐</h2><span class="sb" id="wkBadge"></span></div>
+    <div class="wk-grid" id="wkGrid"></div>
+    <div class="nb" style="margin-top:20px">💡 爆款推荐基于各平台榜单变动、收入增长和用户反馈综合评估，每周一更新</div>
+  </div></section>
 </div>
 
 <div id="tab-revenue" class="tab">
@@ -465,6 +510,7 @@ function sw(btn,tab){
   // Hide hero on revenue tab
   document.querySelector('.hero').style.display=tab==='revenue'?'none':'';
   
+  if(tab==='weekly')renderWeekly();
   if(tab==='revenue')renderRevenue();
 }
 function loadD(dk){renderAll(dk);renderProfiles();window.scrollTo({top:0,behavior:'smooth'});}
@@ -481,7 +527,7 @@ function loadD(dk){renderAll(dk);renderProfiles();window.scrollTo({top:0,behavio
       rvDates.forEach(function(d){var opt=document.createElement('option');opt.value=d;opt.textContent=d+' 收入';rvPicker.appendChild(opt);});
       if(rvDates.length>0)curRD=rvDates[0];
     }
-    renderAll(rDates[0]);}
+    renderAll(rDates[0]);renderWeekly();}
   catch(e){document.querySelector('.hero').innerHTML='<div class="ctn"><h1 style="color:var(--red)">加载失败</h1><p style="color:var(--c2);margin-top:12px">'+e.message+'</p></div>';}
 })();
 
@@ -670,6 +716,19 @@ function genRevCard(){
   c.fillStyle='rgba(255,255,255,0.15)';c.font='11px '+zh;c.fillText('收入数据为行业估算值，仅供竞争格局参考',60,1310);
 
   var a=document.createElement('a');a.download='drama_revenue_'+(curRD||'card')+'.png';a.href=cv.toDataURL('image/png');a.click();
+}
+
+function renderWeekly(){
+  var w=DB.weekly;if(!w||!w.picks)return;
+  var badge=document.getElementById('wkBadge');if(badge)badge.textContent=w.week+' · '+w.period;
+  var grid=document.getElementById('wkGrid');if(!grid)return;
+  var tagIcons={hot:'🔥',new:'✨',rise:'📈'};
+  var tagLabels={hot:'爆款',new:'新上',rise:'飙升'};
+  var metricColors={hot:'var(--red)',new:'var(--grn)',rise:'var(--gld)'};
+  document.getElementById('wkGrid').innerHTML=w.picks.map(function(p,i){
+    var tc=p.tag||'';var mc=metricColors[tc]||'var(--ind)';
+    return '<div class="wk-card"><div class="wk-rk"'+(i===0?' style="background:var(--tg)"':'')+'><span'+(i===0?' style="color:var(--gld)"':'')+'>'+(i+1)+'</span>TOP</div><div><div class="wk-name">'+p.title+'</div><div class="wk-meta"><span class="wk-tag '+tc+'">'+(tagIcons[tc]||'')+' '+(tagLabels[tc]||'')+'</span><span class="wk-tag">'+p.platform+'</span><span class="wk-tag">'+p.genre+'</span><span class="wk-tag">'+p.lang+'</span></div><div class="wk-desc">'+p.desc+'</div></div><div class="wk-stats"><div class="wk-stats-v" style="color:'+mc+'">'+p.metric+'</div><div class="wk-stats-l">'+p.metricLabel+'</div></div></div>';
+  }).join('');
 }
 </script>
 </body>
